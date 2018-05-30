@@ -1,0 +1,25 @@
+---
+# main.scss
+---
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Rubik:300,400,700|Bubblegum+Sans');
+
+$color-primary: #8294E4;
+$color-secondary: #D6CAE7;
+$color-dark-text: #514F5A;
+$color-light-text: #EEF2EF;
+$color-accent: #91C9C9;
+
+$font-header: 'Open Sans', sans-serif;
+$font-body: 'Rubik', sans-serif;
+$font-title: 'Bubblegum Sans', cursive;
+
+$nav-height: 100px;
+
+@import 
+	"footer", 
+	"nav", 
+	"main";
+
+
+

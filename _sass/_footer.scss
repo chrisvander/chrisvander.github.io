@@ -1,0 +1,25 @@
+.footer {
+	background-color: $color-dark-text;
+	height: 400px;
+	width: 100%;
+	font-family: $font-body;
+	.column {
+		float: left;
+		width: 20%;
+		height: 400px;
+		color: $color-light-text;
+		font-weight: 300;
+		h1 {
+			font-family: $font-header;
+			font-weight: 700;
+			font-size: 18px;
+		}
+		h2 {
+			font-size: 15px;
+		}
+		h3 {
+			padding-left: 8px;
+			font-size: 13px;
+		}
+	}
+}
