@@ -3,11 +3,11 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{ page.title }}</title>
+    {% seo %}
 	<meta name="author" content="Chris Vanderloo" />
 	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-	{% seo %} 
 	{% include nav.html %}
 	<div class="site" style="width: 100px;">
 		{{ content }}
