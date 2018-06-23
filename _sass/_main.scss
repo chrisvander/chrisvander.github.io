@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	font-size: 15px;
 	margin: 0 auto;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: $font;
 }
 @media screen and (max-width: 675px) {
 	body {
