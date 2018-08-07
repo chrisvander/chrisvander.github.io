@@ -2,7 +2,7 @@
 # main.scss
 ---
 
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,500,700|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro');
 
 // https://coolors.co/e0fbfc-c2dfe3-9db4c0-5c6b73-253237
 // $text-dark: #5c6b73;
@@ -10,15 +10,16 @@
 // $bg-light-secondary: #c2dfe3;
 
 // https://coolors.co/161925-23395b-406e8e-93a3b1-fcfcfc
-$text-dark: #fcfcfc;
-$bg-light: #406e8e;
-$bg-light-secondary: #2c5a7a;
+$dark: #161925;
+$bg-dark: #273d5a;
+$bg-light-secondary: #b79552;
+$bg-light: #406E8E;
+$light: #FCFCFC;
 
 
-$font: 'Nunito', sans-serif;
+$font: 'Nunito Sans', sans-serif;
 // $font: 'Source Sans Pro', sans-serif;
 
 @import
-	"footer",
 	"nav",
 	"main";
