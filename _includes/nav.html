@@ -1,5 +1,7 @@
 <div id="nav">
-	<div class="title">Chris Vanderloo</div>
+	<div class="title">
+        <img src="/assets/imgs/Logo.png" />
+    </div>
 	<div id="links">
 		<div class="page-btn">Blog</div>
 		<div class="page-btn">Development</div>
@@ -7,16 +9,7 @@
 		<div class="page-btn">Contact</div>
 	</div>
 </div>
-<script> 
-window.onscroll = () => {
-    if (window.pageYOffset >= 112.5) {
-    	document.getElementById("links").style.position = "fixed";
-    	document.getElementById("nav").style.marginBottom = "7.2em";
-    }
-    else {
-    	document.getElementById("links").style.position = "relative";
-    	document.getElementById("nav").style.marginBottom = "0em";
-    }
-    console.log(window.pageYOffset);
-};
+<script>
+var $ = (id) => document.getElementById(id).style;
+window.onscroll = () => $("links").position = (window.pageYOffset >= 172) ? "fixed" : "relative";
 </script>
