@@ -1,0 +1,11 @@
+docs_list_title: Navigation
+links:
+
+- title: Music
+  url: music
+
+- title: Projects
+  url: projects
+
+- title: About
+  url: about

@@ -4,8 +4,8 @@ body {
 	margin: 0 auto;
 	font-family: $font;
 }
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 500px) {
 	body {
-		font-size: 10px;
+		font-size: 12px;
 	}
 }

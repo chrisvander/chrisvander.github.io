@@ -12,13 +12,14 @@
 // https://coolors.co/161925-23395b-406e8e-93a3b1-fcfcfc
 $dark: #161925;
 $bg-dark: #273d5a;
+$bg-dark-h: #1e3552;
 $bg-light-secondary: #b79552;
 $bg-light: #406E8E;
 $light: #FCFCFC;
 
 
 $font: 'Nunito Sans', sans-serif;
-// $font: 'Source Sans Pro', sans-serif;
+$font-secondary: 'Source Sans Pro', sans-serif;
 
 @import
 	"nav",

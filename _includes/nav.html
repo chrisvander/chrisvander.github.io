@@ -1,15 +1,18 @@
-<div id="nav">
-	<div class="title">
-        <img src="/assets/imgs/Logo.png" />
-    </div>
-	<div id="links">
-		<div class="page-btn">Blog</div>
-		<div class="page-btn">Development</div>
-		<div class="page-btn">Music</div>
-		<div class="page-btn">Contact</div>
-	</div>
+<div class="nav">
+	<a href="/">
+	  <div class="nav-button nav-title selected">
+	    <div class="text">
+	      Chris Vanderloo
+	    </div>
+	  </div>
+	</a>
+	{% for item in site.data.pages.links %}
+		<a href="{{ item.url }}">
+		  <div class="nav-button">
+		    <div class="text">
+		      {{ item.title }}
+		    </div>
+		  </div>
+		</a>
+	 {% endfor %}
 </div>
-<script>
-var $ = (id) => document.getElementById(id).style;
-window.onscroll = () => $("links").position = (window.pageYOffset >= 172) ? "fixed" : "relative";
-</script>
