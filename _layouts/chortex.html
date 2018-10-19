@@ -10,7 +10,7 @@
 <body>
 	{% include nav.html %}
 	<div id="dark-gradient">
-		<span><img src="./assets/icons/chortex2blk.jpg" /></span>
+		<span><img src="{{ "/assets/icons/chortex2blk.jpg" | relative_url }}" /></span>
 	</div>
 	<div class="site" style="width: 100px; height: 120vh;">
 		{{ content }}
