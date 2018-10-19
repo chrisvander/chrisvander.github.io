@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
 sass:
     sass_dir: _sass
+url: chrisvanderloo.com
+baseurl: /
