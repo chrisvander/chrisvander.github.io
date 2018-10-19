@@ -2,10 +2,10 @@ docs_list_title: Navigation
 links:
 
 - title: Music
-  url: music
+  url: /music
 
 - title: Projects
-  url: projects
+  url: /projects
 
 - title: About
-  url: about
+  url: /about

@@ -1,6 +1,6 @@
 <div class="nav">
 	<a href="/">
-	  <div class="nav-button nav-title selected">
+	  <div class="nav-button nav-title {% if page.url == "/" %} selected {% endif %}">
 	    <div class="text">
 	      Chris Vanderloo
 	    </div>
@@ -8,7 +8,7 @@
 	</a>
 	{% for item in site.data.pages.links %}
 		<a href="{{ item.url }}">
-		  <div class="nav-button">
+		  <div class="nav-button {% if page.url == item.url %} selected {% endif %}">
 		    <div class="text">
 		      {{ item.title }}
 		    </div>
