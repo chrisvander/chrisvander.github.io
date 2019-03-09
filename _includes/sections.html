@@ -1,0 +1,15 @@
+{% for section in page.sections %}
+	<div id="{{ section.title }}" class="section" 
+		style="{% if section.bg!=white %} background-color: #EDEDED {% endif %}">
+		<div class="header">
+			<div class="title">
+				{{ section.title }}
+			</div>
+			{% for button in section.buttons %}
+			<div class="button">
+				{{ button.title }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endfor %}

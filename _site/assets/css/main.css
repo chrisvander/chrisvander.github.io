@@ -1,28 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro");
-.nav { font-size: 1.2em; }
+body { margin: 0; font-size: 18px; }
 
-.nav .nav-title, .nav .nav-button { display: table; text-align: center; float: left; height: 70px; padding-left: 1.6em; padding-right: 1.6em; }
+h1 { font-family: "Cochin", serif; font-size: 2.8em; text-transform: uppercase; color: #696969; margin: 0; padding-top: 0.7em; font-weight: lighter; }
 
-.nav { position: fixed; min-width: 400px; z-index: 5; width: 100%; background-color: #273d5a; height: 70px; padding: 0; }
-.nav .nav-title .text { display: table-cell; vertical-align: middle; color: #ecf0f1; font-size: 1.3em; font-weight: 700; }
-.nav .nav-button { cursor: pointer; font-size: 1em; }
-.nav .nav-button .text { display: table-cell; vertical-align: middle; color: #ecf0f1; }
-.nav .nav-button:hover, .nav .selected { background-color: #1e3552; }
+#header { background-color: #EDEDED; margin-top: 0; text-align: center; }
+#header .topline { height: 1px; width: 25.3em; background-color: #B4B4B4; display: inline-block; margin-top: .8em; }
+#header a { text-decoration: none; }
+#header .button { font-family: 'Avenir Next'; font-size: 1.25em; color: #8B8B8B; display: inline-block; margin: 10px; margin-bottom: 16px; padding: 0.4em; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.16), 0 0px 0px rgba(0, 0, 0, 0.23); transition: box-shadow .2s; border-radius: 15px; cursor: pointer; }
+#header .button:hover { box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.16), 0 0.125em 0.25em rgba(0, 0, 0, 0.23); }
+#header .button:active { box-shadow: 0 0.05em 0.125em rgba(0, 0, 0, 0.3), 0 0.05em 0.125em rgba(0, 0, 0, 0.4); }
 
-#top-gradient { width: 100%; height: 400px; background: radial-gradient(circle at 10%, #C0E538 5%, #C4D440 12%, #FFC312 30%, #B0D213 50%, #B53471 80%); background-size: 400% 400%; animation: bgmove 40s cubic-bezier(0.1, 0.1, 0.75, 1) infinite; text-align: center; padding-top: 50px; }
-#top-gradient span { line-height: 400px; width: 100%; font-size: 4em; color: white; text-shadow: 1px 1px 4px #555; }
-
-#dark-gradient { width: 100%; height: 400px; background-color: black; text-align: center; padding-top: 50px; overflow: hidden; }
-#dark-gradient img { height: 40em; margin-top: -100px; }
-
-@media screen and (max-width: 600px) { .nav { font-size: 1.0em; height: 50px; }
-  .nav .nav-title, .nav .nav-button { height: 50px; }
-  #dark-gradient img { height: 28em; margin-top: 0px; } }
-@keyframes bgmove { 0% { background-position: 0% 0%; }
-  25% { background-position: 40% 0%; }
-  50% { background-position: 100% 0%; }
-  75% { background-position: 60% 0%; }
-  100% { background-position: 0% 0%; } }
-body { margin: 0; font-size: 15px; margin: 0 auto; font-family: "Nunito Sans", sans-serif; }
+.section { text-align: center; }
+.section .header { text-align: right; flex: 1; display: inline-flex; width: 70%; height: 4em; background-color: #DBE3ED; margin-top: .92em; box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.16); }
+.section .header .title { width: 9.5em; display: inline-block; background-color: #DFE9F4; color: #8B8B8B; font-family: 'Avenir Next'; text-transform: uppercase; font-weight: bold; font-size: 1em; padding-top: 1.4em; text-align: center; }
+.section .header .button { flex: 0.9; display: inline-block; }
 
 @media screen and (max-width: 500px) { body { font-size: 12px; } }

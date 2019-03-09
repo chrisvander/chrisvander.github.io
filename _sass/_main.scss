@@ -1,9 +1,80 @@
-body {
+h1 {
+	font-family: $font-title;
+	font-size: 2.8em;
+	text-transform: uppercase;
+	color: $bg2;
 	margin: 0;
-	font-size: 15px;
-	margin: 0 auto;
-	font-family: $font;
+	padding-top: 0.7em;
+	font-weight: lighter;
+}	
+
+#header {
+	background-color: $bg0;
+	margin-top: 0;
+	text-align: center;
+	.topline {
+		height: 1px;
+		width: 25.3em;
+		background-color: #B4B4B4;
+		display: inline-block;
+		margin-top: .8em;
+	}
+	a {
+		text-decoration: none;
+	}
+	.button {
+		font-family: 'Avenir Next';
+		font-size: 1.25em;
+		color: $bg1;
+		display: inline-block;
+		margin: 10px;
+		margin-bottom: 16px;
+		padding: 0.4em;
+		box-shadow: 0 0px 0px rgba(0,0,0,0.16), 0 0px 0px rgba(0,0,0,0.23);
+		transition: box-shadow .2s;
+		border-radius: 15px;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16), 0 0.125em 0.25em rgba(0,0,0,0.23);
+		}
+		&:active {
+			box-shadow: 0 0.05em 0.125em rgba(0,0,0,0.3), 0 0.05em 0.125em rgba(0,0,0,0.4);
+		}
+	}
 }
+
+.section {
+	text-align: center;
+	.header {
+		text-align: right;
+		flex: 1;
+		display: inline-flex;
+		width: 70%;
+		height: 4em;
+		background-color: $blue-ld;
+		margin-top: .92em;
+		box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16);
+		.title {
+			width: 9.5em;
+			display: inline-block;
+			background-color: $blue-ll;
+			color: $bg1;
+			font-family: 'Avenir Next';
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 1em;
+			padding-top: 1.4em;
+			text-align: center;
+		}
+		.button {
+			flex: 0.9;
+			display: inline-block;
+		}
+	}
+	
+}
+
 @media screen and (max-width: 500px) {
 	body {
 		font-size: 12px;

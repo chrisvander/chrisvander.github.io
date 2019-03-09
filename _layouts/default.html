@@ -8,12 +8,9 @@
 	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-	{% include nav.html %}
-	<div id="top-gradient">
-		<span>{{ page.title }}</span>
-	</div>
-	<div class="site" style="width: 100px; height: 120vh;">
-		{{ content }}
-	</div>
+	{% include topbar.html %}
+	{{ content }}
+	{% include sections.html %}
+	{% include footer.html %}
 </body>
 </html>

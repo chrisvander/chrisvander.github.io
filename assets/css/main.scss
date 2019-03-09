@@ -4,23 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro');
 
-// https://coolors.co/e0fbfc-c2dfe3-9db4c0-5c6b73-253237
-// $text-dark: #5c6b73;
-// $bg-light: #e0fbfc;
-// $bg-light-secondary: #c2dfe3;
+$bg0: #EDEDED;
+$bg1: #8B8B8B;
+$bg2: #696969;
+$bg3: #333333;
+$blue-ll: #DFE9F4;
+$blue-ld: #DBE3ED;
 
-// https://coolors.co/161925-23395b-406e8e-93a3b1-fcfcfc
-$dark: #161925;
-$bg-dark: #273d5a;
-$bg-dark-h: #1e3552;
-$bg-light-secondary: #b79552;
-$bg-light: #406E8E;
-$light: #FCFCFC;
+$font-title: 'Cochin', serif;
+$font-button: 'Avenir Next', sans-serif;
 
+body {
+	margin: 0;
+	font-size: 18px;
+}
 
-$font: 'Nunito Sans', sans-serif;
-$font-secondary: 'Source Sans Pro', sans-serif;
 
 @import
-	"nav",
 	"main";

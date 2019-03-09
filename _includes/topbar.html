@@ -1,0 +1,11 @@
+<div id="header">
+	<h1>Chris Vanderloo</h1>
+	<div class="topline"></div><br />
+	{% for item in page.sections %}
+	<a href="#{{ item.title }}">
+		<div class="button">
+			{{ item.title }}
+		</div>
+	</a>
+ {% endfor %}
+</div>
