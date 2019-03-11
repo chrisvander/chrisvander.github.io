@@ -2,3 +2,5 @@ bg: dark
 buttons:
 - title: GitHub
   url: http://github.com/chrisvander
+content:
+  <div id="github-info">Grabbing from GitHub...</div>

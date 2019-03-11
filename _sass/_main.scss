@@ -74,16 +74,39 @@ h1 {
 				font-weight: bold;
 				margin-top: 0.69em;
 				margin-bottom: 0.69em;
-				height: 66px;
-				width: 200px;
+				height: 2.75em;
+				width: 8.3em;
 				border: 2px solid #EDEDED;
 				color: #EDEDED;
 				background-color: #333333;
-				border-radius: 20px;
+				border-radius: 1em;
 			}
 		}
 	}
-	
+}
+
+#github-info {
+	width: 70%;
+	display: inline-block;
+	ol {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			display: flex;
+			width: 44%;
+			background-color: white;
+			margin: 3%;
+			border-radius: 1em;
+			box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16);
+			div {
+				margin: 1em;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 500px) {
