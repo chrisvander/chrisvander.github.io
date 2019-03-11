@@ -2,10 +2,10 @@
 	<h1>Chris Vanderloo</h1>
 	<div class="topline"></div><br />
 	{% for item in page.sections %}
-	<a href="#{{ item.title }}">
-		<div class="button">
-			{{ item.title }}
-		</div>
-	</a>
+		<a href="#{{ item.title }}">
+			<span class="button">
+				{{ item.title }}
+			</span>
+		</a>
  {% endfor %}
 </div>

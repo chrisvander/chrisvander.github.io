@@ -1,10 +1,15 @@
-{% for section in page.sections %}
-	<div id="{{ section.title }}" class="section" 
-		style="{% if section.bg!=white %} background-color: #EDEDED {% endif %}">
-		<div class="header">
-			<div class="title">
-				{{ section.title }}
-			</div>
+{% for s_hash in site.data.sections %}
+{% assign section_title = s_hash[0] %}
+{% assign section = s_hash[1] %}
+<div 
+	id="{{ section_title }}" 
+	class="section" 
+	style="{% if section.bg!=white %} background-color: #EDEDED {% endif %}">
+	<div class="header">
+		<div class="title">
+			{{ section_title }}
+		</div>
+		<div class="buttons">
 			{% for button in section.buttons %}
 			<div class="button">
 				{{ button.title }}
@@ -12,4 +17,8 @@
 			{% endfor %}
 		</div>
 	</div>
+	<p>
+		{{ section.content }}
+	</p>
+</div>
 {% endfor %}
