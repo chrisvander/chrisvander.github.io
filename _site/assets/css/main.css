@@ -1,24 +1,47 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro");
 body { margin: 0; font-size: 18px; }
 
-h1 { font-family: "Cochin", serif; font-size: 2.8em; text-transform: uppercase; color: #696969; margin: 0; padding-top: 0.7em; font-weight: lighter; }
+body { font-size: 18px; overflow: hidden; }
 
-#header { background-color: #EDEDED; margin-top: 0; text-align: center; }
-#header .topline { height: 1px; width: 25.3em; background-color: #B4B4B4; display: inline-block; margin-top: .8em; }
-#header a { text-decoration: none; }
-#header .button { font-family: 'Avenir Next'; font-size: 1.25em; color: #8B8B8B; display: inline-block; margin: 10px; margin-bottom: 16px; padding: 0.4em; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.16), 0 0px 0px rgba(0, 0, 0, 0.23); transition: box-shadow .2s; border-radius: 15px; cursor: pointer; }
-#header .button:hover { box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.16), 0 0.125em 0.25em rgba(0, 0, 0, 0.23); }
-#header .button:active { box-shadow: 0 0.05em 0.125em rgba(0, 0, 0, 0.3), 0 0.05em 0.125em rgba(0, 0, 0, 0.4); }
+@media screen and (max-width: 1024px) { body { font-size: 14px; } }
+.landing.pageopen > .landing-wrapper { opacity: 0; pointer-events: none; }
 
-.section { text-align: center; font-family: 'Avenir Next'; }
-.section .header { text-align: right; flex: 1; display: inline-flex; width: 70%; height: 4em; background-color: #DBE3ED; margin-top: .92em; box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.16); }
-.section .header .title { width: 9.5em; display: inline-block; background-color: #DFE9F4; color: #8B8B8B; text-transform: uppercase; font-weight: bold; padding-top: 1.4em; text-align: center; }
-.section .header .buttons { flex: .9; }
-.section .header .buttons .button { display: inline-block; text-transform: uppercase; font-weight: bold; margin-top: 0.69em; margin-bottom: 0.69em; height: 2.75em; width: 8.3em; border: 2px solid #EDEDED; color: #EDEDED; background-color: #333333; border-radius: 1em; }
+.landing.pageopen > img { transform: translateY(100%); }
 
-#github-info { width: 70%; display: inline-block; }
-#github-info ol { display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; padding: 0; margin: 0; }
-#github-info ol li { display: flex; width: 44%; background-color: white; margin: 3%; border-radius: 1em; box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.16); }
-#github-info ol li div { margin: 1em; }
+#backBtn { display: inline-block; position: absolute; top: 0; left: 0; z-index: 1; height: 100px; width: 100px; border: 0px; background-color: #FFFFFF; --hover: #bbbbbb; color: #696969; opacity: 1; transition: box-shadow 0.25s, transform 0.25s; transform: translateX(0); }
+#backBtn:hover, #backBtn:focus { box-shadow: inset 10em 0 0 0 var(--hover); color: #EDEDED; }
+#backBtn:active { box-shadow: inset 10em 0 0 0 #696969; color: #EDEDED; }
 
-@media screen and (max-width: 500px) { body { font-size: 12px; } }
+#backBtn.hidden { pointer-events: 0 !important; transform: translateX(-100%); }
+
+.landing { z-index: 0; min-height: 640px; background-color: #EDEDED; height: 100vh; width: 100%; color: #696969; text-align: center; position: relative; overflow: hidden; }
+.landing .landing-wrapper { display: inline-block; height: 11.1em; vertical-align: middle; line-height: normal; margin-top: 25vh; opacity: 1; transition: opacity 0.25s; }
+.landing .name { text-align: right; display: inline-block; transform: perspective(1px) translateY(-50%); }
+.landing .name h1 { padding: 0; margin: 0; font-family: "Didot", serif; font-size: 3.5em; text-transform: uppercase; }
+.landing .name h3 { margin: 0; font-family: "Cochin", serif; font-size: 1.3em; font-weight: 300; }
+.landing .vertical-line { display: inline-block; background-color: #696969; height: 200px; width: 2px; margin-left: 50px; margin-right: 30px; }
+.landing .links { position: relative; top: -35%; text-align: left; display: inline-block; }
+.landing button { display: block; float: left; font-family: "Cochin", serif; border: 2px solid #EDEDED; font-size: 1.3em; font-weight: 300; background-color: #EDEDED; text-align: center; padding: 10px; padding-left: 20px; padding-right: 20px; margin: 10px; text-transform: none; --hover: #888888; color: #696969; transition: 0.25s; }
+.landing button:hover, .landing button:focus { box-shadow: inset 0 -2.5em 0 0 var(--hover); border: 2px solid; color: #EDEDED; }
+.landing button:active { box-shadow: inset 0 -2.5em 0 0 #696969; border: 2px solid; color: #EDEDED; }
+@media screen and (max-width: 1366px) { .landing .links { top: 0; }
+  .landing button { float: none; width: 100%; } }
+@media screen and (max-height: 800px) { .landing .landing-wrapper { margin-top: 10vh; } }
+.landing img { width: 750px; position: absolute; bottom: -10px; margin: auto; left: 0px; right: 0px; transition: .5s; transition-timing-function: ease-in-out; }
+
+.dark .landing { background-color: #888888; color: #EDEDED; }
+.dark .landing .links button { color: #EDEDED; background-color: #888888; border: 2px solid #888888; --hover: #ededed; }
+.dark .landing .links button:hover, .dark .landing .links button:focus { color: #888888; }
+.dark .landing .links button:active { box-shadow: inset 0 -2.5em 0 0 #BDBDBD; color: #888888; }
+.dark .landing .vertical-line { background-color: #EDEDED; }
+
+.page { position: absolute; transition: transform 0.5s; width: 100%; height: 100vh; background-color: white; right: -120%; top: 0; transform: skewX(-10deg); transition-timing-function: ease-in-out; font-size: 18px; }
+.page .content { position: absolute; transform: skewX(10deg); transition: 0.5s; transition-timing-function: ease-in-out; width: 60%; height: 100vh; right: -50%; overflow: auto; margin-left: 10px; }
+.page .content h1, .page .content h2, .page .content h3, .page .content h4 { font-family: 'Cochin'; color: #696969; }
+.page .content h1 { font-size: 3em; }
+.page .content h2 { font-size: 2em; }
+.page .content h3 { font-size: 1.5em; }
+.page .content h4 { font-size: 1.3em; }
+
+.page.visible { -webkit-transform: translateX(-100%) skewX(-10deg); transform: translateX(-100%) skewX(-10deg); }
+.page.visible .content { transform: translateX(-120%) skewX(10deg); will-change: transform; }

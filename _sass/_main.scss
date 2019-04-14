@@ -1,116 +1,230 @@
-h1 {
-	font-family: $font-title;
-	font-size: 2.8em;
-	text-transform: uppercase;
-	color: $bg2;
-	margin: 0;
-	padding-top: 0.7em;
-	font-weight: lighter;
-}	
+body {
+	font-size: 18px;
+	overflow: hidden;
 
-#header {
-	background-color: $bg0;
-	margin-top: 0;
+}
+@media screen and (max-width: 1024px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+.landing.pageopen > .landing-wrapper {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.landing.pageopen > img {
+	transform: translateY(100%);
+}
+
+#backBtn {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 100px;
+	width: 100px;
+	border: 0px;
+	background-color: #FFFFFF;
+	--hover: #{adjust-hue($mid-gray, 45deg)};
+	color: $title;
+	opacity: 1;
+	transition: box-shadow 0.25s, transform 0.25s;
+	transform: translateX(0);
+	&:hover,
+	&:focus {
+	  box-shadow: inset 10em 0 0 0 var(--hover);
+	  color: $bg;
+	}
+	&:active {
+		box-shadow: inset 10em 0 0 0 $title;
+	  color: $bg;
+	}
+}
+
+#backBtn.hidden {
+	pointer-events: 0 !important;
+	transform: translateX(-100%);
+}
+
+.landing {
+	z-index:0;
+	min-height: 640px;
+	background-color: $bg;
+	height: 100vh;
+	width: 100%;
+	color: $title;
 	text-align: center;
-	.topline {
-		height: 1px;
-		width: 25.3em;
-		background-color: #B4B4B4;
+	position: relative;
+	overflow: hidden;
+	.landing-wrapper {
 		display: inline-block;
-		margin-top: .8em;
+		height: 11.1em;
+		vertical-align: middle;
+	  line-height: normal;
+	  margin-top: 25vh;
+	  opacity: 1;
+	  transition: opacity 0.25s;
 	}
-	a {
-		text-decoration: none;
-	}
-	.button {
-		font-family: 'Avenir Next';
-		font-size: 1.25em;
-		color: $bg1;
+	.name {
+		text-align: right;
 		display: inline-block;
+   	transform: perspective(1px) translateY(-50%);
+		h1 {
+			padding: 0;
+			margin: 0;
+			font-family: $font-title;
+			font-size: 3.5em;
+			text-transform: uppercase;
+		}
+		h3 {
+			margin: 0;
+			font-family: $font;
+			font-size: 1.3em;
+			font-weight: 300;
+		}
+	}
+	.vertical-line {
+		display: inline-block;
+		background-color: $title;
+		height: 200px;
+		width: 2px;
+		margin-left: 50px;
+		margin-right: 30px;
+	}
+	.links {
+		position: relative;
+   	top: -35%;
+		text-align: left;
+		display: inline-block;
+	}
+	button {
+ 		display: block;
+ 		float: left;
+		font-family: $font;
+		border: 2px solid $bg;
+		font-size: 1.3em;
+		font-weight: 300;
+		background-color: $bg;
+		text-align: center;
+		padding: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
 		margin: 10px;
-		margin-bottom: 16px;
-		padding: 0.4em;
-		box-shadow: 0 0px 0px rgba(0,0,0,0.16), 0 0px 0px rgba(0,0,0,0.23);
-		transition: box-shadow .2s;
-		border-radius: 15px;
-		cursor: pointer;
-
-		&:hover {
-			box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16), 0 0.125em 0.25em rgba(0,0,0,0.23);
+		text-transform: none;
+		--hover: #{adjust-hue($bg-dark, 45deg)};
+		color: $title;
+		transition: 0.25s;
+		&:hover,
+		&:focus {
+		  box-shadow: inset 0 -2.5em 0 0 var(--hover);
+		  border: 2px solid;
+		  color: $bg;
 		}
 		&:active {
-			box-shadow: 0 0.05em 0.125em rgba(0,0,0,0.3), 0 0.05em 0.125em rgba(0,0,0,0.4);
+			box-shadow: inset 0 -2.5em 0 0 $title;
+		  border: 2px solid;
+		  color: $bg;
 		}
+	}
+	@media screen and (max-width: 1366px) {
+		.links {
+			top: 0;
+		}
+		button {
+			float: none;
+			width: 100%;
+		}
+	}
+	@media screen and (max-height: 800px) {
+		.landing-wrapper {
+		  margin-top: 10vh;
+		}
+	}
+	img {
+		width: 750px;
+		position: absolute;
+		bottom: -10px;
+		margin: auto;
+		left: 0px;
+		right: 0px;
+		transition: .5s;
+		transition-timing-function: ease-in-out;
 	}
 }
 
-.section {
-	text-align: center;
-	font-family: 'Avenir Next';
-	.header {
-		text-align: right;
-		flex: 1;
-		display: inline-flex;
-		width: 70%;
-		height: 4em;
-		background-color: $blue-ld;
-		margin-top: .92em;
-		box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16);
-		.title {
-			width: 9.5em;
-			display: inline-block;
-			background-color: $blue-ll;
-			color: $bg1;
-			text-transform: uppercase;
-			font-weight: bold;
-			padding-top: 1.4em;
-			text-align: center;
-		}
-		.buttons {
-			flex: .9;
-			.button {
-				display: inline-block;
-				text-transform: uppercase;
-				font-weight: bold;
-				margin-top: 0.69em;
-				margin-bottom: 0.69em;
-				height: 2.75em;
-				width: 8.3em;
-				border: 2px solid #EDEDED;
-				color: #EDEDED;
-				background-color: #333333;
-				border-radius: 1em;
+.dark {
+	.landing {
+		background-color: $bg-dark;
+		color: $title-dark;
+		.links button {
+			color: $title-dark;
+			background-color: $bg-dark;
+			border: 2px solid $bg-dark;			
+			--hover: #{adjust-hue($bg, 45deg)};
+			&:hover,
+			&:focus {
+			  color: $bg-dark;
+			}
+			&:active {
+				box-shadow: inset 0 -2.5em 0 0 #BDBDBD;
+			  color: $bg-dark;
 			}
 		}
-	}
-}
-
-#github-info {
-	width: 70%;
-	display: inline-block;
-	ol {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		li {
-			display: flex;
-			width: 44%;
-			background-color: white;
-			margin: 3%;
-			border-radius: 1em;
-			box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.16);
-			div {
-				margin: 1em;
-			}
+		.vertical-line {
+			background-color: $title-dark;
 		}
 	}
 }
 
-@media screen and (max-width: 500px) {
-	body {
-		font-size: 12px;
+.page {
+	position: absolute;
+	transition: transform 0.5s;
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	right: -120%;
+	top: 0;
+	transform: skewX(-10deg);
+	transition-timing-function: ease-in-out;
+	font-size: 18px;
+	.content {
+		position: absolute;
+		transform: skewX(10deg);
+		transition: 0.5s;
+		transition-timing-function: ease-in-out;
+		width: 60%;
+		height: 100vh;
+		right: -50%;
+		overflow: auto;
+		margin-left: 10px;
+		h1,h2,h3,h4 {
+			font-family: 'Cochin';
+			color: #696969;
+		}
+		h1 {
+			font-size: 3em;
+		}
+		h2 {
+			font-size: 2em;
+		}
+		h3 {
+			font-size: 1.5em;
+		}
+		h4 {
+			font-size: 1.3em;
+		}
+
+	}
+}
+
+.page.visible {
+	-webkit-transform: translateX(-100%) skewX(-10deg);
+	transform: translateX(-100%) skewX(-10deg);
+	.content {
+		transform: translateX(-120%) skewX(10deg);
+		will-change: transform;
 	}
 }

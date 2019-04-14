@@ -1,24 +1,17 @@
+var currentPage;
 
-$.get({
-    url: "https://cors-anywhere.herokuapp.com/github.com/chrisvander",
-    xhrFields: {
-        withCredentials: false
-    },
-    success: function (response) {
-        // handle the response
-        $('#github-info').html(
-        	$(response)
-        		.find("#js-pjax-container > div > div > div > div:nth-child(1) > div > ol")
-        );
-        $('#github-info').find('*').removeClass();
-        $('#github-info a').each(function() {
-        	this.href = this.href.replace(/http:\/\/[^\/]*\//, 
-         "http://github.com/");
-        });
-    },
-    error: function (xhr, status) {
-        // handle errors
-        console.log(status)
-        console.log(xhr)
+function togglePageOpen(page) {
+    var el = document.getElementById("landing");
+    var back = document.getElementById("backBtn");
+    if (page) currentPage = document.getElementById(page);
+    if (el.classList.contains("pageopen")) {
+        el.classList.remove("pageopen");
+        back.classList.add("hidden");
+        currentPage.classList.remove("visible");
     }
-});
+    else {
+        currentPage.classList.add("visible");
+        back.classList.remove("hidden");
+        el.classList.add("pageopen");
+    }
+}

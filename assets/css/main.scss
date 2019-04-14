@@ -4,21 +4,23 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro');
 
-$bg0: #EDEDED;
-$bg1: #8B8B8B;
-$bg2: #696969;
-$bg3: #333333;
-$blue-ll: #DFE9F4;
-$blue-ld: #DBE3ED;
+// light theme
+$bg: #EDEDED;
+$title: #696969;
 
-$font-title: 'Cochin', serif;
-$font-button: 'Avenir Next', sans-serif;
+// dark theme
+$bg-dark: #888888;
+$title-dark: #EDEDED;
+
+$mid-gray: #BBB;
+
+$font-title: 'Didot', serif;
+$font: 'Cochin', serif;
 
 body {
 	margin: 0;
 	font-size: 18px;
 }
-
 
 @import
 	"main";

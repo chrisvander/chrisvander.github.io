@@ -6,13 +6,56 @@
     {% seo %}
 	<meta name="author" content="Chris Vanderloo" />
 	<link rel="stylesheet" href="/assets/css/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-	{% include topbar.html %}
-	{{ content }}
-	{% include sections.html %}
-	{% include footer.html %}
+	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
+		<img src="/assets/svg/arrow_left.svg"/>
+	</button>
+	<div class="landing" id="landing">
+		<div class="landing-wrapper">
+			<div class="name">
+				<h1>Chris Vanderloo</h1>
+				<h3>Computer Science & Cognitive Science student at Rensselaer Polytechnic</h3>
+			</div>
+			<div class="vertical-line"></div>
+			<div class="links">
+				<button onclick="togglePageOpen('about')" href="#About">
+					About
+				</button>
+				<button onclick="togglePageOpen('portfolio')" href="#Portfolio">
+					Portfolio
+				</button>
+				<button onclick="togglePageOpen('music')" href="#Music">
+					Music
+				</button>
+				<button onclick="togglePageOpen('contact')" href="#Contact">
+					Contact
+				</button>
+			</div>
+		</div>
+		<img src="/assets/svg/at_desk.svg" />
+	</div>
+	<div id="about" class="page">
+		<div class="content">
+			<h1>About</h1>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel facilisis mauris. Aliquam interdum ligula et consectetur ullamcorper. Sed euismod rhoncus enim, vitae aliquet turpis gravida at. Sed ornare arcu et urna lacinia dignissim. Maecenas arcu nisl, ultricies at justo id, consequat placerat libero. Morbi a orci diam. Aliquam erat volutpat. Etiam malesuada purus sed risus aliquam pharetra.
+		</div>
+	</div>
+	<div id="portfolio" class="page">
+		<div class="content">
+			<h1>Portfolio</h1>
+		</div>
+	</div>
+	<div id="music" class="page">
+		<div class="content">
+			<h1>Music</h1>
+		</div>
+	</div>
+	<div id="contact" class="page">
+		<div class="content">
+			<h1>Contact</h1>
+		</div>
+	</div>
 </body>
 <script src="/assets/js/github_grab.js"></script>
 </html>
