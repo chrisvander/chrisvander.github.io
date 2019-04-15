@@ -1,6 +1,9 @@
 var currentPage;
 
+
 function togglePageOpen(page) {
+console.log("hi")
+    
     var el = document.getElementById("landing");
     var back = document.getElementById("backBtn");
     if (page) currentPage = document.getElementById(page);

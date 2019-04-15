@@ -8,20 +8,17 @@ body { font-size: 18px; overflow: hidden; }
 
 .landing.pageopen > img { transform: translateY(100%); }
 
-#backBtn { display: inline-block; position: absolute; top: 0; left: 0; z-index: 1; height: 100px; width: 100px; border: 0px; background-color: #FFFFFF; --hover: #bbbbbb; color: #696969; opacity: 1; transition: box-shadow 0.25s, transform 0.25s; transform: translateX(0); }
-#backBtn:hover, #backBtn:focus { box-shadow: inset 10em 0 0 0 var(--hover); color: #EDEDED; }
-#backBtn:active { box-shadow: inset 10em 0 0 0 #696969; color: #EDEDED; }
+#backBtn { display: inline-block; position: absolute; top: 0; left: 0; z-index: 1; border: 0px; --hover: #bbbbbb; color: #696969; opacity: 1; transition: box-shadow 0.25s, transform 0.25s; transform: translateX(0) translateY(0); }
 
 #backBtn.hidden { pointer-events: 0 !important; transform: translateX(-100%); }
 
-.landing { z-index: 0; min-height: 640px; background-color: #EDEDED; height: 100vh; width: 100%; color: #696969; text-align: center; position: relative; overflow: hidden; }
+.landing { z-index: 0; min-height: 640px; background-color: #EDEDED; height: 100vh; width: 100%; color: #696969; text-align: center; position: relative; overflow: hidden; zoom: 1; }
 .landing .landing-wrapper { display: inline-block; height: 11.1em; vertical-align: middle; line-height: normal; margin-top: 25vh; opacity: 1; transition: opacity 0.25s; }
 .landing .name { text-align: right; display: inline-block; transform: perspective(1px) translateY(-50%); }
 .landing .name h1 { padding: 0; margin: 0; font-family: "Didot", serif; font-size: 3.5em; text-transform: uppercase; }
-.landing .name h3 { margin: 0; font-family: "Cochin", serif; font-size: 1.3em; font-weight: 300; }
-.landing .vertical-line { display: inline-block; background-color: #696969; height: 200px; width: 2px; margin-left: 50px; margin-right: 30px; }
+.landing .name h3 { margin: 0; font-family: "Gill Sans", sans-serif; font-size: 1.3em; font-weight: 300; }
 .landing .links { position: relative; top: -35%; text-align: left; display: inline-block; }
-.landing button { display: block; float: left; font-family: "Cochin", serif; border: 2px solid #EDEDED; font-size: 1.3em; font-weight: 300; background-color: #EDEDED; text-align: center; padding: 10px; padding-left: 20px; padding-right: 20px; margin: 10px; text-transform: none; --hover: #888888; color: #696969; transition: 0.25s; }
+.landing button { display: block; float: left; font-family: "Gill Sans", sans-serif; border: 2px solid #EDEDED; font-size: 1.3em; font-weight: 300; background-color: #EDEDED; text-align: center; padding: 10px; padding-left: 20px; padding-right: 20px; margin: 10px; text-transform: none; --hover: #888888; color: #696969; transition: 0.25s; }
 .landing button:hover, .landing button:focus { box-shadow: inset 0 -2.5em 0 0 var(--hover); border: 2px solid; color: #EDEDED; }
 .landing button:active { box-shadow: inset 0 -2.5em 0 0 #696969; border: 2px solid; color: #EDEDED; }
 @media screen and (max-width: 1366px) { .landing .links { top: 0; }
@@ -29,19 +26,46 @@ body { font-size: 18px; overflow: hidden; }
 @media screen and (max-height: 800px) { .landing .landing-wrapper { margin-top: 10vh; } }
 .landing img { width: 750px; position: absolute; bottom: -10px; margin: auto; left: 0px; right: 0px; transition: .5s; transition-timing-function: ease-in-out; }
 
+.page { position: absolute; transition: transform 0.5s; width: 100%; height: 100vh; background-color: white; top: 0; transition-timing-function: ease-in-out; font-size: 18px; }
+.page span { display: inline-block; padding: 20px; }
+.page .content { padding-left: 20px; padding-right: 20px; font-family: "Gill Sans", sans-serif; position: absolute; transition: 0.5s; transition-timing-function: ease-in-out; height: 100vh; overflow: hidden; }
+
+.page > .content h1 { color: black; font-weight: 600; font-size: 2.5em; margin: 0; }
+.page > .content h2 { font-weight: 600; font-size: 1.5em; margin: 0; color: #696969; }
+.page > .content h3 { color: black; font-weight: 600; font-size: 2.2em; margin: 0; }
+.page > .content p { font-size: 1.1em; }
+.page > .content .project { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16); border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 30px; }
+.page > .content .project .text { padding: 25px; width: calc(100% - 300px); }
+.page > .content .project img { width: 200px; transform-origin: top left; }
+.page > .content .project .links { background-color: #F5F5F5; width: 100%; padding: 25px; font-size: 1.1em; }
+.page > .content .project .links div { width: calc(100% - 300px); }
+.page > .content .project .links div a { text-decoration: none; }
+
+.page.visible { overflow: auto; }
+.page.visible .content { will-change: transform; zoom: 1; overflow: auto; }
+
+@media screen and (max-width: 750px) { #backBtn { height: 60px; width: 100%; background-color: #F5F5F5; }
+  #backBtn:hover, #backBtn:focus { box-shadow: inset 750px 0 0 0 var(--hover); color: #EDEDED; }
+  #backBtn:active { box-shadow: inset 750px 0 0 0 #696969; color: #EDEDED; }
+  #backBtn img { transform: rotate(90deg) scale(0.7); }
+  #backBtn.hidden { pointer-events: 0 !important; transform: translateY(-100%); }
+  .page.visible { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+  .page { right: -100%; transform: skewX(0); }
+  .page .content { width: 100%; left: 0; transform: skewX(0); padding-left: 0; padding-right: 0; }
+  .page .content:before { content: ''; display: block; width: 100%; height: 60px; }
+  .img-wrap { padding: 20px; height: 300px; overflow: hidden; margin-left: 30px; } }
+@media screen and (min-width: 750px) { #backBtn { height: 100px; width: 100px; background-color: #FFFFFF; }
+  #backBtn:hover, #backBtn:focus { box-shadow: inset 10em 0 0 0 var(--hover); color: #EDEDED; }
+  #backBtn:active { box-shadow: inset 10em 0 0 0 #696969; color: #EDEDED; }
+  .vertical-line { display: inline-block; background-color: #696969; height: 200px; width: 2px; margin-left: 50px; margin-right: 30px; }
+  #backBtn.hidden { pointer-events: 0 !important; transform: translateX(-100%); }
+  .page.visible { -webkit-transform: translateX(-100%) skewX(-10deg); transform: translateX(-100%) skewX(-10deg); }
+  .page.visible .content { transform: translateX(-115%) skewX(10deg); }
+  .page { right: -120%; transform: skewX(-10deg); }
+  .page .content { width: 60%; right: -50%; transform: skewX(10deg); }
+  .img-wrap { float: right; position: absolute; top: 0; width: 200px; right: 0; padding: 20px; } }
 .dark .landing { background-color: #888888; color: #EDEDED; }
 .dark .landing .links button { color: #EDEDED; background-color: #888888; border: 2px solid #888888; --hover: #ededed; }
 .dark .landing .links button:hover, .dark .landing .links button:focus { color: #888888; }
 .dark .landing .links button:active { box-shadow: inset 0 -2.5em 0 0 #BDBDBD; color: #888888; }
 .dark .landing .vertical-line { background-color: #EDEDED; }
-
-.page { position: absolute; transition: transform 0.5s; width: 100%; height: 100vh; background-color: white; right: -120%; top: 0; transform: skewX(-10deg); transition-timing-function: ease-in-out; font-size: 18px; }
-.page .content { position: absolute; transform: skewX(10deg); transition: 0.5s; transition-timing-function: ease-in-out; width: 60%; height: 100vh; right: -50%; overflow: auto; margin-left: 10px; }
-.page .content h1, .page .content h2, .page .content h3, .page .content h4 { font-family: 'Cochin'; color: #696969; }
-.page .content h1 { font-size: 3em; }
-.page .content h2 { font-size: 2em; }
-.page .content h3 { font-size: 1.5em; }
-.page .content h4 { font-size: 1.3em; }
-
-.page.visible { -webkit-transform: translateX(-100%) skewX(-10deg); transform: translateX(-100%) skewX(-10deg); }
-.page.visible .content { transform: translateX(-120%) skewX(10deg); will-change: transform; }
