@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body>
+<body class="lightbg">
 	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
 		<img src="/assets/svg/arrow_left.svg"/>
 	</button>
@@ -36,10 +36,13 @@
 		</div>
 		<img src="/assets/svg/at_desk.svg" />
 	</div>
-	{% include about.html %}
-	{% include portfolio.html %}
-	{% include music.html %}
-	{% include contact.html %}
+	<div class="one column lightbg"></div>
+	<div class="eleven column">
+		{% include about.html %}
+		{% include portfolio.html %}
+		{% include music.html %}
+		{% include contact.html %}
+	</div>
 </body>
 <script src="/assets/js/github_grab.js"></script>
 </html>

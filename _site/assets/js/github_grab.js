@@ -1,20 +1,35 @@
-var currentPage;
+let height = () => window.innerHeight || e.clientHeight;
+let width = () => window.innerWidth || e.clientWidth;
+let getScroll = () => document.documentElement.scrollTop || document.body.scrollTop;
+let isHidden = (el) => el.classList.contains("hidden");
+let topOffset = () => width <= 750 ? 200 : 0;
 
+function checkBack() {
+  let back = document.getElementById("backBtn");
+  if (isHidden(back) && height() - getScroll() <= topOffset()) {
+    back.classList.remove("hidden");
+  }
+  else if (!isHidden(back) && height() - getScroll() > topOffset()) {
+    back.classList.add("hidden");
+  }
+}
 
-function togglePageOpen(page) {
-console.log("hi")
-    
-    var el = document.getElementById("landing");
-    var back = document.getElementById("backBtn");
-    if (page) currentPage = document.getElementById(page);
-    if (el.classList.contains("pageopen")) {
-        el.classList.remove("pageopen");
-        back.classList.add("hidden");
-        currentPage.classList.remove("visible");
-    }
-    else {
-        currentPage.classList.add("visible");
-        back.classList.remove("hidden");
-        el.classList.add("pageopen");
-    }
+window.addEventListener("scroll", () => window.requestAnimationFrame(() => checkBack()));
+window.addEventListener("resize", (e) => checkBack());
+
+function togglePageOpen(page) {  
+  if (page) {
+    var el = document.getElementById(page);
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  else {
+    document.getElementById("landing").scrollIntoView({ behavior: "smooth" });
+  }
+  var back = document.getElementById("backBtn");
+  if (!back.classList.contains("hidden")) {
+    back.classList.add("hidden");
+  }
+  else {
+    back.classList.remove("hidden");
+  }
 }

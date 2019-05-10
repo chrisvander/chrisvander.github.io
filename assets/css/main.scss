@@ -3,13 +3,16 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro');
+@import "normalize.css";
+@import "skeleton.css";
 
 // light theme
-$bg: #EDEDED;
+$bg: #E3E3E3;
 $title: #696969;
 
 // dark theme
-$bg-dark: #888888;
+$bg-dark: #4C4C4C;
+$bg-darker: #444444;
 $title-dark: #EDEDED;
 
 $mid-gray: #BBB;
