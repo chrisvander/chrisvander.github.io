@@ -2,14 +2,13 @@ let height = () => window.innerHeight || e.clientHeight;
 let width = () => window.innerWidth || e.clientWidth;
 let getScroll = () => document.documentElement.scrollTop || document.body.scrollTop;
 let isHidden = (el) => el.classList.contains("hidden");
-let topOffset = () => width <= 750 ? 200 : 0;
 
 function checkBack() {
   let back = document.getElementById("backBtn");
-  if (isHidden(back) && height() - getScroll() <= topOffset()) {
+  if (isHidden(back) && height() - getScroll() <= 200) {
     back.classList.remove("hidden");
   }
-  else if (!isHidden(back) && height() - getScroll() > topOffset()) {
+  else if (!isHidden(back) && height() - getScroll() > 200) {
     back.classList.add("hidden");
   }
 }

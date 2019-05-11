@@ -159,6 +159,10 @@ button {
 		.landing-wrapper {
 		  margin-top: 10vh;
 		}
+		.name {
+				top: -20px;
+				position: relative;
+			}
 	}
 	img {
 		max-width: 750px;
@@ -256,7 +260,15 @@ button {
 @media screen and (max-width: 750px) {
 	.landing 	.name {
 		text-align: center;
+		h3 {
+			display: none;
+		}
 	}
+
+	.landing button {
+		font-size: 1.6em;
+	}
+
 	#backBtn {
 		height: 60px;
 		width: 100%;
@@ -354,6 +366,9 @@ button {
 }
 
 // dark theme
+body.dark {
+	background-color: $bg-dark;
+}
 
 .dark {
 	.landing {
@@ -389,6 +404,9 @@ button {
 		.text h3 {
 			color: white;
 		}
+	}
+	.page .container {
+		background-color: $bg-dark;
 	}
 
 	h1 {
