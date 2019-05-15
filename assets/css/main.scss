@@ -2,7 +2,7 @@
 # main.scss
 ---
 
-@import url('https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700|Antic+Didone');
 @import "normalize.css";
 @import "skeleton.css";
 
@@ -18,7 +18,7 @@ $title-dark: #EDEDED;
 $mid-gray: #BBB;
 
 $font-title: 'Didot', serif;
-$font: 'Gill Sans', sans-serif;
+$font: 'Lato', sans-serif;
 
 body {
 	margin: 0;
