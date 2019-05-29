@@ -32,6 +32,9 @@ button {
 	body .landing .name h1 {
 		font-size: 2.5em;
 	}
+	.landing img {
+		display: none;
+	}
 }
 
 .lightbg {
@@ -74,6 +77,8 @@ button {
 	z-index:0;
 	min-height: 640px;
 	background-color: $bg;
+	background: radial-gradient(rgba(227, 227, 227, 0.9) 30%,rgba(227, 227, 227, 0.4)), url(/assets/svg/trianglify.svg);
+	background-size: cover;
 	height: 100vh;
 	width: 100%;
 	color: $title;
@@ -119,16 +124,15 @@ button {
  		display: block;
  		float: left;
 		font-family: $font;
-		border: 2px solid $bg;
+		border: 2px solid rgba(0,0,0,0);
 		font-size: 1.3em;
 		height: inherit;
 		font-weight: 300;
-		background-color: $bg;
 		text-align: center;
 		padding: 10px;
 		padding-left: 20px;
 		padding-right: 20px;
-		margin: 10px;
+		margin-right: 10px;
 		text-transform: none;
 		--hover: #{adjust-hue($bg-dark, 45deg)};
 		color: $title;
@@ -157,7 +161,7 @@ button {
 	}
 	@media screen and (max-height: 800px) {
 		.landing-wrapper {
-		  margin-top: 10vh;
+		  margin-top: 15vh;
 		}
 		.name {
 				top: -20px;
@@ -166,6 +170,7 @@ button {
 	}
 	img {
 		max-width: 750px;
+		max-height: 50vh;
 		width: 100%;
 		position: absolute;
 		bottom: -10px;
@@ -257,7 +262,7 @@ button {
 	}
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
 	.landing 	.name {
 		text-align: center;
 		h3 {
@@ -326,7 +331,7 @@ button {
 	}
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 850px) {
 	#backBtn {
 		height: 100px;
 		width: 100px;
@@ -367,17 +372,16 @@ button {
 
 // dark theme
 body.dark {
-	background-color: $bg-dark;
+	background-color: #444444;
 }
 
 .dark {
 	.landing {
-		background-color: $bg-dark;
+		background: radial-gradient(rgba(0, 0, 0, 0.43),rgba(0, 0, 0, 0.4)), url(/assets/svg/trianglify.svg);
+		background-size: cover;
 		color: $title-dark;
 		.links button {
 			color: $title-dark;
-			background-color: $bg-dark;
-			border: 2px solid $bg-dark;			
 			--hover: #{adjust-hue($bg, 45deg)};
 			&:hover,
 			&:focus {

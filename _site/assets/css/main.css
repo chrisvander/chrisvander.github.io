@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito-Sans:400,500,700|Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,700|Antic+Didone");
 @import url(normalize.css);
 @import url(skeleton.css);
 body { margin: 0; font-size: 18px; }
@@ -11,7 +11,8 @@ button { text-align: inherit; font-size: inherit; font-weight: inherit; line-hei
 
 @media screen and (max-width: 1024px) { body { font-size: 14px; } }
 @media screen and (max-width: 550px) { body { font-size: 12px; } }
-@media screen and (max-width: 430px) { body .landing .name h1 { font-size: 2.5em; } }
+@media screen and (max-width: 430px) { body .landing .name h1 { font-size: 2.5em; }
+  .landing img { display: none; } }
 .lightbg { background-color: #F2F2F2; }
 
 .landing.pageopen > .landing-wrapper { opacity: 0; pointer-events: none; }
@@ -23,22 +24,22 @@ button { text-align: inherit; font-size: inherit; font-weight: inherit; line-hei
 
 #backBtn.hidden { pointer-events: 0 !important; transform: translateY(-100%); }
 
-.landing { z-index: 0; min-height: 640px; background-color: #E3E3E3; height: 100vh; width: 100%; color: #696969; text-align: center; position: relative; overflow: hidden; zoom: 1; }
+.landing { z-index: 0; min-height: 640px; background-color: #E3E3E3; background: radial-gradient(rgba(227, 227, 227, 0.9) 30%, rgba(227, 227, 227, 0.4)), url(/assets/svg/trianglify.svg); background-size: cover; height: 100vh; width: 100%; color: #696969; text-align: center; position: relative; overflow: hidden; zoom: 1; }
 .landing .landing-wrapper { display: inline-block; height: 11.1em; vertical-align: middle; line-height: normal; margin-top: 25vh; opacity: 1; transition: opacity 0.25s; }
 .landing .name { text-align: right; display: inline-block; transform: perspective(1px) translateY(-50%); }
 .landing .name h1 { padding: 0; margin: 0; font-family: "Didot", serif; font-size: 3.5em; text-transform: uppercase; }
-.landing .name h3 { margin: 0; font-family: "Gill Sans", sans-serif; font-size: 1.3em; font-weight: 300; letter-spacing: 0; }
+.landing .name h3 { margin: 0; font-family: "Lato", sans-serif; font-size: 1.3em; font-weight: 300; letter-spacing: 0; }
 .landing .links { position: relative; top: -35%; text-align: left; display: inline-block; }
-.landing button { display: block; float: left; font-family: "Gill Sans", sans-serif; border: 2px solid #E3E3E3; font-size: 1.3em; height: inherit; font-weight: 300; background-color: #E3E3E3; text-align: center; padding: 10px; padding-left: 20px; padding-right: 20px; margin: 10px; text-transform: none; --hover: #4c4c4c; color: #696969; transition: 0.25s; border-radius: 4px; }
+.landing button { display: block; float: left; font-family: "Lato", sans-serif; border: 2px solid rgba(0, 0, 0, 0); font-size: 1.3em; height: inherit; font-weight: 300; text-align: center; padding: 10px; padding-left: 20px; padding-right: 20px; margin-right: 10px; text-transform: none; --hover: #4c4c4c; color: #696969; transition: 0.25s; border-radius: 4px; }
 .landing button:hover, .landing button:focus { box-shadow: inset 0 -2.5em 0 0 var(--hover); border: 2px solid; color: #E3E3E3; }
 .landing button:active { box-shadow: inset 0 -2.5em 0 0 #696969; border: 2px solid; color: #E3E3E3; }
 @media screen and (max-width: 1366px) { .landing .links { top: 0; }
   .landing button { float: none; width: 100%; } }
-@media screen and (max-height: 800px) { .landing .landing-wrapper { margin-top: 10vh; }
+@media screen and (max-height: 800px) { .landing .landing-wrapper { margin-top: 15vh; }
   .landing .name { top: -20px; position: relative; } }
-.landing img { max-width: 750px; width: 100%; position: absolute; bottom: -10px; margin: auto; left: 0px; right: 0px; transition: .5s; transition-timing-function: ease-in-out; }
+.landing img { max-width: 750px; max-height: 50vh; width: 100%; position: absolute; bottom: -10px; margin: auto; left: 0px; right: 0px; transition: .5s; transition-timing-function: ease-in-out; }
 
-.page { transition: transform 0.5s; width: 100%; min-height: 100vh; background-color: #F2F2F2; top: 0; transition-timing-function: ease-in-out; font-size: 18px; font-family: "Gill Sans", sans-serif; }
+.page { transition: transform 0.5s; width: 100%; min-height: 100vh; background-color: #F2F2F2; top: 0; transition-timing-function: ease-in-out; font-size: 18px; font-family: "Lato", sans-serif; }
 .page .container { background-color: white; min-height: 100vh; }
 .page span { display: inline-block; padding: 20px; }
 .page h1 { color: black; font-weight: 600; font-size: 2.5em; margin: 0; }
@@ -56,7 +57,7 @@ button { text-align: inherit; font-size: inherit; font-weight: inherit; line-hei
 .page.visible { overflow: auto; }
 .page.visible .content { will-change: transform; zoom: 1; overflow: auto; }
 
-@media screen and (max-width: 750px) { .landing .name { text-align: center; }
+@media screen and (max-width: 850px) { .landing .name { text-align: center; }
   .landing .name h3 { display: none; }
   .landing button { font-size: 1.6em; }
   #backBtn { height: 60px; width: 100%; background-color: #F5F5F5; }
@@ -70,16 +71,16 @@ button { text-align: inherit; font-size: inherit; font-weight: inherit; line-hei
   .project .text { width: inherit; }
   .project .links div { width: inherit; }
   .page:before { content: ''; display: block; position: relative; width: 100%; height: 60px; margin-top: -60px; } }
-@media screen and (min-width: 750px) { #backBtn { height: 100px; width: 100px; background-color: #FFFFFF; }
+@media screen and (min-width: 850px) { #backBtn { height: 100px; width: 100px; background-color: #FFFFFF; }
   #backBtn:hover, #backBtn:focus { box-shadow: inset 10em 0 0 0 var(--hover); color: #E3E3E3; }
   #backBtn:active { box-shadow: inset 10em 0 0 0 #696969; color: #E3E3E3; }
   .vertical-line { display: inline-block; background-color: #696969; height: 200px; width: 2px; margin-left: 50px; margin-right: 30px; }
   #backBtn.hidden { pointer-events: 0 !important; }
   .img-wrap { float: right; position: absolute; top: 0; width: 200px; right: 0; padding: 20px; } }
-body.dark { background-color: #4C4C4C; }
+body.dark { background-color: #444444; }
 
-.dark .landing { background-color: #4C4C4C; color: #EDEDED; }
-.dark .landing .links button { color: #EDEDED; background-color: #4C4C4C; border: 2px solid #4C4C4C; --hover: #e3e3e3; }
+.dark .landing { background: radial-gradient(rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.4)), url(/assets/svg/trianglify.svg); background-size: cover; color: #EDEDED; }
+.dark .landing .links button { color: #EDEDED; --hover: #e3e3e3; }
 .dark .landing .links button:hover, .dark .landing .links button:focus { color: #4C4C4C; }
 .dark .landing .links button:active { box-shadow: inset 0 -2.5em 0 0 #BDBDBD; color: #4C4C4C; }
 .dark .landing .vertical-line { background-color: #EDEDED; }
