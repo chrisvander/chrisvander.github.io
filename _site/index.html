@@ -21,9 +21,19 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body class="lightbg">
+<body class="lightbg" onload="checkDark()">
 	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
 		<img src="/assets/svg/arrow_left.svg"/>
+	</button>
+	<button id="toggleDark" onclick="toggleDark()">
+		<svg>
+			<path id="crescent" 
+	  d="
+	  	M 12.5,3.5 
+	  	a 22.5,22.5 0 0,1 0,43 
+	  	a 22.5,22.5 0 1,0 0,-43 z" 
+	  />
+	 </svg>
 	</button>
 	<div class="landing" id="landing">
 		<div class="landing-wrapper">
@@ -50,11 +60,10 @@
 		<img src="/assets/svg/at_desk.svg" />
 	</div>
 	<div class="one column lightbg"></div>
-	<div class="eleven column">
+	<div class="eleven columns">
 		<div id="about" class="section page">
 	<div class="container">
-		<h1>Hi, I'm Chris.</h1>
-		<h2>I like technology.</h2>
+		<h1>About Me</h1>
 		<p>I'm currently a student at Rensselaer Polytechnic Institute currently working towards a dual B.S. in Computer Science & Cognitive Science. I enjoy skiing, I'm a huge Apple fan, and I've been programming since around 4th grade.</p>
 	</div>
 </div>
