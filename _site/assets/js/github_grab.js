@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   if (localStorage.getItem("darkMode") == 1) {
-    body.classList.remove("lightbg");
     body.classList.add("dark");
   }
 });
@@ -46,11 +45,9 @@ function toggleDark() {
   if (body.classList.contains("dark")) {
     localStorage.setItem("darkMode", 0);
     body.classList.remove("dark");
-    body.classList.add("lightbg");
   }
   else {
     localStorage.setItem("darkMode", 1);
-    body.classList.remove("lightbg");
     body.classList.add("dark");
   }
 }

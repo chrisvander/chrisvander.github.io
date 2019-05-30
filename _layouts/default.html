@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body class="lightbg" onload="checkDark()">
+<body onload="checkDark()">
 	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
 		<img src="/assets/svg/arrow_left.svg"/>
 	</button>
@@ -46,8 +46,7 @@
 		</div>
 		<img src="/assets/svg/at_desk.svg" />
 	</div>
-	<div class="one column lightbg"></div>
-	<div class="eleven columns">
+	<div class="offset">
 		{% include about.html %}
 		{% include portfolio.html %}
 		{% include music.html %}
