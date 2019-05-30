@@ -469,4 +469,10 @@ body.dark {
 		  }
 		}
 	}
+
+	#backBtn {
+		--hover: #{adjust-hue($bg-dark, 45deg)};
+		color: $title;
+		background-color: #2f2f2f;
+	}
 }

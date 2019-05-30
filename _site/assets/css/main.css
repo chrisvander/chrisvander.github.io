@@ -100,3 +100,4 @@ body.dark { background-color: #444444; }
 .dark p { color: rgba(255, 255, 255, 0.8); }
 .dark #toggleDark #crescent { fill: white; stroke: white; stroke-width: 2; stroke-linejoin: round; }
 .dark #toggleDark:hover #crescent { fill: #EEE; stroke: #EEE; }
+.dark #backBtn { --hover: #4c4c4c; color: #696969; background-color: #2f2f2f; }
