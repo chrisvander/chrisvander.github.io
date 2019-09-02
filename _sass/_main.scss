@@ -244,8 +244,10 @@ button {
 	display: inline-block;
 	padding-left: 10px;
 	border: 1px solid black;
-	background-color: black;
 	border-radius: 15px;
+	span {
+		color: black;
+	}
 }
 
 // --- PORTFOLIO STYLING --- //
@@ -590,6 +592,14 @@ body.dark {
 		    fill: #EEE;
 		    stroke: #EEE;
 		  }
+		}
+	}
+
+	.listbtn {
+		border: 1px solid #EEE;
+		border-radius: 15px;
+		span {
+			color: #EEE;
 		}
 	}
 
