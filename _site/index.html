@@ -3,7 +3,11 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Chris Vanderloo</title>
-  <!-- Begin Jekyll SEO tag v2.4.0 -->
+	<meta name="author" content="Chris Vanderloo" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Chris Vanderloo | chrisvander.github.io</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Chris Vanderloo" />
@@ -17,10 +21,6 @@
 {"name":"chrisvander.github.io","description":"Personal website and portfolio","@type":"WebSite","url":"http://localhost:4000/","headline":"Chris Vanderloo","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-	<meta name="author" content="Chris Vanderloo" />
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="/assets/css/main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body onload="checkDark()">
 	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
@@ -64,9 +64,21 @@
 		<div id="about" class="section page">
 	<div class="container">
 		<h1>About Me</h1>
-        <h2>&nbsp;</h2>
-		<p>I'm Chris Vanderloo. I've been making websites since 4th grade and programming since 7th. I'm currently attending Rensselaer Polytechnic Institute studying Computer Science and Cognitive Science, and I plan to graduate in the fall of 2021 with a Master's in Computer Science. In my free time, I like to read, work on independent programming projects, and make music. I'm heavily involved in Greek life at school and our campus open-source community.</p>
-		<a href="/assets/pdf/ChrisVanderloo_Resume.pdf" class="listbtn"><span class="fa fa-file">&nbsp;&nbsp;Resume&nbsp;&nbsp;</span> </a>
+    <h2>&nbsp;</h2>
+		<p>I'm Chris Vanderloo. I've been making websites since 4th grade and programming since 7th. I'm currently attending Rensselaer Polytechnic Institute studying Computer Science and Cognitive Science. I plan to graduate in the fall of 2021 with a Master's in Computer Science. In my free time, I like to read, work on independent programming projects, and make music. I'm heavily involved in Greek life at school and our campus open-source community.</p>
+    <p>My past work experience and skills are on my resume and LinkedIn. I also have some personal projects hosted on my GitHub. Feel free to check them out below.</p>
+    <br />
+		<a href="/resume" class="listbtn">
+      <span class="fa fa-file"></span>Resume
+    </a>
+    <a href="https://www.linkedin.com/in/chris-vanderloo/" class="listbtn">
+      <span class="fa fa-linkedin"></span>LinkedIn
+    </a>
+    <a href="https://github.com/chrisvander" class="listbtn">
+      <span class="fa fa-github"></span>GitHub
+    </a>
+    <br />
+
 	</div>
 </div>
 		<div id="portfolio" class="section page">
@@ -147,12 +159,29 @@
 		<div id="contact" class="section page">
   <div class="container">
     <h1>Contact</h1>
+    <h2>&nbsp;</h2>
     <p>I can be contacted through phone or email for recruiters or freelance work.</p>
     <p><h2>Phone: </h2> 513-739-9901</p>
     <p><h2>Email: </h2> chris.vanderloo@yahoo.com</p>   
-  </div>	
+  </div>
 </div>
 	</div>
+  <div id="footer">
+		<button onclick="togglePageOpen('about')" href="#About">
+			About
+		</button>
+		<button onclick="togglePageOpen('portfolio')" href="#Portfolio">
+			Portfolio
+		</button>
+		<button onclick="togglePageOpen('music')" href="#Music">
+			Music
+		</button>
+		<button onclick="togglePageOpen('contact')" href="#Contact">
+			Contact
+		</button><br /><br />
+		<span>C / V</span>
+	</div>	
+
 </body>
 <script src="/assets/js/github_grab.js"></script>
 </html>

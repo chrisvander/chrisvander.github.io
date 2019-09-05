@@ -242,11 +242,26 @@ button {
 
 .listbtn {
 	display: inline-block;
-	padding-left: 10px;
-	border: 1px solid black;
-	border-radius: 15px;
+	text-align: left;
+	color: black;
+	text-decoration: none;
+	background-color: #EEE;
+	width: 32%;
+	margin-bottom: 5px;
 	span {
 		color: black;
+	}
+	&:hover {
+		background-color: #57BDDC;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.16);
+		color: black;
+	}
+	transition: all .2s ease-in-out;
+}
+
+@media screen and (max-width: 850px) {
+	.listbtn {
+		width: 100%;
 	}
 }
 
@@ -369,14 +384,14 @@ button {
 // --- CONTACT --- //
 
 div.left {
-    float: left;
-    h2 {
-        font-size: 1.2em;
-    }  
-    p {
-        line-height: 1.2em;
-    }
-    #social-buttons {
+  float: left;
+  h2 {
+      font-size: 1.2em;
+  }  
+  p {
+      line-height: 1.2em;
+  }
+  #social-buttons {
 		display: table;
 		width: 100%;
 		border-spacing: 20px;
@@ -387,7 +402,41 @@ div.left {
 	}
 }
 
+#contact.page {
+	min-height: 0px;
+	.container {
+		min-height: 0px;
+	}
+}
 
+#footer {
+	color: #999;
+	text-align: center;
+	padding-top: 40px;
+	width: 100%;
+	height: 400px;
+	text-size: 2rem;
+	button {
+		font-weight: bold;
+		background-color: none;
+		border: none;
+		color: #999;
+		min-width: 100px;
+		&:hover {
+			color: #777;
+		}
+	}
+	span {
+		font-size: 1.5rem;
+		font-weight: lighter;
+	}
+}
+
+.dark #footer button {
+	&:hover {
+		color: #BBB;
+	}
+}
 
 // --- ADAPTIVE MEDIA QUERIES --- //
 
@@ -596,10 +645,14 @@ body.dark {
 	}
 
 	.listbtn {
-		border: 1px solid #EEE;
-		border-radius: 15px;
+		background-color: rgb(54, 54, 54);
+		color: white;
 		span {
 			color: #EEE;
+		}
+		&:hover {
+			background-color: #075167;
+			color: white;
 		}
 	}
 

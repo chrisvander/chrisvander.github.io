@@ -3,11 +3,11 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>{{ page.title }}</title>
-  {% seo %}
 	<meta name="author" content="Chris Vanderloo" />
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	{% seo %}
 </head>
 <body onload="checkDark()">
 	<button id="backBtn" class="hidden" onclick="togglePageOpen()">
@@ -53,6 +53,22 @@
 		{% include music.html %}
 		{% include contact.html %}
 	</div>
+  <div id="footer">
+		<button onclick="togglePageOpen('about')" href="#About">
+			About
+		</button>
+		<button onclick="togglePageOpen('portfolio')" href="#Portfolio">
+			Portfolio
+		</button>
+		<button onclick="togglePageOpen('music')" href="#Music">
+			Music
+		</button>
+		<button onclick="togglePageOpen('contact')" href="#Contact">
+			Contact
+		</button><br /><br />
+		<span>C / V</span>
+	</div>	
+
 </body>
 <script src="/assets/js/github_grab.js"></script>
 </html>

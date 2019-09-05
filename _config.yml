@@ -3,3 +3,5 @@ sass:
     sass_dir: _sass
 url: chrisvanderloo.com
 baseurl: /
+plugins:
+  - jekyll-seo-tag
