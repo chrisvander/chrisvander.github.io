@@ -92,7 +92,7 @@ div.left .fa-facebook { background-color: #3b5998; }
 
 .dark #footer button:hover { color: #BBB; }
 
-@media screen and (max-width: 1024px) { body { font-size: 14px; } }
+@media screen and (max-width: 1024px) { body { font-size: 15px; } }
 @media screen and (max-width: 850px) { .offset .page { width: 100%; padding-left: 0; }
   .landing .name { text-align: center; }
   .landing .name h3 { display: none; }
