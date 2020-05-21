@@ -7,6 +7,11 @@
       <div id="pdf-body" style="width: 100%; max-width: 70em; display: inline-block"></div>
     </center>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.js"></script>
-    <script>PDFObject.embed("/assets/pdf/ChrisVanderloo_Resume.pdf", "#pdf-body");</script>
+    <script>
+      if (PDFObject.supportsPDFs)
+        PDFObject.embed("/assets/pdf/ChrisVanderloo_Resume.pdf", "#pdf-body");
+      else
+        window.location.href="/assets/pdf/ChrisVanderloo_Resume.pdf";
+    </script>
   </body>
 </html>
