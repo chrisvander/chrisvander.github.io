@@ -36,7 +36,6 @@ const IndexPage = () => {
           <Header siteTitle="" />
         </div>
         <div className="hero-body">
-          <Scroll speed={0.7}>
             <div className="container is-huge secondary-font">
               <Section>
                   <span className="has-text-weight-bold brand-font" style={{ lineHeight: '5rem' }}>
@@ -54,7 +53,6 @@ const IndexPage = () => {
               </Section>
               <Section />
             </div>
-          </Scroll>
         </div>
       </Hero>
 
