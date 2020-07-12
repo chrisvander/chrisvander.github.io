@@ -35,7 +35,7 @@ const IndexPage = () => {
         <div className="hero-body">
           <div className="container is-huge secondary-font">
             <Section>
-              <span className="has-text-weight-bold">
+              <span className="has-text-weight-bold brand-font">
                 Chris Vanderloo
               </span>
               <div style={{ display: 'flex' }}>
