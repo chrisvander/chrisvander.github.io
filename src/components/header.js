@@ -29,10 +29,10 @@ const Header = ({ siteTitle, hideBrand }) => {
           <AniLink cover bg="#ff7a00" duration={0.6} to="/resume" className="navbar-item">
             Resume
           </AniLink>
-          <span class="navbar-item">
-            <a class="button is-transparent is-primary is-inverted">
-              <span class="icon">
-                <i class="fab fa-github"></i>
+          <span className="navbar-item">
+            <a className="button is-transparent is-primary is-inverted">
+              <span className="icon">
+                <i className="fab fa-github"></i>
               </span>
               <span>@chrisvander</span>
             </a>

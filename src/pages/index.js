@@ -11,12 +11,13 @@ import Header from "../components/header"
 import Video from "../components/video"
 
 import HomepageVideo from '../assets/homepage.mp4';
+import Scroll from "../components/scroll";
 
 const my_roles_array = [
   'full-stack software engineer', 
   'web developer', 
   'dubstep producer',
-  'Chipotle addict'
+  'burrito enthusiast'
 ]
 
 const IndexPage = () => {
@@ -27,35 +28,39 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Hero className="is-primary is-fullheight">
         <div className={`video-container ${videoLoaded ? '' : 'hidden'}`}>
-          <Video source={HomepageVideo} loaded={fadeIn} />
+          <Scroll speed={0.4}>
+            <Video source={HomepageVideo} loaded={fadeIn} />
+          </Scroll>
         </div>
         <div className="hero-head">
           <Header siteTitle="" />
         </div>
         <div className="hero-body">
-          <div className="container is-huge secondary-font">
-            <Section>
-              <span className="has-text-weight-bold brand-font">
-                Chris Vanderloo
-              </span>
-              <div style={{ display: 'flex' }}>
-                <div className="inline-stack is-size-1 softer">
-                  <TextLoop springConfig={{ stiffness: 260, damping: 30 }} interval={3000}>
-                    {my_roles_array.map(
-                      text => <div className="item">{text}</div>
-                    )}
-                  </TextLoop>
+          <Scroll speed={0.7}>
+            <div className="container is-huge secondary-font">
+              <Section>
+                  <span className="has-text-weight-bold brand-font" style={{ lineHeight: '5rem' }}>
+                    Chris Vanderloo
+                  </span>
+                <div style={{ display: 'flex' }}>
+                  <div className="inline-stack is-size-1 softer">
+                    <TextLoop springConfig={{ stiffness: 260, damping: 30 }} interval={3000}>
+                      {my_roles_array.map(
+                        text => <div className="item">{text}</div>
+                      )}
+                    </TextLoop>
+                  </div>
                 </div>
-              </div>
-            </Section>
-            <Section />
-          </div>
+              </Section>
+              <Section />
+            </div>
+          </Scroll>
         </div>
       </Hero>
 
 
       <Section>
-        <Container>
+        <Container style={{ height: '1000px'}}>
           <h1 className="title">
             Bulma
           </h1>
