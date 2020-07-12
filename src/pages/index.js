@@ -33,15 +33,13 @@ const IndexPage = () => {
           <Header siteTitle="" />
         </div>
         <div className="hero-body">
-          <div className="container is-size-1 secondary-font">
+          <div className="container is-huge secondary-font">
             <Section>
-              My name is&nbsp;
               <span className="has-text-weight-bold">
                 Chris Vanderloo
               </span>
               <div style={{ display: 'flex' }}>
-                I am a&nbsp;
-                <div className="inline-stack ">
+                <div className="inline-stack is-size-1 softer">
                   <TextLoop springConfig={{ stiffness: 260, damping: 30 }} interval={3000}>
                     {my_roles_array.map(
                       text => <div className="item">{text}</div>
