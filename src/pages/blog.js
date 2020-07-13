@@ -6,7 +6,7 @@ export default () => {
   return (
     <Layout>
       <Section>
-        <h1 className="title">Projects</h1>
+        <h1 className="title">Blog</h1>
       </Section>
     </Layout>
   );

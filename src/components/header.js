@@ -4,14 +4,21 @@ import React, { useState } from "react"
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-const Header = ({ siteTitle, hideBrand }) => {
+const Header = ({ siteTitle, hideBrand, hide, style }) => {
   const [burgerActive, setBurgerActive] = useState(false);
   return (
-    <nav className="navbar is-primary">
-      <div className="navbar-brand" style={{ overflow: 'none' }}>
-        <AniLink cover bg="#ff7a00" duration={0.6} to="/" className="navbar-item brand-font is-size-4">
+    <nav 
+      style={{
+        ...style, 
+        opacity: `${hide ? '0' : '1'}`,
+        transform: `translateY(${hide ? '-100%' : '0'})`,
+        transition: 'transform 0.5s opacity 0.5s'
+      }} 
+      className="navbar is-primary">
+      <div className="navbar-brand" style={{ overflow: 'none', paddingLeft: 20 }}>
+        {siteTitle !== "" && <AniLink cover bg="#ff7a00" duration={0.6} to="/" className="navbar-item brand-font is-size-4">
           {siteTitle}
-        </AniLink>
+        </AniLink>}
         <span 
           onClick={() => setBurgerActive(!burgerActive)} 
           className={`navbar-burger burger ${burgerActive ? 'is-active' : ''}`} 
@@ -22,21 +29,16 @@ const Header = ({ siteTitle, hideBrand }) => {
         </span>
       </div>
       <div className={`navbar-menu ${burgerActive ? 'is-active' : ''}`}>
-        <div className="navbar-end">
-          <AniLink cover bg="#ff7a00" duration={0.6} to="/projects" className="navbar-item">
-            Projects
+        <div className="navbar-end" style={{ paddingRight: 20 }}>
+          <AniLink cover bg="#ff7a00" duration={0.5} to="/blog" className="navbar-item">
+            Blog
           </AniLink>
-          <AniLink cover bg="#ff7a00" duration={0.6} to="/resume" className="navbar-item">
+          <AniLink cover bg="#ff7a00" duration={0.5} to="/resume" className="navbar-item">
             Resume
           </AniLink>
-          <span className="navbar-item">
-            <a className="button is-transparent is-primary is-inverted">
-              <span className="icon">
-                <i className="fab fa-github"></i>
-              </span>
-              <span>@chrisvander</span>
-            </a>
-          </span>
+          <AniLink cover bg="#ff7a00" duration={0.5} to="/contact" className="navbar-item">
+            <div class="button is-primary is-inverted">Reach Out!</div>
+          </AniLink>
         </div>
       </div>
     </nav>

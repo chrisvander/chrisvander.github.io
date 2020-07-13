@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Video({ source, loaded }) {
+export default function Video({ source, loaded, style }) {
   const videoEl = React.createRef();
   function onVideoLoad() {
     videoEl.current.play();
@@ -8,7 +8,7 @@ export default function Video({ source, loaded }) {
     loaded();
   }
   return (
-    <video loop ref={videoEl} onLoadedData={onVideoLoad}>
+    <video style={style} ref={videoEl} onCanPlayThrough={onVideoLoad} loop playsinline autoPlay muted>
       <source src={source} type="video/mp4" />
     </video>
   );

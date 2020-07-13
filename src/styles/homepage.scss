@@ -1,0 +1,137 @@
+.brand-font {
+  @include mobile {
+    font-size: 7vw;
+  }
+}
+
+.secondary-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-item:hover {
+  background-color: rgba(100,100,100,0.4) !important;
+}
+
+.is-huge {
+  font-size: 5rem;
+}
+
+.inline-stack {
+  .item {
+    @include mobile {
+      font-size: 5vw;
+    }
+  }
+}
+
+.hero-body {
+  overflow: hidden;
+}
+
+.softer {
+  opacity: 0.8;
+}
+
+.video-container {
+  min-height: 100vh;
+  height: 486px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: opacity 2s;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes move_from_bottom { 
+  0% { 
+    transform: translateY(100%); 
+    opacity: 0;
+  } 
+  50% { 
+    transform: translateY(100%); 
+    opacity: 0;
+  } 
+  100% { 
+    transform: translateY(0); 
+    opacity: 0.9;
+  }  
+}
+
+@keyframes bounce { 
+  0% { 
+    transform: translateY(0px); 
+  }
+  50% {
+    transform: translateY(-9px); 
+  } 
+  80% { 
+    transform: translateY(0px); 
+  }  
+}
+
+.scroll-down {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  animation: move_from_bottom 4s;
+  span {
+    font-weight: 700;
+    animation: bounce 4s infinite ease-in-out;
+  }
+  i {
+    opacity: 0.9;
+    font-size: 2rem;
+  }
+}
+
+.showcase {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-light;
+  h1, .subtitle {
+    text-align: center;
+  }
+  h1 {
+    color: $color-purple;
+    font-size: 4rem;
+    @include mobile {
+      font-size: 7vw;
+    }
+  }
+}
+
+.experience {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-lighter;
+  h1, .subtitle {
+    text-align: center;
+  }
+  h1 {
+    color: $color-orange;
+    font-size: 4rem;
+    @include mobile {
+      font-size: 7vw;
+    }
+  }
+}
+
+
+

@@ -31,7 +31,9 @@ export default class Scroll extends React.Component {
   }
 
   componentDidMount() {
-    this.containerOffset = this.container.current.getBoundingClientRect().top;
+    const boundingBox = this.container.current.getBoundingClientRect()
+    console.log(this.props.offset)
+    this.containerOffset = boundingBox.top + this.props.offset ? this.props.offset : 0;
     this.onScroll();
     window.addEventListener('scroll', this.onScroll);
   }
@@ -41,10 +43,10 @@ export default class Scroll extends React.Component {
   }
 
   render(){
-    let { children } = this.props;
+    let { children, style } = this.props;
     return (<div style={{ 
-      height: '100%',
-      width: '100%'
+      ...style,
+      display: 'inline-block'
     }} ref={this.container}>{children}</div>);
   }
 }

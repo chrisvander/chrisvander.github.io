@@ -4,67 +4,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap');
 
 $color-orange: #ff7a00;
-$color-blue: #3f84e5;
+$color-blue: #0015ff;
 $color-white: #FCFAF5;
 $color-black: #131200;
-$color-green: #78bc61;
+$color-purple: #7300ff;
 
-$grey-dark: #916136;
-$grey-light: #f2dbc7;
+$grey-dark: #413126;
+$grey-light: #ffca99;
+$grey-lighter: #ffe7d1;
+$purple-light: #e3ccff;
 $primary: $color-orange;
 $link: $color-blue;
-$info: $color-green;
+$info: $color-purple;
 
-$body-background-color: $color-white;
+$body-background-color: $grey-light;
 $control-border-width: 2px;
 $input-shadow: none;
 
 $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~bulma/bulma.sass";
+@import '~bulma/sass/utilities/mixins';
 
 .brand-font {
   font-family: 'Fugaz One', cursive;
   text-transform: uppercase;
 }
 
-.secondary-font {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+@keyframes fade_in { 
+  0% { 
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }  
 }
 
-.navbar-item:hover {
-  background-color: rgba(100,100,100,0.4) !important;
+@keyframes fade_out { 
+  0% { 
+    opacity: 0;
+  } 
+  100% { 
+    opacity: 1;
+  }  
 }
 
-.is-huge {
-  font-size: 5rem;
+#homepage {
+  @import "homepage.scss";
 }
 
-.inline-stack {
-  display: inline-block;
-  .item {
+#resume {
+  @import "resume.scss";
+}
+
+.you-are-lost {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-family: 'Fugaz One', cursive;
+    text-transform: uppercase;
+    font-size: 12rem;
+    @include mobile {
+      font-size: 30vw;
+    }
+    color: $color-purple;
+  }
+  p {
+    font-weight: 600;
   }
 }
 
-.softer {
-  opacity: 0.8;
+.footer {
+  background-color: $grey-light;
+  z-index: 5;
+  text-align: center;
+  font-family: 'Montserrat';
+  color: $color-orange;
+  font-weight: 800;
+  text-shadow: 3px 3px 2px rgba(255,255,255,0.6);
+  .brand-font {
+    font-size: 3rem;
+  }
+  .socials {
+    text-shadow: none;
+    padding-top: 1.2rem;
+    font-size: 1.6rem;
+    a {
+      color: $color-orange;
+      padding: 0.5rem;
+      opacity: 1;
+      &:hover, &:active {
+        opacity: 0.8;
+      }
+    }
+
+  }
 }
 
-.video-container {
-  min-height: 100vh;
-  height: 486px;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  transition: opacity 2s;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
+.white-shadow {
+  text-shadow: 3px 3px 2px rgba(255,255,255,0.6);
 }
