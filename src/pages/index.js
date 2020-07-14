@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import TextLoop from "react-text-loop";
 import { Link } from "gatsby"
 
-import { Section, Hero, Container } from '../components/bulma';
+import { Section, Hero, Container, ColumnContainer, Column } from '../components/bulma';
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -16,9 +16,7 @@ import Scroll from "../components/scroll";
 const my_roles_array = [
   'full-stack software engineer',
   'electronic music producer',
-  'Phi Kappa Theta brother',
-  'burrito enthusiast',
-  'decent boyfriend'
+  'burrito enthusiast'
 ]
 
 class HomeHeroText extends React.Component {
@@ -41,14 +39,14 @@ class HomeHeroText extends React.Component {
       let windowHalf = window.innerWidth/2;
       let mousePos = evt.clientX;
       let multiplier = (mousePos-windowHalf)/windowHalf;
-      this.section.current.style.transform = `perspective(900px) rotateY(${4*multiplier}deg)`;
+      this.section.current.style.transform = `perspective(600px) rotateY(${4*multiplier}deg)`;
     }
   }
 
   render() {
     return (
       <Section>
-        <div ref={this.section} style={{ transition: 'transform 0.02s' }}>
+        <div ref={this.section} style={{ transformOrigin: '30% 50%', transition: 'transform 0.02s' }}>
           <span className="has-text-weight-bold brand-font">
             Chris Vanderloo
           </span>
@@ -67,6 +65,16 @@ class HomeHeroText extends React.Component {
   }
 }
 
+class SideNav extends React.Component {
+  render() {
+    return (
+      <div className="side-nav">
+        
+      </div>
+    )
+  }
+}
+
 const IndexPage = () => {
   const [ videoLoaded, setVideoLoaded ] = useState(false);
   const [ navHidden, setNavHidden ] = useState(true);
@@ -74,6 +82,7 @@ const IndexPage = () => {
   return (
     <Layout id="homepage" noNavPadding hideNav={navHidden}>
       <SEO title="Home" />
+      <SideNav />
       <Hero className="is-primary is-fullheight">
         <div className={`video-container ${videoLoaded ? '' : 'hidden'}`}>
           <Scroll speed={0.4}>
@@ -97,27 +106,50 @@ const IndexPage = () => {
         </div>
       </Hero>
 
-      <Section id="showcase" className="showcase">
-        <Container>
-          <h1 className="title brand-font white-shadow">
-            Showcase
-          </h1>
-          <p className="subtitle">
-            Some of the work I've done in the past.
-          </p>
-        </Container>
-      </Section>
-
-      <Section id="experience" className="experience">
-        <Container>
-          <h1 className="title brand-font white-shadow">
-            Experience
-          </h1>
-          <p className="subtitle">
-            Some of the work I've done in the past.
-          </p>
-        </Container>
-      </Section>
+      <ColumnContainer className="is-desktop showcase-container">
+        <Column>
+          <Section id="showcase" className="showcase">
+            <Scroll speed={0.7}>
+              <div className="decoration-1" />
+            </Scroll>
+            <Scroll speed={0.8}>
+              <div className="decoration-2" />
+            </Scroll>
+            <Scroll speed={0.5}>
+              <div className="decoration-3" />
+            </Scroll>
+            <Container>
+              <h1 className="title brand-font white-shadow">
+                Showcase
+              </h1>
+              <h2 className="subtitle brand-font">
+                Projects I've worked on
+              </h2>
+            </Container>
+          </Section>
+        </Column>
+        <Column>
+          <Section id="experience" className="experience">
+            <Scroll speed={0.9}>
+              <div className="decoration-1" />
+            </Scroll>
+            <Scroll speed={0.4}>
+              <div className="decoration-2" />
+            </Scroll>
+            <Scroll speed={0.2}>
+              <div className="decoration-3" />
+            </Scroll>
+            <Container>
+              <h1 className="title brand-font white-shadow">
+                Experience
+              </h1>
+              <h2 className="subtitle brand-font">
+                Technologies I use
+              </h2>
+            </Container>
+          </Section>
+        </Column>
+      </ColumnContainer>
     </Layout>
   );
 }

@@ -12,7 +12,10 @@ const Header = ({ siteTitle, hideBrand, hide, style }) => {
         ...style, 
         opacity: `${hide ? '0' : '1'}`,
         transform: `translateY(${hide ? '-100%' : '0'})`,
-        transition: 'transform 0.5s opacity 0.5s'
+        transition: 'transform 0.5s opacity 0.5s',
+        position: 'absolute',
+        top: 0,
+        width: '100%'
       }} 
       className="navbar is-primary">
       <div className="navbar-brand" style={{ overflow: 'none', paddingLeft: 20 }}>

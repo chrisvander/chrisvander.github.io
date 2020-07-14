@@ -83,20 +83,46 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 }
 
 .footer {
+  position: relative;
   background-color: $grey-light;
   z-index: 5;
   text-align: center;
   font-family: 'Montserrat';
   color: $color-orange;
   font-weight: 800;
-  text-shadow: 3px 3px 2px rgba(255,255,255,0.6);
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 1.5rem 1rem;
+  @include tablet {
+    flex-direction: row;
+  }
+  .brand {
+    display: flex;
+    flex-direction: row;
+    padding-right: 1rem;
+  }
   .brand-font {
     font-size: 3rem;
   }
+  .year-text {
+    align-self: flex-end;
+    margin-bottom: 16px;
+  }
+  .smalltext {
+    display: inline-block;
+    font-size: 0.9rem;
+    text-shadow: none;
+    font-weight: 500;
+    padding: 1rem 1.6rem;
+  }
   .socials {
     text-shadow: none;
-    padding-top: 1.2rem;
+    padding: 1rem 2rem;
     font-size: 1.6rem;
+    width: 280px;
     a {
       color: $color-orange;
       padding: 0.5rem;

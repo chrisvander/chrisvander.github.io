@@ -1,7 +1,13 @@
-.brand-font {
+h1.brand-font {
   @include mobile {
     font-size: 7vw;
   }
+}
+
+.hero {
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
 }
 
 .secondary-font {
@@ -14,10 +20,14 @@
 }
 
 .is-huge {
-  font-size: 5rem;
+  font-size: 7vw;
+  @include desktop {
+    font-size: 5rem;
+  }
 }
 
 .inline-stack {
+  height: 3rem;
   .item {
     @include mobile {
       font-size: 5vw;
@@ -35,7 +45,7 @@
 
 .video-container {
   min-height: 100vh;
-  height: 486px;
+  height: 800px;
   width: 100%;
   overflow: hidden;
   position: absolute;
@@ -43,6 +53,7 @@
   transition: opacity 2s;
   opacity: 0.4;
   pointer-events: none;
+  z-index: 0;
 }
 
 .hidden {
@@ -95,41 +106,86 @@
   }
 }
 
-.showcase {
-  min-height: 100vh;
+.showcase-container {
+  position: relative;
+  z-index: 1;
+  .column {
+    background-color: $color-white;
+  }
+  overflow: hidden;
+}
+
+.showcase, .experience {
+  margin: 5vh;
+  @include mobile {
+    margin: 0;
+  }
+  // @include desktop {
+  //   font-size: 2vw;
+  // }
+  min-height: 90vh;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  background-color: $grey-light;
   h1, .subtitle {
     text-align: center;
   }
   h1 {
-    color: $color-purple;
-    font-size: 4rem;
+    font-size: 3.5rem;
     @include mobile {
       font-size: 7vw;
     }
+  }
+  .decoration-1, .decoration-2, .decoration-3 {
+    position: absolute;
+    right: -50px;
+    height: 450px;
+    width: 450px;
+    background-color: $grey-light;
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .decoration-2 {
+    height: 250px;
+    width: 250px;
+    background-color: $purple-light;
+    opacity: 0.3;
+    right: -500px;
+  }
+  .decoration-3 {
+    height: 380px;
+    width: 380px;
+    background-color: $grey-lighter;
+    opacity: 0.5;
+    right: -260px;
+  }
+}
+
+.showcase {
+  overflow: hidden;
+  background-color: $grey-lighter;
+  h1 {
+    color: $color-orange;
   }
 }
 
 .experience {
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  background-color: $grey-lighter;
-  h1, .subtitle {
-    text-align: center;
-  }
+  background-color: $purple-light;
   h1 {
-    color: $color-orange;
-    font-size: 4rem;
-    @include mobile {
-      font-size: 7vw;
-    }
+    color: $color-purple;
+  }
+  .decoration-3 {
+    height: 330px;
+    width: 330px;
+    background-color: $grey-lighter;
+    opacity: 0.7;
+    left: 160px;
+    bottom: 340px;
+  }
+  .decoration-1 {
+    right: 45px;
   }
 }
 

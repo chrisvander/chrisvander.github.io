@@ -11,8 +11,10 @@ const socials = [
 
 export default () => (
   <footer className="footer">
-    <div className="brand-font">CJV</div>
-    © {new Date().getFullYear()}
+    <div className="brand">
+      <div className="brand-font">CJV</div>
+      <div className="year-text">© {new Date().getFullYear()}</div>
+    </div>
     <div className="socials">
       {socials.map(el => (
         <Link to={el.url}>
@@ -22,5 +24,6 @@ export default () => (
         </Link>
       ))}
     </div>
+    <span className="smalltext">This website was built using Bulma, Gatsby, React, SCSS.</span>
   </footer>
 );
