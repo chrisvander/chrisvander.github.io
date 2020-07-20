@@ -1,0 +1,41 @@
+- title: Coronavirus Modeling
+  tags: [python, networkx]
+  description: A Python and NetworkX-based simulation of the COVID-19 epidemic. Gathers information from the U.S. Census and NHTS and parses it out to create realistic population layouts internally.
+  links:
+    coronavirus-modeling: https://github.com/chrisvander/coronavirus-modeling
+- title: Existential Graphs
+  tags: [react, javascript, github-pages]
+  description: A React application designed to provide a visual way to solve propositional logic problems in the Beta E.G. implementation.
+  links:
+    existential-graphs: https://github.com/chrisvander/existential-graphs
+    Demo: https://chrisvanderloo.com/existential-graphs/
+- title: 2048 AI
+  tags: [c++, ai]
+  description: A console-based implementation of the popular game 2048 with a baked-in expectimax AI.
+  links: 
+    2048-Expectimax: https://github.com/chrisvander/2048-Expectimax
+- title: chrisvanderloo.com
+  tags: [gatsby, react, javascript, markdown, github-pages]
+  description: My personal web portfolio and blog.
+  links:
+    chrisvander.github.io Repo: https://github.com/chrisvander/chrisvander.github.io
+- title: Cornerstone Capital
+  description: A static HTML/CSS website built for Cornerstone Capital.
+  links:
+    cornerstonecapre.com: https://cornerstonecapre.com/
+- title: 3D Tours NY
+  tags: [gatsby, react, javascript, s3]
+  description: A static Gatsby/React website built to provide 3D tours for various forms of real estate.
+  links:
+    3dtoursny.com: http://www.3dtoursny.com/
+- title: TagRat
+  tags: [java, android, react, pug, express, nodejs, sass]
+  description: MIT Lincoln Labs internal tool for deployment and collection of samples during live equipment tests.
+  links:
+    Resume: /resume
+- title: Schedj
+  tags: [react-native, ios]
+  description: A now-deprecated React Native app to bring RPI's Student Information System to mobile platforms. (Turns out, sitting on top of someone else's authentication is too easy to break!)
+  links:
+    schedj-frontend: https://github.com/Schedj/schedj-frontend
+    schedj-backend: https://github.com/Schedj/schedj-backend

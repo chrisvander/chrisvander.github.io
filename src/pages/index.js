@@ -9,12 +9,19 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Video from "../components/video"
+import FadeInSection from "../components/fadein"
 
 import HomepageVideo from '../assets/homepage.mp4';
 import Scroll from "../components/scroll";
 
+import ShowcaseData from "../../content/showcase.yml"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
+
 const my_roles_array = [
   'full-stack software engineer',
+  'computer science student',
+  'Phi Kappa Theta brother',
   'electronic music producer',
   'burrito enthusiast'
 ]
@@ -122,10 +129,29 @@ const IndexPage = () => {
               <h1 className="title brand-font white-shadow">
                 Showcase
               </h1>
-              <h2 className="subtitle brand-font">
+              <h2 className="subtitle brand-font" style={{ marginBottom: 20 }}>
                 Projects I've worked on
               </h2>
             </Container>
+            <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
+              {ShowcaseData.map(el => (
+                <Container className="is-fluid" style={{ marginBottom: 20 }}>
+                  <div className="showcase-item box">
+                    <h1>{el.title}</h1>
+                    {el.tags && <div className="tags">{
+                      el.tags.map(tag => <span className="tag is-primary is-light">{tag}</span>)
+                    }</div>}
+                    <p>{el.description}</p>
+                    <br />
+                    {el.links && <div className="buttons">
+                      {Object.entries(el.links).map(link => (
+                        <AniLink cover bg="#ff7a00" duration={0.5} to={link[1]} className="button is-link is-light">{link[0]}</AniLink>
+                      ))}
+                    </div>}              
+                  </div>
+                </Container>
+              ))}
+            </div>
           </Section>
         </Column>
         <Column>
@@ -147,6 +173,9 @@ const IndexPage = () => {
                 Technologies I use
               </h2>
             </Container>
+            <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
+              <div className="tag is-large">BIG</div>
+            </div>
           </Section>
         </Column>
       </ColumnContainer>

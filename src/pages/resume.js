@@ -1,10 +1,12 @@
 import React from "react";
 import Layout from "../components/layout";
 import { Container, Section, ColumnContainer, Column } from "../components/bulma";
+import SEO from "../components/seo"
 
 export default () => {
   return (
     <Layout id="resume">
+      <SEO title="Resume" />
       <Section>
         <Container>
           <ColumnContainer>

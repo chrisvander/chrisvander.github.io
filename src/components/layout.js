@@ -12,7 +12,16 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children, hideNav, shown, noNavPadding, id, orange }) => {
+const Layout = ({ 
+  children, 
+  hideNav, 
+  shown, 
+  noNavPadding, 
+  id, 
+  orange,
+  whiteLayout,
+  addPadding
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,12 +40,14 @@ const Layout = ({ children, hideNav, shown, noNavPadding, id, orange }) => {
           position: 'fixed', 
           width: '100%'
         }} 
+        addContainer={addPadding}
+        transparent={whiteLayout}
         siteTitle={data.site.siteMetadata.title} />
       <main id={id} style={{ 
         backgroundColor: orange ? '' : 'white', 
-        paddingTop: !noNavPadding ? 56 : 0,
+        paddingTop: !noNavPadding ? 56 : 0
       }}>{children}</main>
-      <Footer />
+      <Footer addPadding={addPadding} whiteLayout={whiteLayout} />
     </>
   )
 }

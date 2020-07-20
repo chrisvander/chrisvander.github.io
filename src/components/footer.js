@@ -9,8 +9,8 @@ const socials = [
 
 ]
 
-export default () => (
-  <footer className="footer">
+export default ({ addPadding, whiteLayout }) => (
+  <footer className={`footer${whiteLayout ? " whiteLayout" : ""}${addPadding ? " addPadding" : ""}`}>
     <div className="brand">
       <div className="brand-font">CJV</div>
       <div className="year-text">© {new Date().getFullYear()}</div>

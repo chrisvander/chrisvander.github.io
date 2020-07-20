@@ -123,7 +123,7 @@ h1.brand-font {
   // @include desktop {
   //   font-size: 2vw;
   // }
-  min-height: 90vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -168,6 +168,15 @@ h1.brand-font {
   background-color: $grey-lighter;
   h1 {
     color: $color-orange;
+  }
+  .showcase-item {
+    h1 {
+      font-size: 1.4rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      text-align: left;
+      margin-bottom: 10px;
+    }
   }
 }
 
