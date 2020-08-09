@@ -20,7 +20,7 @@ const Layout = ({
   id, 
   orange,
   whiteLayout,
-  addPadding
+  fullWidth
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -40,14 +40,14 @@ const Layout = ({
           position: 'fixed', 
           width: '100%'
         }} 
-        addContainer={addPadding}
+        addContainer={!fullWidth}
         transparent={whiteLayout}
         siteTitle={data.site.siteMetadata.title} />
       <main id={id} style={{ 
         backgroundColor: orange ? '' : 'white', 
         paddingTop: !noNavPadding ? 56 : 0
       }}>{children}</main>
-      <Footer addPadding={addPadding} whiteLayout={whiteLayout} />
+      <Footer addPadding={!fullWidth} whiteLayout={whiteLayout} />
     </>
   )
 }

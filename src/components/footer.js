@@ -17,11 +17,11 @@ export default ({ addPadding, whiteLayout }) => (
     </div>
     <div className="socials">
       {socials.map(el => (
-        <Link to={el.url}>
+        <a href={el.url}>
           <span className="icon">
             <i className={el.fa} />
           </span>
-        </Link>
+        </a>
       ))}
     </div>
     <span className="smalltext">This website was built using Bulma, Gatsby, React, SCSS.</span>

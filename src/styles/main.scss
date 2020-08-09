@@ -66,6 +66,10 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
   @import "blog.scss";
 }
 
+#pageheader {
+  @import "pageheader.scss";
+}
+
 .montserrat {
   font-family: 'Montserrat', sans-serif;
 }
@@ -76,9 +80,10 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 
 .divider {
   display: block;
+  position: absolute;
+  bottom: -3rem;
   width: 100%;
   text-align: center;
-  margin: 3rem 0;
   i {
     background-color: white;
     line-height: 30px;

@@ -1,3 +1,46 @@
 .resume-bg {
   background-color: $grey-light;
 }
+
+.hidden-mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+blockquote {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @include until-widescreen {
+    grid-template-columns: 1fr;
+  }
+  blockquote {
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+}
+
+h1.textTitle {
+  font-size: 2.4rem;
+  position: relative;
+  margin-left: 0;
+  &:before {
+    position: absolute;
+    left: -70px;
+    content: '-';
+    font-size: 3rem;
+    opacity: 0.8;
+    top: -12px;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}

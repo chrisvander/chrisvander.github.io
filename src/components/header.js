@@ -42,7 +42,7 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent }
             </AniLink>
             <AniLink cover bg="#ff7a00" duration={0.5} to="/contact" className="navbar-item">
               <div 
-                class={transparent ? "button is-primary is-outlined" : "button is-primary is-inverted"}
+                className={transparent ? "button is-primary is-outlined" : "button is-primary is-inverted"}
                 >Reach Out!</div>
             </AniLink>
           </div>

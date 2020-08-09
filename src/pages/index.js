@@ -12,9 +12,11 @@ import Video from "../components/video"
 import FadeInSection from "../components/fadein"
 
 import HomepageVideo from '../assets/homepage.mp4';
+import ChortexLogo from '../assets/chortex2blk.jpg';
 import Scroll from "../components/scroll";
 
 import ShowcaseData from "../../content/showcase.yml"
+import ExperienceData from "../../content/experience.yml"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 
@@ -85,6 +87,9 @@ class SideNav extends React.Component {
 const IndexPage = () => {
   const [ videoLoaded, setVideoLoaded ] = useState(false);
   const [ navHidden, setNavHidden ] = useState(true);
+  const [ showcase, setShowcaseFilter ] = useState(ShowcaseData);
+  const tags = new Set(showcase.map(el => el.tags).flat())
+  console.log(tags)
   const fadeIn = () => setVideoLoaded(true);
   return (
     <Layout id="homepage" noNavPadding hideNav={navHidden}>
@@ -134,7 +139,7 @@ const IndexPage = () => {
               </h2>
             </Container>
             <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
-              {ShowcaseData.map(el => (
+              {showcase.map(el => (
                 <Container className="is-fluid" style={{ marginBottom: 20 }}>
                   <div className="showcase-item box">
                     <h1>{el.title}</h1>
@@ -145,7 +150,7 @@ const IndexPage = () => {
                     <br />
                     {el.links && <div className="buttons">
                       {Object.entries(el.links).map(link => (
-                        <AniLink cover bg="#ff7a00" duration={0.5} to={link[1]} className="button is-link is-light">{link[0]}</AniLink>
+                        <a href={link[1]} className="button is-link is-light">{link[0]}</a>
                       ))}
                     </div>}              
                   </div>
@@ -170,15 +175,44 @@ const IndexPage = () => {
                 Experience
               </h1>
               <h2 className="subtitle brand-font">
-                Technologies I use
-              </h2>
+                Tools I've used or prefer
+              </h2><br />
             </Container>
             <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
-              <div className="tag is-large">BIG</div>
+              {ExperienceData.map(el => el.subcategories ? (
+                <Container className="is-fluid" style={{ marginBottom: 20 }}>
+                  <div className="experience-items box">
+                    <h1 className="secondary-font">{el.category}</h1>
+                    <div className="grid-container">
+                    {el.subcategories.map(item => (
+                      <div>
+                        <h2 className="subtitle">{item.title}</h2>
+                        <div className="tags">
+                          {item.elements.map(text => <span className="tag is-primary is-medium">{text}</span>)}
+                        </div>
+                      </div>
+                    ))}
+                    </div>
+                  </div>
+                </Container>
+              ) : <React.Fragment />)}
             </div>
           </Section>
         </Column>
       </ColumnContainer>
+      <Section className="chortex has-text-centered">
+      <ColumnContainer className="is-vcentered is-centered">
+        <Column className="is-4">
+          <figure className="image" style={{ minWidth: '100%', maxHeight: 200 }}>
+            <img src={ChortexLogo} style={{ maxWidth: 1000, maxHeight: 200 }}/>
+          </figure>
+        </Column>
+        <Column className="is-4">
+          <h2>I like to make music in my free time. I have a website for that too - check it out!</h2><br />
+          <a className="button is-link" href="http://chortexofficial.com">chortexofficial.com</a>
+        </Column>
+      </ColumnContainer>
+      </Section>
     </Layout>
   );
 }
