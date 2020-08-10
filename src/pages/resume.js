@@ -21,7 +21,6 @@ const components = {
 }
 
 export default ({ data: { mdx } }) => {
-  console.log(mdx.body)
   return (
     <Layout id="resume">
       <SEO title="Resume" />

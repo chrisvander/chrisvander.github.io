@@ -30,35 +30,28 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages/`,
+          defaultLayouts: {
+              posts: require.resolve('./src/templates/blog-post.js'),
+          },
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/content/posts/`,
+        path: `${__dirname}/content/posts`,
       },
     },
     {
-      resolve: "gatsby-plugin-page-creator",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resume`,
-        path: `${__dirname}/content/`,
+        name: `pages`,
+        path: `${__dirname}/content/pages`,
       },
-    },
-    `gatsby-plugin-mdx`,
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     defaultLayouts: {
-    //       posts: require.resolve("./src/templates/post-layout.js"),
-    //     },
-    //   },
-    // },
+    }
+    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

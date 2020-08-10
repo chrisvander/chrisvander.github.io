@@ -1,15 +1,12 @@
 import React, { useState } from "react"
 import TextLoop from "react-text-loop";
-import { Link } from "gatsby"
 
 import { Section, Hero, Container, ColumnContainer, Column } from '../components/bulma';
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Video from "../components/video"
-import FadeInSection from "../components/fadein"
 
 import HomepageVideo from '../assets/homepage.mp4';
 import ChortexLogo from '../assets/chortex2blk.jpg';
@@ -17,8 +14,6 @@ import Scroll from "../components/scroll";
 
 import ShowcaseData from "../../content/showcase.yml"
 import ExperienceData from "../../content/experience.yml"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-
 
 const my_roles_array = [
   'full-stack software engineer',

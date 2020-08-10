@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 
@@ -25,11 +24,10 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent }
           </AniLink>}
           <span 
             onClick={() => setBurgerActive(!burgerActive)} 
-            className={`navbar-burger burger ${burgerActive ? 'is-active' : ''}`} 
-            data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
+            className={`navbar-burger burger ${burgerActive ? 'is-active' : ''}`}>
+            <span />
+            <span />
+            <span />
           </span>
         </div>
         <div className={`navbar-menu ${burgerActive ? 'is-active' : ''}`}>

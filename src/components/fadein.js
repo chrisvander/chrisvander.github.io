@@ -3,11 +3,11 @@ import { useInView } from "react-intersection-observer";
 
 export default function FadeInSection({ children }) {
   const [isVisible, setVisible] = useState(true);
-  const [ref, inView, entry] = useInView({ threshold: 0 });
+  const [ref, inView] = useInView({ threshold: 0 });
   useEffect(() => {
     if (inView) setVisible(true);
     else setVisible(false);
-  });
+  }, [inView]);
   
   return (
     <div

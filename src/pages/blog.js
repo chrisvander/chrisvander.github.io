@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Container, Section } from "../components/bulma";
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader";
 

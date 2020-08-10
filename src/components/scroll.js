@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

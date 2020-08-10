@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 const socials = [
   { fa: 'fab fa-facebook', url: 'https://www.facebook.com/cjvanderloo' },
