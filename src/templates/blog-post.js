@@ -2,10 +2,12 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Section, Container, ColumnContainer, Column } from "../components/bulma"
 
-const BlogPostTemplate = ({ children, pageContext }) => {
-  const { title, subtitle, author, date, tags, icon } = pageContext.frontmatter;
+const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
+  const { title, subtitle, author, date, tags, icon } = frontmatter;
   return (
     <Layout whiteLayout>
       <SEO title={title} />
@@ -21,7 +23,9 @@ const BlogPostTemplate = ({ children, pageContext }) => {
         <Container>
           <ColumnContainer className="is-centered">
             <Column className="is-9 content">
-              {children}
+              <MDXProvider>
+                <MDXRenderer>{body}</MDXRenderer>
+              </MDXProvider>
             </Column>
           </ColumnContainer>
         </Container>

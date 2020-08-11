@@ -39,6 +39,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx {
         edges {
           node {
+            id
+            body
             frontmatter {
               title
               subtitle
@@ -73,7 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/templates/blog-post.js`),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id, frontmatter: node.frontmatter },
+      context: { id: node.id, frontmatter: node.frontmatter, body: node.body },
     })
   });
 }
