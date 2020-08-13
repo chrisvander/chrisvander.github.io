@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script defer src="http://34.83.210.216/js/commento.js"></script>
+    </Helmet>
   )
 }
 

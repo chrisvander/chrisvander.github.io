@@ -108,7 +108,7 @@ h1.brand-font {
 
 .showcase-container {
   position: relative;
-  z-index: 1;
+  
   .column {
     background-color: $color-white;
   }
@@ -116,15 +116,25 @@ h1.brand-font {
 }
 
 .showcase, .experience {
-  margin: 5vh;
-  border-radius: 25px;
+  z-index: 1;
   @include mobile {
     margin: 0;
   }
   // @include desktop {
   //   font-size: 2vw;
   // }
-  height: 90vh;
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 15px;
+    @include desktop {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
   align-items: center;
   justify-content: center;
   display: flex;
@@ -171,6 +181,9 @@ h1.brand-font {
     color: $color-orange;
   }
   .showcase-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     h1 {
       font-size: 1.4rem;
       font-family: 'Montserrat', sans-serif;
@@ -183,27 +196,18 @@ h1.brand-font {
 
 .experience {
   background-color: $purple-light;
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 15px;
-    @include mobile {
-      grid-template-columns: 1fr;
-    }
-
-  }
   .is-fluid {
     h1 {
-      font-size: 2.5rem;
+      font-size: 1.4rem;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       margin-bottom: 10px;
+      text-align: left;
     }
     h2 {
       text-align: left;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 10px;
-      margin-top: 10px;
     }
   }
   h1 {
@@ -228,5 +232,20 @@ h1.brand-font {
   color: white;
 }
 
+#intro {
+  h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: black;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #222;
+    margin-top: -10px;
+  }
+  color: black;
+}
 
 

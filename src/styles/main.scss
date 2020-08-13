@@ -64,6 +64,7 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 
 #blog {
   @import "blog.scss";
+  font-size: 1.1rem;
 }
 
 #pageheader {
@@ -96,7 +97,7 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
     margin-top: -14px;
     height: 1px;
     width: 100%;
-    background-color: #BBB;
+    background-color: #DDD;
     content: "";
   }
 }

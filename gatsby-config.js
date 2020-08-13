@@ -32,9 +32,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-          defaultLayouts: {
-              posts: require.resolve('./src/templates/blog-post.js'),
-          },
+        defaultLayouts: {
+          posts: require.resolve('./src/templates/blog-post.js'),
+        },
       },
     },
     {

@@ -26,10 +26,10 @@ h1.textTitle {
   margin-left: 0;
   &:before {
     position: absolute;
-    left: -70px;
-    content: '-';
+    left: -50px;
+    content: '~';
     font-size: 3rem;
-    opacity: 0.8;
+    opacity: 0.2;
     top: -12px;
   }
 }
