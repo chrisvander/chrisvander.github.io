@@ -44,7 +44,10 @@ class HomeHeroText extends React.Component {
   }
 
   onMove(evt) {
-    if (this.section.current) {
+    if (window.innerWidth < 500) {
+      this.section.current.style.transform = `perspective(600px) rotateY(0deg)`;
+    }
+    else if (this.section.current) {
       let windowHalf = window.innerWidth/2;
       let mousePos = evt.clientX;
       let multiplier = (mousePos-windowHalf)/windowHalf;
@@ -92,13 +95,13 @@ const IndexPage = ({ data: { mdx } }) => {
   console.log(tags)
   const fadeIn = () => setVideoLoaded(true);
   return (
-    <Layout id="homepage" noNavPadding hideNav={navHidden}>
+    <Layout id="homepage" style={{overflow: 'hidden'}} noNavPadding hideNav={navHidden}>
       <SEO title="Home" />
       <SideNav />
       <Hero className="is-primary is-fullheight">
         <div className={`video-container ${videoLoaded ? '' : 'hidden'}`}>
           <Scroll speed={0.4}>
-            <Video style={{ maxWidth: 'none', minWidth: '100%', minHeight: '100vh' }} source={HomepageVideo} loaded={fadeIn} />
+            <Video source={HomepageVideo} loaded={fadeIn} />
           </Scroll>
         </div>
         <div className="hero-head">

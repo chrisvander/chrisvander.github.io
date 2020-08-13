@@ -1,7 +1,21 @@
 h1.brand-font {
   @include mobile {
     font-size: 7vw;
+ 
   }
+}
+
+video {
+  max-width: none;
+  min-width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  left: -30%;
+  @include desktop {
+    left: 0;
+  }
+  
+  position: relative;
 }
 
 .hero {
@@ -20,7 +34,7 @@ h1.brand-font {
 }
 
 .is-huge {
-  font-size: 7vw;
+  font-size: 10vw;
   @include desktop {
     font-size: 5rem;
   }
