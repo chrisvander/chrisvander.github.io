@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "chrisvander.github.io",
+  "private": false,
+  "description": "My web portfolio",
+  "version": "1.0.0",
+  "author": "Chris Vanderloo",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@mdx-js/mdx": "^1.6.14",
@@ -22,7 +22,6 @@
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-transformer-sharp": "^2.5.7",
     "gatsby-transformer-yaml": "^2.4.10",
-    "gh-pages": "^3.1.0",
     "gsap": "^3.4.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -33,15 +32,16 @@
     "react-text-loop": "^2.3.0"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "2.0.5"
   },
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
