@@ -171,12 +171,14 @@ const IndexPage = ({ data: { mdx } }) => {
             <div className="grid-container">
               {showcase.map(el => (
                 <div className="showcase-item box">
-                  <h1>{el.title}</h1>
-                  {el.tags && <div className="tags">{
-                    el.tags.map(tag => <span className="tag is-primary is-light">{tag}</span>)
-                  }</div>}
-                  <p>{el.description}</p>
-                  <br />
+                  <div className="showcase-content">
+                    <h1>{el.title}</h1>
+                    {el.tags && <div className="tags">{
+                      el.tags.map(tag => <span className="tag is-primary is-light">{tag}</span>)
+                    }</div>}
+                    <p>{el.description}</p>
+                    <br />
+                  </div>
                   {el.links && <div className="buttons">
                     {Object.entries(el.links).map(link => (
                       <a href={link[1]} className="button is-link is-light">{link[0]}</a>
