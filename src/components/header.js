@@ -11,10 +11,11 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent, 
         ...style, 
         opacity: `${hide ? '0' : '1'}`,
         transform: `translateY(${hide ? '-100%' : '0'})`,
-        transition: 'transform 0.5s opacity 0.5s',
+        transition: 'transform 0.5s, opacity 0.5s',
         position: `${sticky ? 'fixed' : 'absolute'}`,
         top: 0,
-        width: '100%'
+        width: '100%',
+        zIndex: sticky ? 4 : 5
       }} 
       className={transparent ? "navbar is-light" : "navbar is-primary"}>
       <div className={addContainer ? "container" : "container is-fluid"}>

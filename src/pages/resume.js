@@ -22,7 +22,7 @@ const components = {
 
 export default ({ data: { mdx } }) => {
   return (
-    <Layout id="resume">
+    <Layout id="resume" stickyNav>
       <SEO title="Resume" />
       <PageHeader
         title="Resume"
