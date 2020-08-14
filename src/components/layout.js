@@ -20,6 +20,7 @@ const Layout = ({
   id, 
   orange,
   whiteLayout,
+  stickyNav,
   fullWidth
 }) => {
   const data = useStaticQuery(graphql`
@@ -36,10 +37,7 @@ const Layout = ({
     <>
       <Header 
         hide={hideNav} 
-        style={{ 
-          position: 'fixed', 
-          width: '100%'
-        }} 
+        sticky={stickyNav}
         addContainer={!fullWidth}
         transparent={whiteLayout}
         siteTitle={data.site.siteMetadata.title} />

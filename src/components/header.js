@@ -3,7 +3,7 @@ import React, { useState } from "react"
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent }) => {
+const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent, sticky }) => {
   const [burgerActive, setBurgerActive] = useState(false);
   return (
     <nav 
@@ -12,7 +12,7 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent }
         opacity: `${hide ? '0' : '1'}`,
         transform: `translateY(${hide ? '-100%' : '0'})`,
         transition: 'transform 0.5s opacity 0.5s',
-        position: 'absolute',
+        position: `${sticky ? 'fixed' : 'absolute'}`,
         top: 0,
         width: '100%'
       }} 
@@ -41,7 +41,7 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent }
             <AniLink cover bg="#ff7a00" duration={0.5} to="/contact" className="navbar-item">
               <div 
                 className={transparent ? "button is-primary is-outlined" : "button is-primary is-inverted"}
-                >Reach Out!</div>
+                >Contact</div>
             </AniLink>
           </div>
         </div>

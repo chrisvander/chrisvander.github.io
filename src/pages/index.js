@@ -20,6 +20,8 @@ import ExperienceData from "../../content/experience.yml"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+
 const my_roles_array = [
   'software engineer',
   'computer science student',
@@ -94,8 +96,14 @@ const IndexPage = ({ data: { mdx } }) => {
   const tags = new Set(showcase.map(el => el.tags).flat())
   console.log(tags)
   const fadeIn = () => setVideoLoaded(true);
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    console.log(currPos)
+    setNavHidden(currPos.y > -300)
+  })
+
   return (
-    <Layout id="homepage" style={{overflow: 'hidden'}} noNavPadding hideNav={navHidden}>
+    <Layout id="homepage" style={{overflow: 'hidden'}} noNavPadding stickyNav hideNav={navHidden}>
       <SEO title="Home" />
       <SideNav />
       <Hero className="is-primary is-fullheight">
@@ -210,7 +218,7 @@ const IndexPage = ({ data: { mdx } }) => {
                     <div>
                       <h2 className="subtitle">{item.title}</h2>
                       <div className="tags">
-                        {item.elements.map(text => <span className="tag is-primary is-medium">{text}</span>)}
+                        {item.elements.map(text => <span className="tag is-info is-medium">{text}</span>)}
                       </div>
                     </div>
                   ))}
