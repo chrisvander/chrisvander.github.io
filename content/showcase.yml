@@ -35,7 +35,7 @@
     Resume: /resume
 - title: Schedj
   tags: [react-native, ios]
-  description: A now-deprecated React Native app to bring RPI's Student Information System to mobile platforms. (Turns out, sitting on top of someone else's authentication is too easy to break!)
+  description: A now-deprecated React Native app to bring RPI's Student Information System to mobile platforms. 
   links:
     schedj-frontend: https://github.com/Schedj/schedj-frontend
     schedj-backend: https://github.com/Schedj/schedj-backend
