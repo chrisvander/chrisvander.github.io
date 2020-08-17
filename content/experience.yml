@@ -4,23 +4,25 @@
       elements: [JavaScript, Python, Ruby]
     - title: Compiled
       elements: [C++, Swift, Java, C]
-- category: Tools
+- category: Software
   subcategories:
-    - title: On My Computer
-      elements: [Sublime Text, iTerm2, Xcode, ZSH, Oh-My-ZSH]
+    - title: OS
+      elements: [macOS, Windows, Ubuntu, Raspbian, CentOS, ZSH, Bash]
+    - title: IDE
+      elements: [Xcode, Android Studio, IntelliJ IDEA, Eclipse, PyCharm]
     - title: CI/CD
       elements: [CircleCI, Travis, Jenkins, Docker, GitHub Actions]
 - category: Front-End
   subcategories:
     - title: Mobile
-      elements: [React Native, Android Studio, Obj-C (iOS), Swift (iOS)]
+      elements: [React Native, Java (Android), Obj-C (iOS), Swift (iOS)]
     - title: Web
-      elements: [React, Gatsby, Jekyll, Vue, SAPUI5, CSS, HTML, Pug, SASS, Bulma, Webpack]
+      elements: [React, Gatsby, Jekyll, SAPUI5, Pug, SASS, Bulma, Webpack]
 - category: Back-End
   subcategories:
     - title: Server
       elements: [NodeJS, Express, Spring Boot]
     - title: Network
-      elements: [NGINX, SSL, AWS CloudFront, AWS Private CA]
+      elements: [NGINX, SSL, AWS CloudFront, AWS Private CA, Lets Encrypt]
     - title: Database
       elements: [MongoDB, PostgreSQL, MySQL]

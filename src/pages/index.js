@@ -199,7 +199,7 @@ const IndexPage = ({ data: { mdx } }) => {
             Experience
           </h1>
           <h2 className="subtitle brand-font" style={{ marginBottom: 20 }}>
-            My preferred tools
+            What's in my toolbox
           </h2>
         </Container>
         <Container>
