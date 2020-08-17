@@ -6,12 +6,20 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Section, Container, ColumnContainer, Column } from "../components/bulma"
 import TextSection from "../components/textcontainer";
+import { Helmet } from "react-helmet";
 
 const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
   const { title, subtitle, author, date, tags, icon } = frontmatter;
   return (
     <Layout id="blog" whiteLayout>
       <SEO title={title} />
+      <Helmet>
+        <script 
+          defer 
+          data-no-fonts="true" 
+          src="https://commento.chrisvanderloo.com/js/commento.js" />
+        <script src="https://cdn.commento.io/js/count.js" />
+      </Helmet>
       <PageHeader 
         title={title} 
         subtitle={subtitle} 
@@ -33,10 +41,6 @@ const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
           <div id="commento" />
         </Container>
       </Section>
-      <script 
-        defer 
-        data-no-fonts="true" 
-        src="https://commento.chrisvanderloo.com/js/commento.js" />
     </Layout>
   );
 }
