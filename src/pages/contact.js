@@ -41,6 +41,7 @@ const ContactPage = () => (
       title="Contact Me"
       icon="fas fa-address-book" />
     <TextSection>
+      <p>Feel free to reach out to me, or connect through any of these mediums! Email or phone are probably the best ways to get ahold of me.</p>
       <div className="tile is-ancestor">
         <div className="tile is-vertical">
           <div className="tile is-parent">
@@ -56,12 +57,12 @@ const ContactPage = () => (
             ))}
           </div>
           <div className="tile is-parent">
-            <CustomA href="mailto:chris.vanderloo@yahoo.com">
+            <CustomA href="mailto:contact@chrisvanderloo.com">
               <div className="tile is-parent">
                 <div className="tile is-child box content has-text-centered" style={{ 'backgroundColor': '#ff7a00', color: 'white' }}>
                   <h1 className="has-text-centered has-text-white"><i className='fas fa-envelope' /></h1>
                   <h1 className="has-text-centered has-text-white title">Email</h1>
-                  <a href="mailto:chris.vanderloo@yahoo.com" className="subtitle has-text-white">chris.vanderloo@yahoo.com</a>
+                  <a href="mailto:contact@chrisvanderloo.com" className="subtitle has-text-white">contact@chrisvanderloo.com</a>
                 </div>
               </div>
             </CustomA>
