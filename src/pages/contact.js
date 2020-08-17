@@ -57,12 +57,12 @@ const ContactPage = () => (
             ))}
           </div>
           <div className="tile is-parent">
-            <CustomA href="mailto:contact@chrisvanderloo.com">
+            <CustomA href="mailto:chris.vanderloo@yahoo.com">
               <div className="tile is-parent">
                 <div className="tile is-child box content has-text-centered" style={{ 'backgroundColor': '#ff7a00', color: 'white' }}>
                   <h1 className="has-text-centered has-text-white"><i className='fas fa-envelope' /></h1>
                   <h1 className="has-text-centered has-text-white title">Email</h1>
-                  <a href="mailto:contact@chrisvanderloo.com" className="subtitle has-text-white">contact@chrisvanderloo.com</a>
+                  <a href="mailto:chris.vanderloo@yahoo.com" className="subtitle has-text-white">chris.vanderloo@yahoo.com</a>
                 </div>
               </div>
             </CustomA>
