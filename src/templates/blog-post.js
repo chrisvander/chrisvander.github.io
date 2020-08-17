@@ -5,6 +5,7 @@ import PageHeader from "../components/pageheader"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Section, Container, ColumnContainer, Column } from "../components/bulma"
+import TextSection from "../components/textcontainer";
 
 const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
   const { title, subtitle, author, date, tags, icon } = frontmatter;
@@ -20,17 +21,11 @@ const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
           {tags && tags.map((e,i) => <span className="tag is-light is-primary" key={i}>{e}</span>)}
         </div>
       </PageHeader>
-      <Section>
-        <Container>
-          <ColumnContainer className="is-centered">
-            <Column className="is-9 content">
-              <MDXProvider>
-                <MDXRenderer>{body}</MDXRenderer>
-              </MDXProvider>
-            </Column>
-          </ColumnContainer>
-        </Container>
-      </Section>
+      <TextSection>
+        <MDXProvider>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </TextSection>
       <Section style= {{ backgroundColor: '#EFEFEF' }}>
         <Container>
           <div id="commento" />
