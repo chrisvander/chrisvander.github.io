@@ -31,7 +31,10 @@ const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
           <div id="commento" />
         </Container>
       </Section>
-      <script defer src="https://commento.chrisvanderloo.com/js/commento.js" />
+      <script 
+        defer 
+        data-no-fonts="true" 
+        src="https://commento.chrisvanderloo.com/js/commento.js" />
     </Layout>
   );
 }
