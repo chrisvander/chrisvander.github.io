@@ -68,9 +68,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      <script defer src="https://commento.chrisvanderloo.com/js/commento.js"></script>
-    </Helmet>
+    />
   )
 }
 
