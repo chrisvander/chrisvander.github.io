@@ -20,14 +20,16 @@ const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
         <div className="tags" style={{ display: 'block' }}>
           {tags && tags.map((e,i) => <span className="tag is-light is-primary" key={i}>{e}</span>)}
         </div>
+        <a href="#commento" />
       </PageHeader>
       <TextSection>
         <MDXProvider>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </TextSection>
-      <Section style= {{ backgroundColor: '#EFEFEF' }}>
+      <Section style= {{ backgroundColor: '#F6F6F6', minHeight: 600 }}>
         <Container>
+          <h1 class="title">Comments</h1>
           <div id="commento" />
         </Container>
       </Section>

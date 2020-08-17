@@ -59,6 +59,7 @@ const Layout = ({
         paddingTop: !noNavPadding ? 56 : 0
       }}>{children}</main>
       <Footer addPadding={!fullWidth} whiteLayout={whiteLayout} />
+      <script src="https://cdn.commento.io/js/count.js" />
     </React.Fragment>
   )
 }
