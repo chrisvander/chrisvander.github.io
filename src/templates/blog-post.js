@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
@@ -10,16 +10,26 @@ import { Helmet } from "react-helmet";
 
 const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
   const { title, subtitle, author, date, tags, icon } = frontmatter;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+
+    document.getElementById('commento').innerHTML = "";
+
+    script.src = "https://commento.chrisvanderloo.com/js/commento.js";
+    script['data-no-fonts'] = 'true';
+    script.defer = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+
   return (
     <Layout id="blog" whiteLayout>
       <SEO title={title} />
-      <Helmet>
-        <script 
-          defer 
-          data-no-fonts="true" 
-          src="https://commento.chrisvanderloo.com/js/commento.js" />
-        <script src="https://cdn.commento.io/js/count.js" />
-      </Helmet>
       <PageHeader 
         title={title} 
         subtitle={subtitle} 
@@ -28,7 +38,6 @@ const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
         <div className="tags" style={{ display: 'block' }}>
           {tags && tags.map((e,i) => <span className="tag is-light is-primary" key={i}>{e}</span>)}
         </div>
-        <a href="#commento" />
       </PageHeader>
       <TextSection>
         <MDXProvider>
