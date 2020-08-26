@@ -11,3 +11,15 @@ hr {
   background-color: #DDD;
   height: 1px;
 }
+
+#searchBox {
+  i {
+    color: #dbdbdb;
+  }
+  input {
+    border-color: #dbdbdb;
+    &:hover {
+      border-color: #bdbdbd;
+    }
+  }
+}
