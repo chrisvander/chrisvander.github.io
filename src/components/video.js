@@ -8,7 +8,7 @@ export default function Video({ source, loaded, style }) {
     loaded();
   }
   return (
-    <video style={style} ref={videoEl} onCanPlayThrough={onVideoLoad} loop playsInline inline autoPlay muted>
+    <video style={style} ref={videoEl} canPlay={onVideoLoad} loop playsInline inline autoPlay muted>
       <source src={source} type="video/mp4" />
     </video>
   );
