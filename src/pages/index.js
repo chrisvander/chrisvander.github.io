@@ -92,7 +92,6 @@ const IndexPage = ({ data: { mdx } }) => {
   const [ videoLoaded, setVideoLoaded ] = useState(false);
   const [ showcase, setShowcaseFilter ] = useState(ShowcaseData);
   const tags = new Set(showcase.map(el => el.tags).flat())
-  console.log(tags)
   const fadeIn = () => setVideoLoaded(true);
 
   return (
@@ -100,8 +99,8 @@ const IndexPage = ({ data: { mdx } }) => {
       <SEO title="Home" />
       <SideNav />
       <Hero className="is-primary is-fullheight">
-        <div className={`video-container ${videoLoaded ? '' : 'hidden'}`}>
-          <Scroll speed={0.4}>
+        <div className={`video-container ${videoLoaded ? '' : 'hidden'}`} style={{ width: '100%' }}>
+          <Scroll speed={0.4} style={{ width: '100%' }}>
             <Video source={HomepageVideo} loaded={fadeIn} />
           </Scroll>
         </div>
