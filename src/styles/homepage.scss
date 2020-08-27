@@ -5,6 +5,11 @@ h1.brand-font {
   }
 }
 
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+
 video {
   max-width: none;
   min-width: 100%;

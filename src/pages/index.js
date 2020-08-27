@@ -110,7 +110,7 @@ const IndexPage = ({ data: { mdx } }) => {
         </div>
         <div className="hero-body">
           <Scroll speed={0.7} offset={2} style={{ height: '100%', width: '100%' }}>
-            <div className="container is-huge secondary-font">
+            <div className="container is-huge secondary-font vcenter">
               <HomeHeroText />
               <Section />
             </div>
