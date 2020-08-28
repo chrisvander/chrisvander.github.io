@@ -204,7 +204,7 @@ const IndexPage = ({ data: { mdx } }) => {
         <Container>
           <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
             {ExperienceData.map(el => el.subcategories ? (
-              <div className="experience-items box">
+              <div className="experience-items inside box">
                 <h1 className="secondary-font">{el.category}</h1>
                 <div className="grid-container">
                 {el.subcategories.map(item => (
