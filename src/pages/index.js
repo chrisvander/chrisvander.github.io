@@ -204,21 +204,19 @@ const IndexPage = ({ data: { mdx } }) => {
         <Container>
           <div style={{ overflow: 'auto', width: '100%', zIndex: 5, paddingTop: 20 }}>
             {ExperienceData.map(el => el.subcategories ? (
-              <Container className="is-fluid" style={{ marginBottom: 20 }}>
-                <div className="experience-items box">
-                  <h1 className="secondary-font">{el.category}</h1>
-                  <div className="grid-container">
-                  {el.subcategories.map(item => (
-                    <div>
-                      <h2 className="subtitle">{item.title}</h2>
-                      <div className="tags">
-                        {item.elements.map(text => <span className="tag is-info is-medium">{text}</span>)}
-                      </div>
+              <div className="experience-items box">
+                <h1 className="secondary-font">{el.category}</h1>
+                <div className="grid-container">
+                {el.subcategories.map(item => (
+                  <div>
+                    <h2 className="subtitle">{item.title}</h2>
+                    <div className="tags">
+                      {item.elements.map(text => <span className="tag is-info is-medium">{text}</span>)}
                     </div>
-                  ))}
                   </div>
+                ))}
                 </div>
-              </Container>
+              </div>
             ) : <React.Fragment />)}
           </div>
         </Container>
