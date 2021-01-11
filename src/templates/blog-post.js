@@ -11,21 +11,21 @@ import { Helmet } from "react-helmet";
 const BlogPostTemplate = ({ pageContext: { frontmatter, body, fields } }) => {
   const { title, subtitle, author, date, tags, icon } = frontmatter;
 
-  useEffect(() => {
-    const script = document.createElement('script');
+  // useEffect(() => {
+  //   const script = document.createElement('script');
 
-    document.getElementById('commento').innerHTML = "";
+  //   document.getElementById('commento').innerHTML = "";
 
-    script.src = "https://commento.chrisvanderloo.com/js/commento.js";
-    script['data-no-fonts'] = 'true';
-    script.defer = true;
+  //   script.src = "https://commento.chrisvanderloo.com/js/commento.js";
+  //   script['data-no-fonts'] = 'true';
+  //   script.defer = true;
 
-    document.body.appendChild(script);
+  //   document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   }
+  // }, []);
 
   return (
     <Layout id="blog" whiteLayout>

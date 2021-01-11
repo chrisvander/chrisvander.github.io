@@ -24,7 +24,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 const my_roles_array = [
   'software engineer',
   'computer science student',
-  'Phi Kappa Theta brother',
   'electronic music producer',
   'burrito enthusiast'
 ]

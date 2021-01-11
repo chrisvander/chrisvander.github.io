@@ -9,8 +9,7 @@ export default () => {
     <Layout id="blog" whiteLayout>
       <SEO title="Blog" />
       <PageHeader 
-        title="The Blog" 
-        subtitle="My place to talk technology." 
+        title="Personal Blog" 
         icon="fas fa-newspaper" />
       <Section>
         <Container>

@@ -33,9 +33,9 @@ const Header = ({ siteTitle, hideBrand, hide, style, addContainer, transparent, 
         </div>
         <div className={`navbar-menu ${burgerActive ? 'is-active' : ''}`}>
           <div className="navbar-end">
-            <AniLink cover bg="#ff7a00" duration={0.5} to="/blog" className="navbar-item">
-              Blog
-            </AniLink>
+            <a href="https://theecosystemblog.com">
+              "The Ecosystem" Blog
+            </a>
             <AniLink cover bg="#ff7a00" duration={0.5} to="/resume" className="navbar-item">
               Resume
             </AniLink>

@@ -12,6 +12,8 @@
       elements: [Xcode, Android Studio, IntelliJ IDEA, Eclipse, PyCharm]
     - title: CI/CD
       elements: [CircleCI, Travis, Jenkins, Docker, GitHub Actions]
+    - title: Machine Learning
+      elements: [NumPy, SciPy, Tensorflow]
 - category: Front-End
   subcategories:
     - title: Mobile
