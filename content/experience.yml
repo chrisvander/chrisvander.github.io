@@ -1,0 +1,30 @@
+- category: Languages
+  subcategories:
+    - title: Interpreted
+      elements: [JavaScript, Python, Ruby]
+    - title: Compiled
+      elements: [C++, Swift, Java, C]
+- category: Software
+  subcategories:
+    - title: OS
+      elements: [macOS, Windows, Ubuntu, Raspbian, CentOS, ZSH, Bash]
+    - title: IDE
+      elements: [Xcode, Android Studio, IntelliJ IDEA, Eclipse, PyCharm]
+    - title: CI/CD
+      elements: [CircleCI, Travis, Jenkins, Docker, GitHub Actions]
+    - title: Machine Learning
+      elements: [NumPy, SciPy, Tensorflow]
+- category: Front-End
+  subcategories:
+    - title: Mobile
+      elements: [React Native, Java (Android), Obj-C (iOS), Swift (iOS)]
+    - title: Web
+      elements: [React, Gatsby, Jekyll, SAPUI5, Pug, SASS, Bulma, Webpack]
+- category: Back-End
+  subcategories:
+    - title: Server
+      elements: [NodeJS, Express, Spring Boot]
+    - title: Network
+      elements: [NGINX, SSL, AWS CloudFront, AWS Private CA, Lets Encrypt]
+    - title: Database
+      elements: [MongoDB, PostgreSQL, MySQL]
