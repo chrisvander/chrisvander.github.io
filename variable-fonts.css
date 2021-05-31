@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "iA Quattro";
+  font-style: normal;
+  src: url("/ia-fonts/variable-fonts/iAWriterQuattroV.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iA Quattro";
+  font-style: italic;
+  src: url("/ia-fonts/variable-fonts/iAWriterQuattroV-Italic.ttf") format("truetype");
+}
+
