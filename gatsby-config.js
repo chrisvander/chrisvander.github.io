@@ -1,59 +1,100 @@
+require(`dotenv`).config({
+  path: `.env`,
+})
+
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+
 module.exports = {
   siteMetadata: {
-    title: `Chris Vanderloo`,
-    description: `The portfolio and blog made by Chris Vanderloo.`,
-    author: `Chris Vanderloo`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Chris Vanderloo`,
+    // Default title of the page
+    siteTitleAlt: `Chris Vanderloo - Personal Site`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Chris Vanderloo - Personal Site`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://chrisvanderloo.com`,
+    // Used for SEO
+    siteDescription: `Chris Vanderloo's personal portfolio website and blog.`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Twitter Handle
+    author: `@chris_vanderloo`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
+      // See the theme's README for all available options
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        navigation: [
+          {
+            title: `Blog`,
+            slug: `/blog`,
+          },
+          {
+            title: `Resume`,
+            slug: `/resume`,
+          },
+        ],
+        externalLinks: [
+          {
+            name: `Twitter`,
+            url: `https://twitter.com/chris_vanderloo`,
+          },
+          {
+            name: `Instagram`,
+            url: `https://www.instagram.com/chrisvanderloo/`,
+          },
+          {
+            name: `GitHub`,
+            url: `https://github.com/chrisvander/`,
+          },
+          {
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/chris-vanderloo/`,
+          },
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-transition-link`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
+        short_name: `minimal-blog`,
+        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#aaa`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icon: `static/cv-icon.png`,
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        defaultLayouts: {
-          posts: require.resolve('./src/templates/blog-post.js'),
-        },
+        custom: {
+          families: ['iA Quattro'],
+          urls: ['/variable-fonts.css']
+        }
+      }
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-netlify`,
+    shouldAnalyseBundle && {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        analyzerMode: `static`,
+        reportFilename: `_bundle.html`,
+        openAnalyzer: false,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages`,
-      },
-    }
-    
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+  ].filter(Boolean),
 }
