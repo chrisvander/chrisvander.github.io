@@ -2,8 +2,8 @@
 title: "iMac 24\" (2021) Impressions"
 date: 2021-04-20
 slug: /imac-24-2021-impressions
-description: ""
-tags: []
+description: "The latest in the Apple Silicon consumer lineup."
+tags: [apple, mac, imac]
 banner: 
 ---
 

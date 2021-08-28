@@ -2,8 +2,8 @@
 title: "iPad Pro (2021) Impressions"
 date: 2021-04-26
 slug: /ipad-pro-2021-impressions
-description: ""
-tags: []
+description: "My impressions of the new M1-powered iPad"
+tags: [apple, ipad, ipad pro]
 banner: ./Images/ipadpro21-hero.jpg
 ---
 
