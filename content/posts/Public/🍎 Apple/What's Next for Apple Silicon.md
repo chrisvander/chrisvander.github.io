@@ -1,11 +1,12 @@
 ---
 title: "What's Next for Apple Silicon"
 date: 2021-01-10
-slug: /what's-next-for-apple-silicon
-description: ""
-tags: []
-banner: 
----Apple Silicon got off to a dramatic start with the M1 chip.  Apple has taken three of their Mac offerings and made them faster than ever by powering them with their own chips. The [early 2020 Intel MacBook Air](https://amzn.to/3nKdEGs) (now $899 on Amazon) was a well-received machine, but [the Verge noted](https://www.theverge.com/2020/3/26/21195008/apple-macbook-air-review-2020-new-keyboard-processor-battery-life-camera-price) it's inability to keep up with intense workloads and subpar battery life. With Apple Silicon, it's got amazing speed (CPU and GPU), long battery life, and such incredible efficiency it doesn't need a fan. I've seen my girlfriend and my brother get the M1-powered MacBook Air and it works astonishingly well for almost anything they need to do. Apple has put M1 inside three Macs so far - [MacBook Air](https://amzn.to/3645lPV), [MacBook Pro 13-inch](https://amzn.to/3ikHekz) , and [Mac mini](https://amzn.to/3svTljs). 
+slug: /whats-next-for-apple-silicon
+description: "What to expect for the next Apple Silicon Macs"
+tags: [apple, apple silicon, mac, macos]
+banner: ./Images/new-m1-chip.jpg
+---
+Apple Silicon got off to a dramatic start with the M1 chip.  Apple has taken three of their Mac offerings and made them faster than ever by powering them with their own chips. The [early 2020 Intel MacBook Air](https://amzn.to/3nKdEGs) (now $899 on Amazon) was a well-received machine, but [the Verge noted](https://www.theverge.com/2020/3/26/21195008/apple-macbook-air-review-2020-new-keyboard-processor-battery-life-camera-price) it's inability to keep up with intense workloads and subpar battery life. With Apple Silicon, it's got amazing speed (CPU and GPU), long battery life, and such incredible efficiency it doesn't need a fan. I've seen my girlfriend and my brother get the M1-powered MacBook Air and it works astonishingly well for almost anything they need to do. Apple has put M1 inside three Macs so far - [MacBook Air](https://amzn.to/3645lPV), [MacBook Pro 13-inch](https://amzn.to/3ikHekz) , and [Mac mini](https://amzn.to/3svTljs). 
 
 M1 offers an 8-core CPU with 4 high-performance cores and 4 efficiency cores. This is paired with an integrated, 7 or 8-core GPU that clocks 2.6 teraflops. It also has a unified memory architecture, so it shares the RAM inside the SoC (system-on-a-chip) directly with the other components of the chip. The CPU has [the fastest single-core performance of any Mac](https://browser.geekbench.com/mac-benchmarks), and the integrated GPU [beats out older discrete GPUs](https://www.techradar.com/news/apples-m1-chip-can-apparently-outperform-some-amd-and-nvidia-graphics-cards) like the Radeon RX 560 and the NVIDIA GTX 1050 Ti. In CPU-bound tasks, M1 will do superbly in comparison to the consumer Macs before it. For the average consumer, the only shortcoming of the M1 might be graphics performance. Knowing that this GPU is *integrated* makes it quite impressive. But to become a capable machine for gaming and Machine Learning, the GPU either needs a bump in cores or Apple needs to make room for a high-performance discrete GPU. For CPU workloads, however, the M1 will be more than enough for most people.
 
