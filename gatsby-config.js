@@ -1,8 +1,8 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
@@ -20,10 +20,11 @@ module.exports = {
     siteLanguage: `en`,
     // Twitter Handle
     author: `@chris_vanderloo`,
+    siteImage: `/dev/null`,
   },
   plugins: [
     {
-      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
+      resolve: `@lekoarts/gatsby-theme-minimal-blog-core`,
       // See the theme's README for all available options
       options: {
         navigation: [
@@ -49,19 +50,15 @@ module.exports = {
             name: `GitHub`,
             url: `https://github.com/chrisvander/`,
           },
-          {
-            name: `LinkedIn`,
-            url: `https://www.linkedin.com/in/chris-vanderloo/`,
-          },
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: process.env.GOOGLE_ANALYTICS_ID,
+    //   },
+    // },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -77,17 +74,19 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
-          families: ['iA Quattro'],
-          urls: ['/variable-fonts.css']
-        }
-      }
+          families: ["iA Quattro"],
+          urls: ["/variable-fonts.css"],
+        },
+      },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-netlify`,
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
@@ -97,4 +96,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};

@@ -1,6 +1,6 @@
-import { merge } from "theme-ui"
-import { transparentize } from "@theme-ui/color"
-import { tailwind } from "@theme-ui/presets"
+import { merge } from "theme-ui";
+import { transparentize } from "@theme-ui/color";
+import { tailwind } from "@theme-ui/presets";
 
 const theme = merge(tailwind, {
   initialColorModeName: `light`,
@@ -199,6 +199,6 @@ const theme = merge(tailwind, {
       color: `text`,
     },
   },
-})
+});
 
-export default theme
+export default theme;

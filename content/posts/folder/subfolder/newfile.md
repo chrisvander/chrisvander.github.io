@@ -1,10 +1,8 @@
 ---
-title: "Hello World"
-date: 2021-05-31
-slug: /hello-world
-description: "Test description"
-tags: [hello, goodbye]
-banner: ./ipados.png
+title: "Trying out Subfolders"
+date: 2021-06-02
+slug: /subfolder-test
+description: "New description"
 ---
 
 Just writing a quick post here so my blog isn't so barren. I'll probably add more content later on.
