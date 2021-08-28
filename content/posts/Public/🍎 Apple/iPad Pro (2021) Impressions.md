@@ -1,4 +1,11 @@
-# iPad Pro (2021) Impressions
+---
+title: "iPad Pro (2021) Impressions"
+date: 2021-04-26
+slug: /ipad-pro-2021-impressions
+description: ""
+tags: []
+banner: ./Images/ipadpro21-hero.jpg
+---
 
 Today at Apple's "Spring Loaded" event, a Mission: Impossible-like clip involved an unknown figure stealing the M1 chip from Apple's sub-basement and putting it into an iPad Pro, only to reveal the shocking twist: it was Tim Cook! I always figured Tim would have the credentials necessary to get inside the normal way. Either way, Apple showed off an iPad Pro with very impressive display tech and an M1 chip packed inside. Let's take a look at what's new.
 
