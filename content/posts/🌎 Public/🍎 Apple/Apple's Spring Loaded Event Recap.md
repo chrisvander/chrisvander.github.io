@@ -2,8 +2,8 @@
 title: "Apple's Spring Loaded Event Recap"
 date: 2021-05-31
 slug: /spring-loaded-event-recap
-description: "Test description"
-tags: [hello, goodbye]
+description: "My thoughts on Apple's announcements."
+tags: [apple, event]
 banner: ./ipados.png
 ---
 
