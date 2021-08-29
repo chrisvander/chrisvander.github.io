@@ -38,14 +38,14 @@ module.exports = {
           },
         ],
         externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/chris_vanderloo`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/chrisvanderloo/`,
-          },
+          // {
+          //   name: `Twitter`,
+          //   url: `https://twitter.com/chris_vanderloo`,
+          // },
+          // {
+          //   name: `Instagram`,
+          //   url: `https://www.instagram.com/chrisvanderloo/`,
+          // },
           {
             name: `GitHub`,
             url: `https://github.com/chrisvander/`,
