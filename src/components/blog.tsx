@@ -29,6 +29,13 @@ type PostsProps = {
   }[];
 };
 
+function compareTags(t1, t2) {
+  if (t1.totalCount == t2.totalCount) {
+    return t1.fieldValue > t2.fieldValue;
+  }
+  return t2.totalCount > t1.totalCount;
+}
+
 const Blog = ({ posts, list }: PostsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
@@ -47,10 +54,7 @@ const Blog = ({ posts, list }: PostsProps) => {
       >
         <div>
           {list
-            .sort(
-              (e1, e2) =>
-                e1.totalCount < e2.totalCount || e1.fieldValue > e2.fieldValue
-            )
+            .sort(compareTags)
             .slice(0, 4)
             .map((listItem, i) => (
               <React.Fragment key={listItem.fieldValue}>
@@ -65,7 +69,7 @@ const Blog = ({ posts, list }: PostsProps) => {
                 </TLink>
               </React.Fragment>
             ))}
-          {list.length > 5 && ", ..."}
+          {list.length > 6 && ", ..."}
         </div>
         <TLink
           as={Link}

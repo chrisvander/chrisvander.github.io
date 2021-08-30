@@ -97,7 +97,7 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          "gatsby-remark-double-brackets-link",
+          "gatsby-remark-obsidian",
         ],
         plugins: [
           {
