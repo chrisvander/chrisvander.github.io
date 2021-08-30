@@ -27,10 +27,12 @@ module.exports = {
       resolve: `@lekoarts/gatsby-theme-minimal-blog-core`,
       // See the theme's README for all available options
       options: {
+        blogPath: "/posts",
+        mdx: false,
         navigation: [
           {
-            title: `Blog`,
-            slug: `/blog`,
+            title: `Posts`,
+            slug: `/posts`,
           },
           {
             title: `Resume`,
@@ -82,6 +84,33 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+          "gatsby-remark-double-brackets-link",
+        ],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-theme-ui`,
@@ -93,6 +122,12 @@ module.exports = {
         analyzerMode: `static`,
         reportFilename: `_bundle.html`,
         openAnalyzer: false,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-markdown-references`,
+      options: {
+        types: ["Mdx"], // or ['RemarkMarkdown'] (or both)
       },
     },
   ].filter(Boolean),

@@ -1,0 +1,11 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "gatsby develop"
+    }
+  },
+  "identifier" : "A1C1A0E8-A33B-455C-BD4C-4B54C61BB13A",
+  "openLogOnRun" : "start",
+  "persistent" : true
+}

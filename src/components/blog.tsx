@@ -1,8 +1,11 @@
 /** @jsx jsx */
+import * as React from "react";
 import { jsx, Heading, Link as TLink, Flex } from "theme-ui";
 import { Link } from "gatsby";
+import kebabCase from "lodash.kebabcase";
 import Layout from "./layout";
 import Listing from "./listing";
+import ItemTags from "./item-tags";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import replaceSlashes from "../utils/replaceSlashes";
 import Seo from "./seo";
@@ -31,9 +34,9 @@ const Blog = ({ posts, list }: PostsProps) => {
 
   return (
     <Layout>
-      <Seo title="Blog" />
+      <Seo title="Posts" />
       <Heading as="h1" variant="styles.h1" sx={{ marginY: 2 }}>
-        Blog
+        Posts
       </Heading>
       <Flex
         sx={{
@@ -42,6 +45,28 @@ const Blog = ({ posts, list }: PostsProps) => {
           flexFlow: `wrap`,
         }}
       >
+        <div>
+          {list
+            .sort(
+              (e1, e2) =>
+                e1.totalCount < e2.totalCount || e1.fieldValue > e2.fieldValue
+            )
+            .slice(0, 4)
+            .map((listItem, i) => (
+              <React.Fragment key={listItem.fieldValue}>
+                {!!i && `, `}
+                <TLink
+                  as={Link}
+                  to={replaceSlashes(
+                    `/${basePath}/${tagsPath}/${kebabCase(listItem.fieldValue)}`
+                  )}
+                >
+                  {listItem.fieldValue} ({listItem.totalCount})
+                </TLink>
+              </React.Fragment>
+            ))}
+          {list.length > 5 && ", ..."}
+        </div>
         <TLink
           as={Link}
           sx={{ variant: `links.secondary`, marginY: 2 }}
