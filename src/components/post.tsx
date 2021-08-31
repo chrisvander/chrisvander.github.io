@@ -6,6 +6,8 @@ import Layout from "./layout";
 import ItemTags from "./item-tags";
 import Seo from "./seo";
 
+require(`katex/dist/katex.min.css`);
+
 type PostProps = {
   data: {
     post: {
