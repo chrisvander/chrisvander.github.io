@@ -7,6 +7,17 @@ tags: []
 banner: 
 ---
 
+Code block:
+```js
+function helloWorld() {
+	console.log("Hello world!");
+}
+```
+Equation:
 $$
 f(x) = y+z'
 $$
+
+Footnote sentence[^1].
+
+[^1]: This is a reference
