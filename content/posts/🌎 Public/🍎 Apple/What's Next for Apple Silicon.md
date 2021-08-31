@@ -3,7 +3,7 @@ title: "What's Next for Apple Silicon"
 date: 2021-01-10
 slug: /whats-next-for-apple-silicon
 description: "What to expect for the next Apple Silicon Macs"
-tags: [apple, apple silicon, mac]
+tags: [apple silicon, mac, apple]
 banner: ./Images/new-m1-chip.jpg
 ---
 Apple Silicon got off to a dramatic start with the M1 chip.  Apple has taken three of their Mac offerings and made them faster than ever by powering them with their own chips. The [early 2020 Intel MacBook Air](https://amzn.to/3nKdEGs) (now $899 on Amazon) was a well-received machine, but [the Verge noted](https://www.theverge.com/2020/3/26/21195008/apple-macbook-air-review-2020-new-keyboard-processor-battery-life-camera-price) it's inability to keep up with intense workloads and subpar battery life. With Apple Silicon, it's got amazing speed (CPU and GPU), long battery life, and such incredible efficiency it doesn't need a fan. I've seen my girlfriend and my brother get the M1-powered MacBook Air and it works astonishingly well for almost anything they need to do. Apple has put M1 inside three Macs so far - [MacBook Air](https://amzn.to/3645lPV), [MacBook Pro 13-inch](https://amzn.to/3ikHekz) , and [Mac mini](https://amzn.to/3svTljs). 
