@@ -94,10 +94,9 @@ const Post = ({ data: { post } }: PostProps) => (
     >
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
-    All tags:{" "}
     {post.tags && (
       <React.Fragment>
-        {` — `}
+        All tags{` — `}
         <ItemTags tags={post.tags} />
       </React.Fragment>
     )}
