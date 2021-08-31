@@ -2,7 +2,7 @@
 title: "The Future of iPadOS"
 date: 2021-04-28
 slug: /the-future-of-ipados
-tags: [apple, ipad, ipad pro, ipados]
+tags: [ipad, ipad pro, ipados, apple]
 banner: ./Images/ipadpro-homescreen.jpg
 ---
 

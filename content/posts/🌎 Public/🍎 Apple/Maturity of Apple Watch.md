@@ -3,7 +3,7 @@ title: "Maturity of Apple Watch"
 date: 2021-01-31
 slug: /maturity-of-apple-watch
 description: ""
-tags: [apple, apple watch]
+tags: [apple watch, apple]
 ---
 
 The "maturity" of a product line is not often talked about, but it's a very good metric to get a birds-eye on where a class of product is and where it needs to go. Apple has been in the business long enough to introduce and remove multiple lines of products. The first generations of those products are often not great, and the later generations stagnate in growth as they reach maturity. It usually takes a reimagining and different class of product to start that growth back up. In this article, I wanted to discuss a bit of the history of the Apple Watch, and what makes it a compelling device, with buyer's recommendations at the end.

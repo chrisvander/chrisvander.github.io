@@ -3,7 +3,7 @@ title: "Apple's Spring Loaded Event Recap"
 date: 2021-05-31
 slug: /spring-loaded-event-recap
 description: "My thoughts on Apple's announcements."
-tags: [apple, event]
+tags: [spring event, event, apple]
 banner: ./ipados.png
 ---
 

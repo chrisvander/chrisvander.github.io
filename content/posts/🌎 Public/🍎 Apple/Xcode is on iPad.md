@@ -2,7 +2,7 @@
 title: "Xcode is on iPad! Kinda."
 date: 2021-06-08
 slug: /xcode-is-on-ipad
-tags: [apple, ios, ipad, ipados, wwdc]
+tags: [wwdc, ipados, ipad, ios, apple]
 banner: ./Images/ipadpro-swift.jpg
 ---
 
