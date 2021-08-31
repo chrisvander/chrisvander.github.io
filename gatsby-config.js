@@ -89,6 +89,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
+          "gatsby-remark-katex",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -108,6 +109,7 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          "remark-html-katex",
         ],
       },
     },

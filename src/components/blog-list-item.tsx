@@ -34,7 +34,7 @@ const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
       }}
     >
       <time>{post.date}</time>
-      {post.tags && showTags && (
+      {post.tags && post.tags.length > 0 && showTags && (
         <React.Fragment>
           {` — `}
           <ItemTags tags={post.tags} />

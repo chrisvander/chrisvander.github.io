@@ -46,6 +46,8 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.3",
+    "remark-html-katex": "^4.0.1",
+    "remark-math": "^5.1.0",
     "theme-ui": "^0.9.1"
   },
   "devDependencies": {

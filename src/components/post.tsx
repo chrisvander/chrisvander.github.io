@@ -6,7 +6,7 @@ import Layout from "./layout";
 import ItemTags from "./item-tags";
 import Seo from "./seo";
 
-require(`katex/dist/katex.min.css`);
+import "katex/dist/katex.min.css";
 
 type PostProps = {
   data: {
@@ -68,7 +68,7 @@ const Post = ({ data: { post } }: PostProps) => (
       }}
     >
       <time>{post.date}</time>
-      {post.tags && (
+      {post.tags && post.tags.length > 0 && (
         <React.Fragment>
           {` — `}
           <ItemTags tags={post.tags.slice(0, 3)} />
@@ -94,7 +94,7 @@ const Post = ({ data: { post } }: PostProps) => (
     >
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
-    {post.tags && (
+    {post.tags && post.tags.length > 0 && (
       <React.Fragment>
         All tags{` — `}
         <ItemTags tags={post.tags} />
