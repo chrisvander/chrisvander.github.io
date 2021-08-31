@@ -22,6 +22,12 @@ type PostsProps = {
       name: string;
       slug: string;
     }[];
+    parent?: {
+      parent?: {
+        name: string;
+        relativeDirectory: string;
+      };
+    };
   }[];
   list: {
     fieldValue: string;

@@ -69,11 +69,15 @@ const Post = ({ data: { post } }: PostProps) => (
       {post.tags && (
         <React.Fragment>
           {` — `}
-          <ItemTags tags={post.tags} />
+          <ItemTags tags={post.tags.slice(0, 3)} />
         </React.Fragment>
       )}
       {post.timeToRead && ` — `}
       {post.timeToRead && <span>{post.timeToRead} min read</span>}
+      {post.parent && ` — `}
+      {post.parent
+        ? post.parent.parent.relativeDirectory.split("/").slice(1)
+        : ""}
     </p>
     {post.banner && <Image src={post.banner.childImageSharp.resize.src} />}
     <section
@@ -88,6 +92,13 @@ const Post = ({ data: { post } }: PostProps) => (
     >
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
+    All tags:{" "}
+    {post.tags && (
+      <React.Fragment>
+        {` — `}
+        <ItemTags tags={post.tags} />
+      </React.Fragment>
+    )}
   </Layout>
 );
 
