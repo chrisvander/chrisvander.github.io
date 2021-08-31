@@ -10,3 +10,7 @@ banner:
 $$
 f(x) = y+z'
 $$
+
+Footnote sentence[^1].
+
+[^1]: This is a reference
