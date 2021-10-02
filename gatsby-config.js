@@ -88,8 +88,8 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        remarkPlugins: [require("remark-math")],
         gatsbyRemarkPlugins: [
-          "gatsby-remark-katex",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -99,6 +99,12 @@ module.exports = {
             },
           },
           "gatsby-remark-obsidian",
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
         ],
         plugins: [
           {
@@ -109,7 +115,6 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          "remark-html-katex",
         ],
       },
     },
