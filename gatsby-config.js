@@ -40,14 +40,10 @@ module.exports = {
           },
         ],
         externalLinks: [
-          // {
-          //   name: `Twitter`,
-          //   url: `https://twitter.com/chris_vanderloo`,
-          // },
-          // {
-          //   name: `Instagram`,
-          //   url: `https://www.instagram.com/chrisvanderloo/`,
-          // },
+          {
+            name: `Google Scholar`,
+            url: `https://scholar.google.com/citations?user=CGImfQsAAAAJ`,
+          },
           {
             name: `GitHub`,
             url: `https://github.com/chrisvander/`,
