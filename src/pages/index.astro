@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Divider from "../components/Divider.astro";
+
+const posts = await Astro.glob("../pages/blog/*.md");
+const postsSorted = posts
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+    );
+  })
+  .slice(0, 6);
+
+const pinnedReq = await fetch(
+  "https://gh-pinned-repos.egoist.dev/?username=chrisvander"
+);
+const pinned = await pinnedReq.json();
+---
+
+<BaseLayout>
+  <div class="py-16">
+    <h1 class="text-4xl">Hi, I'm Chris.</h1>
+    <p class="text-xl">
+      I am a senior software engineer currently building software at Cosine IR.
+      In my spare time, I like to produce
+      <a href="https://open.spotify.com/artist/6Nf6EjiUG7gYxcyHbrsvgs">music</a>
+      and work on personal projects. I occasionally blog, as well. Connect with me
+      on Twitter or LinkedIn, or checkout what I'm up to on my GitHub!
+    </p>
+  </div>
+  <div class="flex flex-row justify-between items-center">
+    <h1>Posts</h1><a href="/blog">All Posts</a>
+  </div>
+  <Divider />
+  <div class="py-4 pb-8 text-xl">
+    {
+      postsSorted.map((post) => (
+        <div>
+          <span class="w-56 text-slate-500 inline-block">
+            {new Date(post.frontmatter.date).toLocaleDateString()}
+          </span>
+          <span class="text-bold">
+            <a href={post.url} class="text-black dark:text-white font-bold">
+              {post.frontmatter.title}
+            </a>
+          </span>
+        </div>
+      ))
+    }
+  </div>
+  <h1>Projects</h1>
+  <Divider />
+  <div class="mt-8 grid grid-flow-row gap-8 grid-cols-2">
+    {
+      pinned.map(({ repo, link, description, language }) => (
+        <div class="p-4 h-full flex flex-col justify-between rounded-md border border-slate-500">
+          <div>
+            <h2>
+              <a href={link}>{repo}</a>
+            </h2>
+            <p>{description}</p>
+          </div>
+          <div>
+            <p class="text-sm">{language}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

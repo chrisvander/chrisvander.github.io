@@ -1,0 +1,23 @@
+---
+const pageSubtitle = "Portfolio";
+const pageTitle = pageSubtitle + " - Christian van der Loo";
+import "@fontsource/ia-writer-quattro/all.css";
+import Header from "../components/Header.astro";
+import "../base.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="max-w-screen-lg mx-auto dark:bg-slate-900 dark:text-white">
+    <Header />
+    <div class="px-12 mx-auto pb-24">
+      <slot />
+    </div>
+  </body>
+</html>

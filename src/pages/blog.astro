@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = await Astro.glob("../pages/blog/*.md");
+const postsSorted = posts.sort((a, b) => {
+  return (
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime()
+  );
+});
+---
+
+<BaseLayout pageSubtitle="All Posts"
+  ><h1 class="py-12">All Posts</h1>
+
+  <div>
+    {
+      postsSorted.map((post) => (
+        <div class="flex flex-row">
+          <span class="w-56 text-lg text-slate-500 inline-block">
+            {new Date(post.frontmatter.date).toLocaleDateString()}
+          </span>
+          <div class="w-full">
+            <span class="text-bold text-lg">
+              <a href={post.url} class="text-black dark:text-white font-bold">
+                {post.frontmatter.title}
+              </a>
+            </span>
+            <br />
+            <div class="text-md mt-2 mb-6 line-clamp-2">
+              {post.frontmatter.description || post.rawContent()}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

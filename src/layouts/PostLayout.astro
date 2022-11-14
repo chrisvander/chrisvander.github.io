@@ -1,0 +1,32 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Icon } from "astro-icon";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  author: string;
+  date: string;
+}>;
+
+const { frontmatter, url } = Astro.props;
+const { title, author, date } = frontmatter;
+---
+
+<BaseLayout pageSubtitle={title}>
+  <a
+    href="/blog"
+    class="text-slate-500 hover:text-slate-500 flex space-x-2 pt-4 items-center flex-row hover:underline"
+  >
+    <Icon name="akar-icons:arrow-left" class="h-5" /><span>All Posts</span>
+  </a>
+  <h1 class="pt-16">{title}</h1>
+  <p class="text-slate-500">
+    By {author || "Christian van der Loo"} on {
+      new Date(date).toLocaleDateString()
+    }
+  </p>
+  <br />
+  <slot />
+</BaseLayout>
