@@ -17,20 +17,20 @@ const postsSorted = posts.sort((a, b) => {
     {
       postsSorted.map((post) => (
         <div class="flex flex-row">
-          <span class="w-56 text-lg text-slate-500 inline-block">
+          <span class="flex-none w-36 text-lg text-slate-500 inline-block">
             {new Date(post.frontmatter.date).toLocaleDateString()}
           </span>
-          <div class="w-full">
+          <span>
             <span class="text-bold text-lg">
               <a href={post.url} class="text-black dark:text-white font-bold">
                 {post.frontmatter.title}
               </a>
             </span>
             <br />
-            <div class="text-md mt-2 mb-6 line-clamp-2">
-              {post.frontmatter.description || post.rawContent()}
+            <div class="text-md mt-2 mb-6 line-clamp-2 w-full">
+              {post.frontmatter.description || post.rawContent().slice(0, 360)}
             </div>
-          </div>
+          </span>
         </div>
       ))
     }

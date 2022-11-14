@@ -4,7 +4,7 @@ title: "The Future of iPadOS"
 date: 2021-04-28
 slug: /the-future-of-ipados
 tags: [ipad, ipad pro, ipados, apple]
-banner: ./Images/ipadpro-homescreen.jpg
+banner: /images/ipadpro-homescreen.jpg
 ---
 
 The new iPad Pro was introduced at Apple's "Spring Loaded" event, and it packs more power than ever before. While it maintained generally the same thin chassis as previous models, Apple was able to add new features like the Liquid Retina XDR display sporting some ridiculous specs like 1000nits of brightness or 5G connectivity. But interestingly, Apple added their powerful M1 chip to the iPad Pro. That's the same chip that is inside the new MacBook Air, MacBook Pro, iMac, and Mac mini. That leaves many consumers with a simple question: what's the purpose of all that power?

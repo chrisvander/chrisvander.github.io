@@ -1,6 +1,11 @@
 ---
-const pageSubtitle = "Portfolio";
-const pageTitle = pageSubtitle + " - Christian van der Loo";
+const { pageSubtitle, pageTrailingTitle, containerClass } = {
+  pageSubtitle: "Portfolio",
+  pageTrailingTitle: " - Christian van der Loo",
+  containerClass: "max-w-screen-lg px-12 mx-auto pb-24",
+  ...Astro.props,
+};
+
 import "@fontsource/ia-writer-quattro/all.css";
 import Header from "../components/Header.astro";
 import "../base.css";
@@ -12,11 +17,13 @@ import "../base.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{pageSubtitle + pageTrailingTitle}</title>
   </head>
-  <body class="max-w-screen-lg mx-auto dark:bg-slate-900 dark:text-white">
-    <Header />
-    <div class="px-12 mx-auto pb-24">
+  <body class="dark:bg-slate-900 dark:text-white">
+    <div class="max-w-screen-lg mx-auto">
+      <Header />
+    </div>
+    <div class={containerClass}>
       <slot />
     </div>
   </body>

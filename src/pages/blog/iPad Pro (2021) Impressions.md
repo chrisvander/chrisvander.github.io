@@ -5,7 +5,7 @@ date: 2021-04-26
 slug: /ipad-pro-2021-impressions
 description: "My impressions of the new M1-powered iPad."
 tags: [ipad pro, ipad, apple]
-banner: ./Images/ipadpro21-hero.jpg
+banner: /images/ipadpro21-hero.jpg
 ---
 
 Today at Apple's "Spring Loaded" event, a Mission: Impossible-like clip involved an unknown figure stealing the M1 chip from Apple's sub-basement and putting it into an iPad Pro, only to reveal the shocking twist: it was Tim Cook! I always figured Tim would have the credentials necessary to get inside the normal way. Either way, Apple showed off an iPad Pro with very impressive display tech and an M1 chip packed inside. Let's take a look at what's new.
@@ -48,4 +48,3 @@ The hardware is amazing in every capacity, to be sure. But there's one thing hol
 ## Conclusion
 
 The display technology is amazing, the connectivity is incredible, the form factor is breathtaking, and in every way, the iPad Pro is the best tablet money can buy. For most people, this new iPad Pro will likely be overkill. But this is truly a "Pro" iPad. The most pro that iPad has ever been, in fact. This is a mobile device that has Apple's most powerful Mac chip inside, which prices it and specs it out as a computer replacement. Let's hope that more software comes to really make it worth the asking price.
-

@@ -5,7 +5,8 @@ date: 2021-04-20
 slug: /imac-24-2021-impressions
 description: "The latest in the Apple Silicon consumer lineup."
 tags: [apple silicon, mac, apple]
-banner:
+banner: /images/trimmed-banner.jpg
+borderless: true
 ---
 
 Apple released the first Apple Silicon iMac today at their "Spring Loaded" event. This is the first Mac they have shipped that was designed with Apple Silicon's incredible thermal profile in mind, and it shows. The iMac they introduced today was the smaller, 24-inch configuration which replaces the 21.5-inch iMac. It is the newest Apple Silicon Mac, and offers the same M1 chip Apple introduced in the MacBook Air, MacBook Pro, and Mac mini in November. I expect Apple will ship larger versions of the redesigned iMac later in the year with an upgraded processor. Here are the announced configurations:
@@ -51,4 +52,3 @@ All accessories are color-matched to the iMac you pick. The accessories aren't s
 I will be waiting to see what Apple has for CPUs beyond M1 before I consider buying another Mac. I strongly believe the iMac is a great choice for anyone who needs a desktop computer. It's the perfect desktop for most, because it handles the majority of casual and professional workloads with ease. Unless you have a particular need for high-end hardware, the iMac will be able to handle anything you throw at it. This iMac has an incredible form factor, and the Touch ID in the keyboard is probably my favorite added touch.
 
 The 24" iMac launches on April 30th.
-

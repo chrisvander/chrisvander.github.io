@@ -5,7 +5,6 @@ date: 2021-05-31
 slug: /spring-loaded-event-recap
 description: "My thoughts on Apple's announcements."
 tags: [spring event, event, apple]
-banner: ./ipados.png
 ---
 
 Apple was not kidding when they made the name of the event Spring Loaded. This was loaded with new product releases and updates, and hopefully everyone is satisfied. I'm going to briefly cover everything Apple announced today and give a few short thoughts, and I'll breakdown the products in future posts.
@@ -59,4 +58,3 @@ I'll write separate posts regarding the new 24" iMac and the iPad Pro. Both of t
 ## Conclusion
 
 This event was packed with products and updates, and there's something for everyone here. I will likely be picking up the new Siri Remote and AirTags, and will offer my thoughts on these when I have them in-hand.
-

@@ -4,7 +4,7 @@ title: "Xcode is on iPad! Kinda."
 date: 2021-06-08
 slug: /xcode-is-on-ipad
 tags: [wwdc, ipados, ipad, ios, apple]
-banner: ./Images/ipadpro-swift.jpg
+banner: /images/ipadpro-swift.jpg
 ---
 
 Apple's WWDC kicked off yesterday with an epic keynote outlining all of their upcoming software updates and APIs for developers, with all of these major releases coming in the fall. One thing that I [[The Future of iPadOS|have been hoping for]] on the iPad is inclusion of pro-level software, including creative software like Logic Pro or development tools like Xcode itself. Today, Apple didn't deliver a pro software suite to iPad. But they did introduce updates to Swift Playgrounds, Apple's app for teaching people how to code using Swift on an iPad in a fun, interactive way. The new update now allows full apps to be built on the iPad and even submitted to the App Store, without a Mac as an intermediary. While it may be disappointing to not have full developer suites yet, the fact that this was introduced implies a few things about what Apple is working on.
