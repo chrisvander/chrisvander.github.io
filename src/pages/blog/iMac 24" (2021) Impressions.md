@@ -5,8 +5,6 @@ date: 2021-04-20
 slug: /imac-24-2021-impressions
 description: "The latest in the Apple Silicon consumer lineup."
 tags: [apple silicon, mac, apple]
-banner: /images/trimmed-banner.jpg
-borderless: true
 ---
 
 Apple released the first Apple Silicon iMac today at their "Spring Loaded" event. This is the first Mac they have shipped that was designed with Apple Silicon's incredible thermal profile in mind, and it shows. The iMac they introduced today was the smaller, 24-inch configuration which replaces the 21.5-inch iMac. It is the newest Apple Silicon Mac, and offers the same M1 chip Apple introduced in the MacBook Air, MacBook Pro, and Mac mini in November. I expect Apple will ship larger versions of the redesigned iMac later in the year with an upgraded processor. Here are the announced configurations:
