@@ -17,7 +17,7 @@ const postsSorted = posts.sort((a, b) => {
     {
       postsSorted.map((post) => (
         <div class="flex flex-row">
-          <span class="flex-none w-36 text-lg text-slate-500 inline-block">
+          <span class="flex-none hidden w-36 text-slate-500 md:inline-block">
             {new Date(post.frontmatter.date).toLocaleDateString()}
           </span>
           <span>
@@ -26,7 +26,9 @@ const postsSorted = posts.sort((a, b) => {
                 {post.frontmatter.title}
               </a>
             </span>
-            <br />
+            <span class="text-slate-500 block md:hidden">
+              {new Date(post.frontmatter.date).toLocaleDateString()}
+            </span>
             <div class="text-md mt-2 mb-6 line-clamp-2 w-full">
               {post.frontmatter.description || post.rawContent().slice(0, 360)}
             </div>
