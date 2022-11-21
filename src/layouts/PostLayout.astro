@@ -24,16 +24,16 @@ const dateFmt = dateObj.format("MMMM Do, Y");
   <div class="max-w-screen-lg mx-auto px-4 sm:px-12">
     <a
       href="/blog"
-      class="text-slate-500 hover:text-slate-500 flex space-x-2 pt-4 items-center flex-row hover:underline"
+      class="text-slate-500 hover:text-slate-500 flex space-x-2 md:pt-4 items-center flex-row hover:underline"
     >
       <Icon name="akar-icons:arrow-left" class="h-5" /><span>All Posts</span>
     </a>
-    <p class="pt-16 text-sm text-slate-500 opacity-80">
+    <p class="pb-2 pt-6 md:pt-16 text-sm text-slate-500 opacity-80">
       {dateFmt}
     </p>
-    <h1 class="p-0">{title}</h1>
-    {description && <h2 class="font-normal">{description}</h2>}
-    <p class="text-slate-500 pb-8">
+    <h1 class="font-bold text-4xl">{title}</h1>
+    {description && <h2 class="text-2xl font-normal py-2">{description}</h2>}
+    <p class="text-slate-500 pb-8 pt-4">
       By {author || "Christian van der Loo"}
     </p>
   </div>
@@ -53,7 +53,7 @@ const dateFmt = dateObj.format("MMMM Do, Y");
     )
   }
   <br />
-  <div class="max-w-screen-lg px-4 sm:px-12 mx-auto">
+  <div class="max-w-screen-lg px-4 sm:px-12 mx-auto prose lg:prose-lg">
     <slot />
   </div>
 </BaseLayout>

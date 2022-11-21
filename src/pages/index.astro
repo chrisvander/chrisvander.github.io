@@ -19,7 +19,9 @@ const pinned = await pinnedReq.json();
 
 <BaseLayout>
   <div class="py-4 sm:py-8 md:py-16">
-    <h1 class="">Hi, I'm Chris.</h1>
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold py-2 sm:py-4">
+      Hi, I'm Chris.
+    </h1>
     <p class="text-md sm:text-lg md:text-xl">
       I am a senior software engineer currently building software at Cosine IR.
       In my spare time, I like to produce
@@ -28,10 +30,10 @@ const pinned = await pinnedReq.json();
       on Twitter or LinkedIn, or checkout what I'm up to on my GitHub!
     </p>
   </div>
-  <div class="flex flex-row justify-between items-center">
+  <div class="flex flex-row justify-between items-center default-headers">
     <h1>Posts</h1><a href="/blog">All Posts</a>
   </div>
-  <hr />
+  <hr class="bg-slate-500 dark:bg-slate-700 mt-4 mb-4" />
   <div class="py-4 pb-8 text-base sm:text-lg md:text-xl">
     {
       postsSorted.map((post) => (
@@ -48,9 +50,13 @@ const pinned = await pinnedReq.json();
       ))
     }
   </div>
-  <h1>Projects</h1>
-  <hr />
-  <div class="mt-8 grid grid-flow-row gap-8 grid-cols-1 md:grid-cols-2">
+  <span class="default-headers">
+    <h1>Projects</h1>
+  </span>
+  <hr class="bg-slate-500 dark:bg-slate-700" />
+  <div
+    class="mt-8 grid grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 default-headers"
+  >
     {
       pinned.map(({ repo, link, description, language }) => (
         <div class="p-4 h-full flex flex-col justify-between rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .default-headers {
+    h1 {
+      @apply text-3xl md:text-4xl font-bold py-2 sm:py-4;
+    }
+    h2 {
+      @apply text-lg sm:text-xl md:text-2xl font-bold py-2;
+    }
+  }
+  a {
+    @apply hover:underline text-orange-500 hover:text-orange-700 hover:dark:text-orange-300;
+  }
+  //pre {
+  //@apply bg-slate-100 p-4 my-2 rounded-md;
+  //}
+}
