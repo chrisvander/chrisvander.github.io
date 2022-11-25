@@ -1,8 +1,9 @@
 ---
-const { pageSubtitle, pageTrailingTitle, containerClass } = {
+const { pageSubtitle, pageTrailingTitle, containerClass, header } = {
   pageSubtitle: "Portfolio",
   pageTrailingTitle: " - Christian van der Loo",
   containerClass: "max-w-screen-lg px-4 sm:px-12 mx-auto pb-24",
+  header: true,
   ...Astro.props,
 };
 
@@ -20,11 +21,18 @@ import "../base.scss";
     <title>{pageSubtitle + pageTrailingTitle}</title>
   </head>
   <body class="dark:bg-slate-900 dark:text-white">
-    <div class="max-w-screen-lg mx-auto">
-      <Header />
-    </div>
+    {
+      header && (
+        <div class="max-w-screen-lg mx-auto">
+          <Header />
+        </div>
+      )
+    }
     <div class={containerClass}>
       <slot />
+    </div>
+    <div class="h-24 flex items-center justify-center">
+      <span class="italic text-gray-500"></span>
     </div>
   </body>
 </html>

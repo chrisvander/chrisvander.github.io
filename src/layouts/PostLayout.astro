@@ -20,8 +20,8 @@ const dateObj = moment(new Date(date));
 const dateFmt = dateObj.format("MMMM Do, Y");
 ---
 
-<BaseLayout containerClass={""} pageSubtitle={title}>
-  <div class="max-w-screen-lg mx-auto px-4 sm:px-12">
+<BaseLayout containerClass={""} pageSubtitle={title} header={false}>
+  <div class="max-w-screen-lg mx-auto px-4 sm:px-12 pt-8">
     <a
       href="/blog"
       class="text-slate-500 hover:text-slate-500 flex space-x-2 md:pt-4 items-center flex-row hover:underline"
@@ -34,7 +34,7 @@ const dateFmt = dateObj.format("MMMM Do, Y");
     <h1 class="font-bold text-4xl">{title}</h1>
     {description && <h2 class="text-2xl font-normal py-2">{description}</h2>}
     <p class="text-slate-500 pb-8 pt-4">
-      By {author || "Christian van der Loo"}
+      By <a href="/">{author || "Christian van der Loo"}</a>
     </p>
   </div>
   {
