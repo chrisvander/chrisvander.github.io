@@ -2,12 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = await Astro.glob("../pages/blog/*.md");
-const postsSorted = posts.sort((a, b) => {
-  return (
-    new Date(b.frontmatter.date).getTime() -
-    new Date(a.frontmatter.date).getTime()
-  );
-});
+const postsSorted = posts
+  .filter((post) => !post.frontmatter.draft)
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+    );
+  });
 ---
 
 <BaseLayout pageSubtitle="All Posts"
