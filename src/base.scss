@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,10 +7,10 @@
 @layer base {
   .default-headers {
     h1 {
-      @apply text-3xl md:text-4xl font-bold py-2 sm:py-4;
+      @apply text-3xl md:text-4xl font-bold py-2 sm:py-4 font-ia;
     }
     h2 {
-      @apply text-lg sm:text-xl md:text-2xl font-bold py-2;
+      @apply text-lg sm:text-xl md:text-2xl font-bold py-2 font-ia;
     }
   }
   a {

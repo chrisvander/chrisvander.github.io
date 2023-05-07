@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["iA Writer Quattro", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        ia: ["iA Writer Quattro", ...defaultTheme.fontFamily.sans],
       },
     },
   },
