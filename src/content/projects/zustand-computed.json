@@ -1,0 +1,6 @@
+{
+  "title": "zustand-computed",
+  "description": "A library for creating computed values in Zustand stores.",
+  "repo": "https://github.com/chrisvander/zustand-computed",
+  "language": "TypeScript"
+}

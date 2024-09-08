@@ -1,37 +1,38 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob("../pages/blog/*.md");
+const posts = await getCollection("blog");
 const postsSorted = posts
-  .filter((post) => !post.frontmatter.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => {
-    return (
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
-    );
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
 ---
 
 <BaseLayout pageSubtitle="All Posts">
-  <h1 class="text-3xl font-bold font-ia py-8 md:py-12">All Posts</h1>
+  <h1 class="text-3xl font-bold py-8 md:py-12">All Posts</h1>
   <div>
     {
       postsSorted.map((post) => (
         <div class="flex flex-row">
           <span class="flex-none hidden w-36 text-slate-500 md:inline-block">
-            {new Date(post.frontmatter.date).toLocaleDateString()}
+            {new Date(post.data.date).toLocaleDateString()}
           </span>
           <span>
             <span class="text-bold text-lg">
-              <a href={post.url} class="text-black dark:text-white font-bold">
-                {post.frontmatter.title}
+              <a
+                href={`/posts${post.slug}`}
+                class="text-black dark:text-white font-bold"
+              >
+                {post.data.title}
               </a>
             </span>
             <span class="text-slate-500 block md:hidden">
-              {new Date(post.frontmatter.date).toLocaleDateString()}
+              {new Date(post.data.date).toLocaleDateString()}
             </span>
             <div class="text-md mt-2 mb-6 line-clamp-2 w-full">
-              {post.frontmatter.description || post.rawContent().slice(0, 360)}
+              {post.data.description || post.body.slice(0, 360)}
             </div>
           </span>
         </div>

@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply hover:underline text-orange-500 hover:text-orange-700 active:text-orange-800 active:dark:text-orange-200 hover:dark:text-orange-300 transition-colors;
+  }
+  .prose {
+    a {
+      @apply hover:underline text-orange-500 hover:text-orange-700 active:text-orange-800 active:dark:text-orange-200 hover:dark:text-orange-300 transition-colors;
+    }
+  }
+}

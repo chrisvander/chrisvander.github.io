@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post }: { post: CollectionEntry<"blog"> } = Astro.props;
+const { title, description, date, banner } = post.data;
+const { Content } = await post.render();
+const dateObj = dayjs(new Date(date));
+const dateFmt = dateObj.format("DD MMM YYYY");
+---
+
+<BaseLayout pageSubtitle={title}>
+  <div class="py-8">
+    <h1 class="font-semibold text-xl">{title}</h1>
+    {
+      description && (
+        <h2 class="text-lg text-slate-700 dark:text-slate-300 font-medium">
+          {description}
+        </h2>
+      )
+    }
+    <p class="text-sm text-slate-500 pt-4">
+      {dateFmt}
+    </p>
+  </div>
+  {banner && <img src={banner} class="max-h-full rounded-lg shadow-md" />}
+  <br />
+  <div class="prose dark:prose-invert lg:prose-md">
+    <Content />
+  </div>
+</BaseLayout>

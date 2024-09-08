@@ -1,0 +1,6 @@
+{
+  "title": "AI 2048",
+  "description": "A terminal-based UI for the 2048 game with a few agents.",
+  "repo": "https://github.com/chrisvander/ai-2048",
+  "language": "Rust"
+}

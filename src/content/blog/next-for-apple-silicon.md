@@ -1,8 +1,7 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: "What's Next for Apple Silicon"
 date: 2021-01-10
-slug: /whats-next-for-apple-silicon
+slug: whats-next-for-apple-silicon
 description: "What to expect for the next Apple Silicon Macs."
 tags: [apple silicon, mac, apple]
 banner: /images/new-m1-chip.jpg

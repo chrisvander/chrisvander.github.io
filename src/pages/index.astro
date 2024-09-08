@@ -1,73 +1,82 @@
 ---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "astro-icon";
+import dayjs from "dayjs";
 
-const posts = await Astro.glob("../pages/blog/*.md");
+const posts: CollectionEntry<"blog">[] = [] // await getCollection("blog");
 const postsSorted = posts
-  .filter((post) => !post.frontmatter.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => {
-    return (
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
-    );
-  })
-  .slice(0, 6);
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
 
-const pinnedReq = await fetch(
-  "https://gh-pinned-repos.egoist.dev/?username=chrisvander"
-);
-const pinned = await pinnedReq.json();
+const projects = await getCollection("projects");
 ---
 
 <BaseLayout>
-  <div class="py-4 sm:py-8 md:py-16">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold py-2 sm:py-4 font-ia">
-      Hi, I'm Chris.
-    </h1>
-    <p class="text-md sm:text-lg md:text-xl">
-      I am a senior software engineer currently building software at Cosine IR.
-      In my spare time, I like to produce
+  <div class="py-4 sm:py-8 mb-8">
+    <h1 class="text-xl font-semibold py-2">Hi, I'm Chris.</h1>
+    <p class="text-md">
+      I am the CTO of <a href="https://bluefin.one">Bluefin Clinical</a>, a
+      startup building a platform for clinical trial supply management. In my
+      spare time, I like to produce
       <a href="https://open.spotify.com/artist/6Nf6EjiUG7gYxcyHbrsvgs">music</a>
-      and work on personal projects. I occasionally blog, as well. Connect with me
-      on <a rel="me" href="https://mastodon.social/@chrisvander">Mastodon</a>,
-      or checkout what I'm up to on my
-      <a href="https://github.com/chrisvander">GitHub</a>!
+      and work on <a href="https://github.com/chrisvander"
+        >personal and open-source projects</a
+      >. You can find me on <a
+        href="https://www.linkedin.com/in/chris-vanderloo/">LinkedIn</a
+      >, <a href="https://instagram.com/chrisvanderloo">Instagram</a>,
+      <a rel="me" href="https://mastodon.social/@chrisvander">Mastodon</a>, and <a
+        href="https://github.com/chrisvander">GitHub</a
+      >.
     </p>
   </div>
-  <div class="flex flex-row justify-between items-end default-headers">
-    <h1>Posts</h1><a href="/blog" class="pb-4">All Posts</a>
-  </div>
-  <hr class="bg-slate-500 dark:bg-slate-700 mb-4" />
-  <div class="py-4 pb-8 text-base sm:text-lg md:text-xl">
+  {
+    postsSorted.length > 0 && (
+      <h1 class="text-xl font-semibold mb-2">Posts</h1>
+      <hr class="border-slate-300 dark:border-slate-500" />
+      <div class="py-4 pb-8 text-base">
+        {postsSorted.map((post) => (
+          <div class="flex">
+            <span class="flex-none w-28 sm:w-40 md:w-56 text-slate-600 dark:text-slate-400 inline-block">
+              {dayjs(post.data.date).format("DD MMM YYYY")}
+            </span>
+            <span class="text-bold">
+              <a
+                href={`posts/${post.slug}`}
+                class="text-black dark:text-white font-semibold"
+              >
+                {post.data.title}
+              </a>
+            </span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  <h1 class="text-xl font-semibold mb-2">Projects</h1>
+  <hr class="border-slate-300 dark:border-slate-500" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-4 pb-8">
     {
-      postsSorted.map((post) => (
-        <div class="flex">
-          <span class="flex-none w-28 sm:w-40 md:w-56 text-slate-500 inline-block">
-            {new Date(post.frontmatter.date).toLocaleDateString()}
-          </span>
-          <span class="text-bold">
-            <a href={post.url} class="text-black dark:text-white font-bold">
-              {post.frontmatter.title}
-            </a>
-          </span>
-        </div>
-      ))
-    }
-  </div>
-  <span class="default-headers">
-    <h1>Projects</h1>
-  </span>
-  <hr class="bg-slate-500 dark:bg-slate-700" />
-  <div
-    class="mt-8 grid grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 default-headers"
-  >
-    {
-      pinned.map(({ repo, link, description, language }) => (
-        <div class="flex flex-col p-4 h-full space-y-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
-          <h2>
-            <a href={link}>{repo}</a>
-          </h2>
+      projects.map(({ data: { title, link, repo, description, language } }) => (
+        <div class="flex flex-col md:p-3 h-full space-y-2 rounded-md md:border md:border-slate-200 dark:border-slate-600">
+          <div class="flex flex-row items-center justify-between">
+            <h2 class="font-semibold text-lg">
+              <a href={repo}>{title}</a>
+            </h2>
+            {link && (
+              <a href={link}>
+                Link{" "}
+                <Icon name="akar-icons:link-out" class="inline-block h-4" />
+              </a>
+            )}
+          </div>
           <p class="flex-1">{description}</p>
-          <p class="text-sm pt-2">{language}</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 pt-1">
+            {language}
+          </p>
         </div>
       ))
     }

@@ -1,15 +1,13 @@
 ---
-const { pageSubtitle, pageTrailingTitle, containerClass, header } = {
+const { pageSubtitle, pageTrailingTitle, containerClass } = {
   pageSubtitle: "Portfolio",
   pageTrailingTitle: " - Christian van der Loo",
-  containerClass: "max-w-screen-lg px-4 sm:px-12 mx-auto pb-24",
-  header: true,
+  containerClass: "max-w-screen-md px-4 sm:px-12 mx-auto pb-24",
   ...Astro.props,
 };
 
-import "@fontsource/ia-writer-quattro/all.css";
 import Header from "../components/Header.astro";
-import "../base.scss";
+import "../base.css";
 ---
 
 <html lang="en">
@@ -19,10 +17,10 @@ import "../base.scss";
     <!-- Google tag (gtag.js) -->
     <script
       async
+      is:inline
       src="https://www.googletagmanager.com/gtag/js?id=G-XBQ2CE5VRZ"
-      type="text/partytown"
-    ></script>
-    <script type="text/partytown">
+      type="text/partytown"></script>
+    <script is:inline type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -35,13 +33,9 @@ import "../base.scss";
     <title>{pageSubtitle + pageTrailingTitle}</title>
   </head>
   <body class="dark:bg-slate-900 dark:text-white">
-    {
-      header && (
-        <div class="max-w-screen-lg mx-auto">
-          <Header />
-        </div>
-      )
-    }
+    <div class="max-w-screen-md mx-auto">
+      <Header />
+    </div>
     <div class={containerClass}>
       <slot />
     </div>
