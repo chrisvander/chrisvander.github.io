@@ -1,16 +1,20 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    sitemap(),
-    partytown(),
-  ],
+  site: "https://chrisvanderloo.com/",
+	integrations: [
+		icon(),
+		tailwind(),
+		sitemap(),
+		partytown(),
+	],
+	markdown: {
+    shikiConfig: {
+      theme: 'catppuccin-mocha',
+    },
+  },
 });

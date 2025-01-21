@@ -1,22 +1,22 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
-import dayjs from "dayjs";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content"
+import type { CollectionEntry } from "astro:content"
+import dayjs from "dayjs"
+import BaseLayout from "../../layouts/BaseLayout.astro"
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog")
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
-  }));
+  }))
 }
 
-const { post }: { post: CollectionEntry<"blog"> } = Astro.props;
-const { title, description, date, banner } = post.data;
-const { Content } = await post.render();
-const dateObj = dayjs(new Date(date));
-const dateFmt = dateObj.format("DD MMM YYYY");
+const { post }: { post: CollectionEntry<"blog"> } = Astro.props
+const { title, description, date, banner } = post.data
+const { Content } = await post.render()
+const dateObj = dayjs(new Date(date))
+const dateFmt = dateObj.format("DD MMM YYYY")
 ---
 
 <BaseLayout pageSubtitle={title}>

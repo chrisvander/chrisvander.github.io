@@ -1,13 +1,15 @@
 ---
-const { pageSubtitle, pageTrailingTitle, containerClass } = {
+const { pageSubtitle, pageTrailingTitle, containerClass, description } = {
   pageSubtitle: "Portfolio",
   pageTrailingTitle: " - Christian van der Loo",
   containerClass: "max-w-screen-md px-4 sm:px-12 mx-auto pb-24",
+  description: "My website and blog.",
   ...Astro.props,
-};
+}
+const title: string = Astro.props.title ?? pageSubtitle + pageTrailingTitle
 
-import Header from "../components/Header.astro";
-import "../base.css";
+import Header from "../components/Header.astro"
+import "../base.css"
 ---
 
 <html lang="en">
@@ -30,7 +32,13 @@ import "../base.css";
     </script>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageSubtitle + pageTrailingTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="og:description" property="og:description" content={description} />
+    <meta name="og:title" property="og:title" content={title} />
+    <slot name="head" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
+    <title>{title}</title>
   </head>
   <body class="dark:bg-slate-900 dark:text-white">
     <div class="max-w-screen-md mx-auto">
