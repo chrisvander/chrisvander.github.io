@@ -1,4 +1,3 @@
-import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
@@ -10,7 +9,6 @@ export default defineConfig({
 		icon(),
 		tailwind(),
 		sitemap(),
-		partytown(),
 	],
 	markdown: {
     shikiConfig: {
