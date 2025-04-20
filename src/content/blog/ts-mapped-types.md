@@ -1,12 +1,10 @@
 ---
-title: “Using TypeScript Mapped Types”
+title: Maintaining Context in TypeScript with Mapped Types
 date: 2025-04-20
 slug: using-typescript-mapped-types
-description: “How to use complex mapped types with inferred generics.”
+description: How to use complex mapped types with inferred generics.
 tags: [typescript]
 ---
-
-# Maintaining Context in TypeScript with Mapped Types
 
 TypeScript is an extremely powerful type system. It’s capable of representing a wide variety of types, sometimes divorced from the actual underlying representation in code, and is capable of deeply inferring values. In a library like [tRPC](https://trpc.io), the input and output types of every function in the RPC context are tracked in a single type. The resulting type is massive, and uses mappings to represent intermediate router types all the way through.
 
