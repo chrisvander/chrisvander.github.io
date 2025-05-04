@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
@@ -7,9 +7,11 @@ export default defineConfig({
   site: "https://chrisvanderloo.com/",
 	integrations: [
 		icon(),
-		tailwind(),
 		sitemap(),
 	],
+	vite: {
+	  plugins: [tailwindcss()]
+	},
 	markdown: {
     shikiConfig: {
       theme: 'catppuccin-mocha',
