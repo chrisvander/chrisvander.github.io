@@ -1,8 +1,8 @@
 ---
-title: Maintaining Context in TypeScript with Mapped Types
+title: TypeScript Wizardry with Mapped Types
 date: 2025-04-20
-slug: using-typescript-mapped-types
-description: How to use complex mapped types with inferred generics.
+slug: typescript-wizardry-mapped-types
+description: A brief dive into TypeScript's ability to represent complex types using mapped types, generics, and type inference.
 tags: [typescript]
 ---
 
@@ -65,7 +65,7 @@ In the case of our box example, that `clone` declaration seems like it will be t
 function createBox(contents: string): Box {
   const innerBox = {
     contents,
-    clone: () => ({ ...box })
+    clone: () => ({ ...innerBox })
   }
   return innerBox
 }
@@ -79,7 +79,7 @@ Okay, let’s reintroduce generics. The function itself will need to have a gene
 function createBox<T>(contents: T): Box<T> {
   const innerBox = {
     contents,
-    clone: () => ({ ...box })
+    clone: () => ({ ...innerBox })
   }
   return innerBox
 }
@@ -150,7 +150,8 @@ TypeScript has correctly inferred the input arguments to match our `MyFuncs` typ
 Let’s now map the return types to Promises. We can use the built-in `Parameters<T>` and `ReturnType<T>` utility types to extract the parameters and return type of each function. Then, we just need to reconstruct the function, with a `Promise<T>` around the return type. To do this on one function, it might look like this:
 
 ```ts
-type ToAsync<Fn extends (...args: any[]) => any> = (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+type ToAsync<Fn extends (...args: any[]) => any> =
+  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
 
 type Result = ToAsync<(arg: string) => string>
 //   ^ type Result = (arg: string) => Promise<string>
@@ -160,11 +161,12 @@ Okay, now let’s apply `ToAsync` in a mapped type.
 
 ```ts
 type MyFuncs = {
-	a: (arg: string) => number;
-	b: (arg: Box<string>) => Box<number>;
+  a: (arg: string) => number
+  b: (arg: Box<string>) => Box<number>
 }
 
-type ToAsync<Fn extends (...args: any[]) => any> = (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+type ToAsync<Fn extends (...args: any[]) => any> =
+  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
 
 type MyFuncsAsync = {
   [K in keyof MyFuncs]: ToAsync<MyFuncs[K]>
@@ -179,8 +181,12 @@ type MyFuncsAsync = {
 The statement `[K in keyof MyFuncs]` gives us a new type `K` that we can use to map into `MyFuncs`. The statement lets us use each field in `MyFuncs` as though it were a new generic argument, and TypeScript will take those results and reconstruct a new mapped type. Here’s the above, resulting in `MyFuncsAsync` again, but this time using a generic utility type:
 
 ```ts
-type ToAsync<Fn extends (...args: any[]) => any> = (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
-type MappedToAsync<T extends FuncArgs> = { [K in keyof T]: ToAsync<T[K]> }
+type ToAsync<Fn extends (...args: any[]) => any> =
+  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+
+type MappedToAsync<T extends FuncArgs> = {
+  [K in keyof T]: ToAsync<T[K]>
+}
 
 type MyFuncsAsync = MappedToAsync<MyFuncs>
 ```
@@ -188,7 +194,9 @@ type MyFuncsAsync = MappedToAsync<MyFuncs>
 With this new utility type, we can finish out the signature of the `makeArgsAsync` function:
 
 ```ts
-function makeArgsAsync<T extends FuncArgs>(args: T): MappedToAsync<T> {
+function makeArgsAsync<T extends FuncArgs>(
+  args: T
+): MappedToAsync<T> {
   // todo
 }
 
@@ -208,7 +216,9 @@ Success! We’ve now created a mapped type that maps an object of synchronous fu
 The part that many resources leave out is actually doing the implementation while maintaining type-safety. One recommendation I have: process each argument in a separate function, with its own generics and return. This way, you can mentally keep the focus on the constraints of the specific problem. I wouldn’t recommend putting all the implementation inside of a for loop or mapping inside the main function. Here’s an implementation of just making one function asynchronous:
 
 ```ts
-function makeArgAsync<Fn extends (...args: any[]) => any>(fn: Fn): ToAsync<Fn> {
+function makeArgAsync<Fn extends (...args: any[]) => any>(
+  fn: Fn
+): ToAsync<Fn> {
   return async (...args) => {
     return new Promise<ReturnType<Fn>>((resolve) => {
       setTimeout(() => {
@@ -222,9 +232,14 @@ function makeArgAsync<Fn extends (...args: any[]) => any>(fn: Fn): ToAsync<Fn> {
 Now, let’s use it.
 
 ```ts
-function makeArgsAsync<T extends FuncArgs>(args: T): MappedToAsync<T> {
+function makeArgsAsync<T extends FuncArgs>(
+  args: T
+): MappedToAsync<T> {
   return Object.fromEntries(
-    Object.keys(args).map((key) => [key, makeArgAsync(args[key])]),
+    Object.keys(args).map((key) => [
+      key,
+      makeArgAsync(args[key])
+    ]),
   ) as MappedToAsync<T>
 }
 ```
@@ -235,7 +250,7 @@ Additionally, `Object.keys` does not return the type `(keyof T)[]`. Instead, it 
 
 ```ts
 type ObjType = { a: number }
-const obj: ObjType = { a: number; b: number }
+const obj: ObjType = { a: number, b: number }
 ```
 
 `obj` satisfies the structural type of `ObjType`, but the key `b` will show up during runtime, hence the difference in type for `Object.keys`.
