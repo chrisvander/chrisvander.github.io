@@ -1,17 +1,17 @@
 ---
-import { getCollection } from "astro:content";
-import { Icon } from "astro-icon/components";
-import dayjs from "dayjs";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content"
+import { Icon } from "astro-icon/components"
+import dayjs from "dayjs"
+import BaseLayout from "../layouts/BaseLayout.astro"
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog")
 const postsSorted = posts
-	.filter((post) => !post.data.draft)
-	.sort((a, b) => {
-		return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-	});
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  })
 
-const projects = await getCollection("projects");
+const projects = await getCollection("projects")
 ---
 
 <BaseLayout>
@@ -24,11 +24,6 @@ const projects = await getCollection("projects");
       <a href="https://open.spotify.com/artist/6Nf6EjiUG7gYxcyHbrsvgs">music</a>
       and work on <a href="https://github.com/chrisvander"
         >personal and open-source projects</a
-      >. You can find me on <a
-        href="https://www.linkedin.com/in/chris-vanderloo/">LinkedIn</a
-      >, <a href="https://instagram.com/chrisvanderloo">Instagram</a>,
-      <a rel="me" href="https://mastodon.social/@chrisvander">Mastodon</a>, and <a
-        href="https://github.com/chrisvander">GitHub</a
       >.
     </p>
   </div>
