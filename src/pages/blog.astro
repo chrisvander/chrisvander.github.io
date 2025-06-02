@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content"
+import BaseLayout from "../layouts/BaseLayout.astro"
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog")
 const postsSorted = posts
   .filter((post) => !post.data.draft)
   .sort((a, b) => {
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-  });
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  })
 ---
 
 <BaseLayout pageSubtitle="All Posts">
@@ -16,7 +16,7 @@ const postsSorted = posts
     {
       postsSorted.map((post) => (
         <div class="flex flex-row">
-          <span class="flex-none hidden w-36 text-slate-500 md:inline-block">
+          <span class="flex-none hidden w-36 text-zinc-500 md:inline-block">
             {new Date(post.data.date).toLocaleDateString()}
           </span>
           <span>
@@ -28,7 +28,7 @@ const postsSorted = posts
                 {post.data.title}
               </a>
             </span>
-            <span class="text-slate-500 block md:hidden">
+            <span class="text-zinc-500 block md:hidden">
               {new Date(post.data.date).toLocaleDateString()}
             </span>
             <div class="text-md mt-2 mb-6 line-clamp-2 w-full">

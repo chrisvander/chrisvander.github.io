@@ -21,15 +21,15 @@ const dateFmt = dateObj.format("DD MMM YYYY")
 
 <BaseLayout pageSubtitle={title}>
   <div class="py-8">
-    <h1 class="font-semibold text-xl">{title}</h1>
+    <h1 class="font-semibold text-3xl">{title}</h1>
     {
       description && (
-        <h2 class="text-lg text-slate-700 dark:text-slate-300 font-medium">
+        <h2 class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">
           {description}
         </h2>
       )
     }
-    <p class="text-sm text-slate-500 pt-4">
+    <p class="text-sm text-zinc-500 pt-4">
       {dateFmt}
     </p>
   </div>

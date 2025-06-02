@@ -16,7 +16,7 @@ const projects = await getCollection("projects")
 
 <BaseLayout>
   <div class="py-4 sm:py-8 mb-8">
-    <h1 class="text-xl font-semibold py-2">Hi, I'm Chris.</h1>
+    <h1>Hi, I'm Chris.</h1>
     <p class="text-md">
       I am the CTO of <a href="https://bluefin.one">Bluefin Clinical</a>, a
       startup building a platform for clinical trial supply management. In my
@@ -29,12 +29,12 @@ const projects = await getCollection("projects")
   </div>
   {
     postsSorted.length > 0 && (
-      <h1 class="text-xl font-semibold mb-2">Posts</h1>
-      <hr class="border-slate-300 dark:border-slate-500" />
+      <h2 class="">Posts</h2>
+      <hr class="border-zinc-300 dark:border-zinc-500" />
       <div class="py-4 pb-8 text-base">
         {postsSorted.map((post) => (
           <div class="flex">
-            <span class="flex-none w-28 sm:w-40 md:w-56 text-slate-600 dark:text-slate-400 inline-block">
+            <span class="flex-none w-28 sm:w-40 md:w-56 text-zinc-600 dark:text-zinc-400 inline-block">
               {dayjs(post.data.date).format("DD MMM YYYY")}
             </span>
             <span class="text-bold">
@@ -50,16 +50,16 @@ const projects = await getCollection("projects")
       </div>
     )
   }
-  <h1 class="text-xl font-semibold mb-2">Projects</h1>
-  <hr class="border-slate-300 dark:border-slate-500" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-4 pb-8">
+  <h2>Projects</h2>
+  <hr class="border-zinc-300 dark:border-zinc-500" />
+  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4 py-4 pb-8">
     {
       projects.map(({ data: { title, link, repo, description, language } }) => (
-        <div class="flex flex-col md:p-3 h-full space-y-2 rounded-md md:border md:border-slate-200 dark:border-slate-600">
+        <div class="flex md:shadow-sm md:bg-white flex-col py-3 md:p-3 h-full space-y-2 md:rounded-md md:border md:border-zinc-200 dark:border-zinc-600">
           <div class="flex flex-row items-center justify-between">
-            <h2 class="font-semibold text-lg">
+            <h3 class="mb-0">
               <a href={repo}>{title}</a>
-            </h2>
+            </h3>
             {link && (
               <a href={link}>
                 Link{" "}
@@ -68,7 +68,7 @@ const projects = await getCollection("projects")
             )}
           </div>
           <p class="flex-1">{description}</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 pt-1">
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 pt-1">
             {language}
           </p>
         </div>
