@@ -55,7 +55,7 @@ const projects = await getCollection("projects")
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4 py-4 pb-8">
     {
       projects.map(({ data: { title, link, repo, description, language } }) => (
-        <div class="flex md:shadow-sm md:bg-white flex-col py-3 md:p-3 h-full space-y-2 md:rounded-md md:border md:border-zinc-200 dark:border-zinc-600">
+        <div class="flex md:shadow-sm md:bg-white dark:md:bg-black flex-col py-3 md:p-3 h-full space-y-2 md:rounded-md md:border md:border-zinc-200 dark:border-zinc-600">
           <div class="flex flex-row items-center justify-between">
             <h3 class="mb-0">
               <a href={repo}>{title}</a>
