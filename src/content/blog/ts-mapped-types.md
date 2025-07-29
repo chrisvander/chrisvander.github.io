@@ -1,7 +1,7 @@
 ---
-title: TypeScript Wizardry with Mapped Types
+title: Using TypeScript Mapped Types
 date: 2025-04-20
-slug: typescript-wizardry-mapped-types
+slug: using-typescript-mapped-types
 description: A brief dive into TypeScript's ability to represent complex types using mapped types, generics, and type inference.
 tags: [typescript]
 ---
@@ -12,7 +12,7 @@ Like tRPC, it can be useful to build functions that operate on multiple objects 
 
 Before we dive into mapped types, let’s talk briefly about generics and type inference in TypeScript.
 
-## Generics
+# Generics
 
 If you aren’t familiar with generics conceptually, they are a way to have types which represent a certain structure while being flexible on the specific types used. For example, let’s say we have a `Box` type which requires a function to clone the box:
 
@@ -50,7 +50,7 @@ const box: Box = { contents: "initial", clone: () => ({ ...box }) }
 
 Better. But I still have to write `: Box` anywhere I want to declare a box, and `: Box<T>` anytime I use a different type than string, which is a little irritating.
 
-## Inference
+# Inference
 
 In TypeScript, types are inferred in many places. Type inference allows the compiler to know what type variables are without having to explicitly declare the type. For example, TypeScript knows both of these declarations are of type `{ a: number }`:
 
@@ -95,7 +95,7 @@ const b2 = createBox<number>(1)
 const b3: Box<number> = createBox<number>(1)
 ```
 
-## Mapped Types
+# Mapped Types
 
 Now that we’ve covered generics and how to infer generics using functions, let’s get into mapped types.
 
@@ -213,7 +213,7 @@ Success! We’ve now created a mapped type that maps an object of synchronous fu
 
 ## Implementation
 
-The part that many resources leave out is actually doing the implementation while maintaining type-safety. One recommendation I have: process each argument in a separate function, with its own generics and return. This way, you can mentally keep the focus on the constraints of the specific problem. I wouldn’t recommend putting all the implementation inside of a for loop or mapping inside the main function. Here’s an implementation of just making one function asynchronous:
+The part that many resources leave out is actually implementing the runtime code while maintaining type-safety. To mentally maintain focus when working with complex types, I recommend splitting each bit of functionality that deals with a different part of the type into separate functions. Putting all the implementation inside of a for loop or mapping inside the main function can result in a confusing type hierarchy. Here’s an implementation of just making one function asynchronous:
 
 ```ts
 function makeArgAsync<Fn extends (...args: any[]) => any>(
@@ -244,7 +244,7 @@ function makeArgsAsync<T extends FuncArgs>(
 }
 ```
 
-We’ve had to use `as MappedToAsync<T>` here because of some TypeScript quirks. `Object.fromEntries` does not know from the output whether all the keys have been iterated over. It just takes in the entries with type `Iterable<readonly [PropertyKey, ToAsync<T[keyof T]>]>`. There’s no information on how many entries there are, nor if all `PropertyKey` are included.
+The `as` keyword is casting in TypeScript. We’ve had to cast to `MappedToAsync<T>` here because of some TypeScript quirks. `Object.fromEntries` does not know from the output whether all the keys have been iterated over. It just takes in the entries with type `Iterable<readonly [PropertyKey, ToAsync<T[keyof T]>]>`. There’s no information on how many entries there are, nor if all `PropertyKey` are included.
 
 Additionally, `Object.keys` does not return the type `(keyof T)[]`. Instead, it returns `string[]`. This is because the keys may differ from the structural type that the runtime object satisfies. For example:
 
@@ -255,4 +255,8 @@ const obj: ObjType = { a: number, b: number }
 
 `obj` satisfies the structural type of `ObjType`, but the key `b` will show up during runtime, hence the difference in type for `Object.keys`.
 
-Using `as` is unavoidable when working with complex mapped types for the above reasons. As the developer, you can safely assert that all keys will be operated on once, and you have to inform TypeScript of that information. To keep things safe, I recommend that the functions operating on the entire mapped type be as small as possible, and defer to smaller functions that operate on each field. It lets you maintain focus on the explicit generics you care about in the moment.
+Casting can be unavoidable when working with complex mapped types for the above reasons. As the developer, you can safely assert that all keys will be operated on once, and you have to inform TypeScript of that information. Like I mentioned earlier, I recommend that the functions operating on the entire mapped type be as small as possible, and defer to smaller functions that operate on each field. It lets you maintain focus on the generics you care about in the moment.
+
+# Conclusion
+
+Mapped types, when paired with generics and utility types like `Parameters` and `ReturnType`, give TypeScript an almost magical ability to preserve structure and intent across functions. Whether you’re adapting functions for use in a worker thread or transforming types across boundaries, these tools let you do it safely and predictably. While some type assertions are necessary, especially at runtime boundaries, maintaining clear separation of logic and generic constraints go a long way. If you’re building complex systems in TypeScript, mastering mapped types is essential.
