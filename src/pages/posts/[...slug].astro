@@ -3,6 +3,7 @@ import { getCollection } from "astro:content"
 import type { CollectionEntry } from "astro:content"
 import dayjs from "dayjs"
 import BaseLayout from "../../layouts/BaseLayout.astro"
+import { BlueskyComments } from "../../components/BlueskyComments"
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog")
@@ -35,7 +36,8 @@ const dateFmt = dateObj.format("DD MMM YYYY")
   </div>
   {banner && <img src={banner} class="max-h-full rounded-lg shadow-md" />}
   <br />
-  <div class="prose dark:prose-invert lg:prose-md">
+  <div class="prose dark:prose-invert lg:prose-md mb-8">
     <Content />
   </div>
+  <BlueskyComments client:load />
 </BaseLayout>

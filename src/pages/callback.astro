@@ -1,0 +1,22 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+  <div class="flex w-full h-24 items-center justify-center text-2xl font-serif animate-pulse">
+    Redirecting...
+  </div>
+</BaseLayout>
+
+<script>
+  import { getClient } from "../oauth.ts"
+
+  const redirectUrl = localStorage.getItem("redirect") ?? "/"
+  const client = await getClient()
+  // Takes the request token from the URL and sets it to the client
+  await client.init()
+  localStorage.removeItem("redirect")
+
+  // Redirect back to the user's original page
+  window.location.href = redirectUrl
+</script>
