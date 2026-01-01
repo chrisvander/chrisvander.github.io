@@ -21,7 +21,7 @@ Individuals and enterprises alike want the same thing: a stable, portable identi
 
 Today, enterprises integrate a mess of SaaS apps together, where one isolated data store talks to another isolated data store with zero centralization. Once users expect to own their data, enterprises will demand the same architecture. And with a PDS-style architecture, integrations wouldn’t need to exist as they do today - all the data is in the PDS, ready to be used by whatever app needs it. IT departments could finally have a clear view into what data is being retrieved, displayed, and written by every app in the organization.
 
-More than ownership on the personal & enterprise side, I believe that protocols like this finally give nerds like myself a way to improve any service I’d like. Is [Leaflet](https://leaflet.pub)  [^Leaflet is, in fact, awesome. Check it out if you like blogging.] not doing a good job for you? Build your own blogging tool, on top of the same lexicons. Voilà! All the user’s existing data will be there, ready to be used.
+More than ownership on the personal & enterprise side, I believe that protocols like this finally give nerds like myself a way to improve any service I’d like. Is [Leaflet](https://leaflet.pub)[^1] not doing a good job for you? Build your own blogging tool, on top of the same lexicons. Voilà! All the user’s existing data will be there, ready to be used.
 
 I love the term [Internet handle](https://internethandle.org/) to describe this. A domain name has long defined a company’s place on the Internet. Eventually, I expect it will define everyone’s place on the Internet.
 
@@ -33,3 +33,4 @@ If you want to read more, I recommend [@pfrazee.com](https://bsky.app/profile/pf
 
 And follow me on Bluesky: [@chrisvanderloo.com](https://bsky.app/profile/chrisvanderloo.com).
 
+[^1]: Leaflet is, in fact, doing a great job. Check it out if you like blogging.
