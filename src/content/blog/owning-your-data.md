@@ -1,6 +1,7 @@
 ---
 title: Owning Your Data
 date: 2026-01-01
+description: How decoupling identity, data, and apps opens up new possibilities for the architecture of the Internet.
 slug: owning-your-data
 tags: [bluesky, atproto]
 ---
