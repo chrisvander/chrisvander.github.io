@@ -1,6 +1,6 @@
 ---
 title: Borrowing Network Effects
-date: 2026-01-01
+date: 2026-02-18
 description: Using someone else’s network to pull in an existing audience is a powerful tool for any social media app.
 slug: borrowing-network-effects
 tags: [bluesky, atproto]
