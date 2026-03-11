@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from "@astrojs/tailwind";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
@@ -8,10 +8,8 @@ export default defineConfig({
 	integrations: [
 		icon(),
 		sitemap(),
+		tailwindcss()
 	],
-	vite: {
-	  plugins: [tailwindcss()]
-	},
 	markdown: {
     shikiConfig: {
       themes: {
