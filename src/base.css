@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap");
+
 @import "tailwindcss";
+
 @plugin '@tailwindcss/typography';
 
 @theme {
@@ -12,6 +14,7 @@
   body {
     @apply bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-50;
   }
+
   h1,
   h2,
   h3,
@@ -20,18 +23,23 @@
   h6 {
     @apply font-sans font-semibold text-zinc-900 dark:text-zinc-100;
   }
+
   h1 {
     @apply font-serif text-3xl mb-4;
   }
+
   h2 {
     @apply font-serif text-2xl mb-2;
   }
+
   h3 {
     @apply text-xl mb-2;
   }
+
   a {
     @apply hover:underline text-orange-600 hover:text-orange-700 active:text-orange-800 active:dark:text-orange-200 hover:dark:text-orange-300 transition-colors;
   }
+
   .prose {
     a {
       @apply hover:underline text-orange-600 hover:text-orange-700 active:text-orange-800 active:dark:text-orange-200 hover:dark:text-orange-300 transition-colors;
@@ -40,6 +48,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;

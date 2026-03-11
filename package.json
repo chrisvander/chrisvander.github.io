@@ -8,12 +8,13 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"gen": "bunx -p @atproto/lex lex build",
+		"postinstall": "rm -rf src/lexicons && bun run gen"
 	},
 	"dependencies": {
 		"@astrojs/rss": "^4.0.17",
 		"@astrojs/sitemap": "^3.7.1",
-		"@astrojs/tailwind": "^6.0.2",
 		"@atproto/lex": "^0.0.20",
 		"astro": "6.0.2",
 		"astro-icon": "^1.1.5",
@@ -26,6 +27,7 @@
 		"@iconify-json/akar-icons": "^1.2.7",
 		"@iconify-json/bi": "^1.2.7",
 		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.2.1",
 		"@types/markdown-it": "^14.1.2",
 		"@types/sanitize-html": "^2.16.1"
 	}
