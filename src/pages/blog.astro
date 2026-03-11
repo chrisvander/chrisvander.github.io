@@ -22,7 +22,7 @@ const postsSorted = posts
           <span>
             <span class="text-bold text-lg">
               <a
-                href={`/posts${post.slug}`}
+                href={`/posts/${post.id}`}
                 class="text-black dark:text-white font-bold"
               >
                 {post.data.title}
@@ -32,7 +32,7 @@ const postsSorted = posts
               {new Date(post.data.date).toLocaleDateString()}
             </span>
             <div class="text-md mt-2 mb-6 line-clamp-2 w-full">
-              {post.data.description || post.body.slice(0, 360)}
+              {post.data.description || (post.body ?? "").slice(0, 360)}
             </div>
           </span>
         </div>

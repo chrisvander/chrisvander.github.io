@@ -13,8 +13,8 @@ export async function GET(context: { site: string }) {
     items: blog
       .filter((post) => post.data.draft !== true)
       .map((post) => ({
-        link: `/posts/${post.slug}`,
-        content: sanitizeHtml(parser.render(post.body), {
+        link: `/posts/${post.id}`,
+        content: sanitizeHtml(parser.render(post.body ?? ""), {
           allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
         }),
         ...post.data,
