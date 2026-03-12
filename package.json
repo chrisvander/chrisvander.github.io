@@ -18,7 +18,7 @@
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "@atproto/lex": "^0.0.20",
-    "astro": "6.0.2",
+    "astro": "^6.0.3",
     "astro-icon": "^1.1.5",
     "dayjs": "^1.11.19",
     "markdown-it": "^14.1.1",
@@ -33,5 +33,9 @@
     "@tailwindcss/vite": "^4.2.1",
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.16.1"
+  },
+  "overrides": {
+    "@iconify/tools": "5.0.5",
+    "@iconify/utils": "3.1.0"
   }
 }
