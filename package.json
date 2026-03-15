@@ -1,8 +1,8 @@
 {
   "name": "@chrisvander/website",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -32,7 +32,8 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
     "@types/markdown-it": "^14.1.2",
-    "@types/sanitize-html": "^2.16.1"
+    "@types/sanitize-html": "^2.16.1",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "overrides": {
     "@iconify/tools": "5.0.5",

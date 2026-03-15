@@ -1,17 +1,17 @@
 ---
-import { getCollection } from "astro:content"
-import { Icon } from "astro-icon/components"
-import dayjs from "dayjs"
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import dayjs from "dayjs";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await getCollection("blog")
+const posts = await getCollection("blog");
 const postsSorted = posts
   .filter((post) => !post.data.draft)
   .sort((a, b) => {
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  })
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
 
-const projects = await getCollection("projects")
+const projects = await getCollection("projects");
 ---
 
 <BaseLayout>
@@ -29,25 +29,27 @@ const projects = await getCollection("projects")
   </div>
   {
     postsSorted.length > 0 && (
-      <h2 class="">Posts</h2>
-      <hr class="border-zinc-300 dark:border-zinc-500" />
-      <div class="py-4 pb-8 text-base">
-        {postsSorted.map((post) => (
-          <div class="flex">
-            <span class="flex-none w-28 sm:w-40 md:w-56 text-zinc-600 dark:text-zinc-400 inline-block">
-              {dayjs(post.data.date).format("DD MMM YYYY")}
-            </span>
-            <span class="text-bold">
-              <a
-                href={`posts/${post.id}`}
-                class="text-black dark:text-white font-semibold"
-              >
-                {post.data.title}
-              </a>
-            </span>
-          </div>
-        ))}
-      </div>
+      <>
+        <h2 class="">Posts</h2>
+        <hr class="border-zinc-300 dark:border-zinc-500" />
+        <div class="py-4 pb-8 text-base">
+          {postsSorted.map((post) => (
+            <div class="flex">
+              <span class="flex-none w-28 sm:w-40 md:w-56 text-zinc-600 dark:text-zinc-400 inline-block">
+                {dayjs(post.data.date).format("DD MMM YYYY")}
+              </span>
+              <span class="text-bold">
+                <a
+                  href={`posts/${post.id}`}
+                  class="text-black dark:text-white font-semibold"
+                >
+                  {post.data.title}
+                </a>
+              </span>
+            </div>
+          ))}
+        </div>
+      </>
     )
   }
   <h2>Projects</h2>

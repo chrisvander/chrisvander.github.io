@@ -6,10 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://chrisvanderloo.com/",
-  integrations: [
-      icon(),
-      sitemap(),
-	],
+  integrations: [icon(), sitemap()],
   vite: {
     plugins: [tailwindcss() as any],
   },
@@ -17,7 +14,7 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: "catppuccin-latte",
-        dark: "catppuccin-mocha"
+        dark: "catppuccin-mocha",
       },
     },
   },

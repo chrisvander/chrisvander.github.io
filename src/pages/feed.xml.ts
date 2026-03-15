@@ -1,11 +1,11 @@
-import { getCollection } from "astro:content"
-import rss from "@astrojs/rss"
-import MarkdownIt from "markdown-it"
-import sanitizeHtml from "sanitize-html"
-const parser = new MarkdownIt()
+import { getCollection } from "astro:content";
+import rss from "@astrojs/rss";
+import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
+const parser = new MarkdownIt();
 
 export async function GET(context: { site: string }) {
-  const blog = await getCollection("blog")
+  const blog = await getCollection("blog");
   return rss({
     title: "Christian van der Loo",
     description: "My personal blog.",
@@ -19,5 +19,5 @@ export async function GET(context: { site: string }) {
         }),
         ...post.data,
       })),
-  })
+  });
 }

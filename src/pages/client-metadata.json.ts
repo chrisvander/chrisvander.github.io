@@ -12,5 +12,5 @@ export async function GET() {
       application_type: "web",
       dpop_bound_access_tokens: true,
     }),
-  )
+  );
 }

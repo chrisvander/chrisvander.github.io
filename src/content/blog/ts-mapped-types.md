@@ -18,22 +18,22 @@ If you aren’t familiar with generics conceptually, they are a way to have type
 
 ```ts
 interface Box {
-  readonly contents: string
-  clone: () => Box
+  readonly contents: string;
+  clone: () => Box;
 }
 
-const box: Box = { contents: "initial", clone: () => ({ ...box }) }
+const box: Box = { contents: "initial", clone: () => ({ ...box }) };
 ```
 
 If we want to hold a number inside of the `Box`, we can’t. We only allow strings right now on the type. With generics, though, we can make this box invariant over the type of the contents:
 
 ```ts
 interface Box<T> {
-  readonly contents: T
-  clone: () => Box<T>
+  readonly contents: T;
+  clone: () => Box<T>;
 }
 
-const box: Box = { contents: "initial", clone: () => ({ ...box }) }
+const box: Box = { contents: "initial", clone: () => ({ ...box }) };
 //         ^ ts: Generic type 'Box<T>' requires 1 type argument(s).
 ```
 
@@ -41,11 +41,11 @@ Whoops! I’ve now broken my existing code, assuming that box would contain a st
 
 ```ts
 interface Box<T = string> {
-  readonly contents: T
-  clone: () => Box<T>
+  readonly contents: T;
+  clone: () => Box<T>;
 }
 
-const box: Box = { contents: "initial", clone: () => ({ ...box }) }
+const box: Box = { contents: "initial", clone: () => ({ ...box }) };
 ```
 
 Better. But I still have to write `: Box` anywhere I want to declare a box, and `: Box<T>` anytime I use a different type than string, which is a little irritating.
@@ -55,8 +55,8 @@ Better. But I still have to write `: Box` anywhere I want to declare a box, and 
 In TypeScript, types are inferred in many places. Type inference allows the compiler to know what type variables are without having to explicitly declare the type. For example, TypeScript knows both of these declarations are of type `{ a: number }`:
 
 ```ts
-const a = { a: 1 }
-const b: { a: number } = { a: 1 }
+const a = { a: 1 };
+const b: { a: number } = { a: 1 };
 ```
 
 In the case of our box example, that `clone` declaration seems like it will be the same across every instantiation. So we may want to create a function that returns a `Box`.
@@ -65,12 +65,12 @@ In the case of our box example, that `clone` declaration seems like it will be t
 function createBox(contents: string): Box {
   const innerBox = {
     contents,
-    clone: () => ({ ...innerBox })
-  }
-  return innerBox
+    clone: () => ({ ...innerBox }),
+  };
+  return innerBox;
 }
 
-const box = createBox("initial")
+const box = createBox("initial");
 ```
 
 Okay, let’s reintroduce generics. The function itself will need to have a generic parameter, in order to pass that to the return type. So it’ll look like this:
@@ -79,20 +79,20 @@ Okay, let’s reintroduce generics. The function itself will need to have a gene
 function createBox<T>(contents: T): Box<T> {
   const innerBox = {
     contents,
-    clone: () => ({ ...innerBox })
-  }
-  return innerBox
+    clone: () => ({ ...innerBox }),
+  };
+  return innerBox;
 }
 
-const box = createBox("initial")
+const box = createBox("initial");
 ```
 
 This code will compile without issue, even though I didn’t explicitly say what type the generic was. I only had to declare `createBox("initial")`. That’s because TypeScript will infer generics on a function based on the parameters passed in. It inferred `"initial"` as the type `string`, and used that in place of the generic. The following three statements all return a `Box<number>`, in order of increasing explicitness:
 
 ```ts
-const b1 = createBox(1)
-const b2 = createBox<number>(1)
-const b3: Box<number> = createBox<number>(1)
+const b1 = createBox(1);
+const b2 = createBox<number>(1);
+const b3: Box<number> = createBox<number>(1);
 ```
 
 # Mapped Types
@@ -103,9 +103,9 @@ Let’s start with an example. Staying solidly in the type system, here’s an e
 
 ```ts
 type MyFuncs = {
-	a: (arg: string) => number;
-	b: (arg: Box<string>) => Box<number>;
-}
+  a: (arg: string) => number;
+  b: (arg: Box<string>) => Box<number>;
+};
 ```
 
 Here’s a scenario we recently ran into at [Bluefin](https://bluefin.one). We’d like to run these functions inside of a web worker, and make it callable from the client side. This inevitably requires us to make these functions asynchronous, and wrap some kind of adapter around them. How do we do that and maintain type safety throughout?
@@ -114,14 +114,14 @@ First, let’s think about the overall structure of this mapped type. We have a 
 
 ```ts
 type FuncArgs = {
-    [key: string]: (...args: any[]) => any
-}
+  [key: string]: (...args: any[]) => any;
+};
 ```
 
 Let’s make sure we’re correct. TypeScript is structural, so we can see if one type is a supertype of another. In this case, `FuncArgs` should be a supertype of `MyFuncs`.
 
 ```ts
-type Test = MyFuncs extends FuncArgs ? true : false
+type Test = MyFuncs extends FuncArgs ? true : false;
 //   ^ true
 ```
 
@@ -129,13 +129,13 @@ Since `FuncArgs` exists to enforce a structure, I didn’t use generics, because
 
 ```ts
 function makeArgsAsync<T extends FuncArgs>(args: T): void {
-    // todo
+  // todo
 }
 
 makeArgsAsync({
   a: (arg: string) => arg,
   b: (arg: Box<string>) => arg.clone(),
-})
+});
 // ^ function makeArgsAsync<{
 //       a: (arg: string) => string;
 //       b: (arg: Box<string>) => Box<string>;
@@ -150,10 +150,11 @@ TypeScript has correctly inferred the input arguments to match our `MyFuncs` typ
 Let’s now map the return types to Promises. We can use the built-in `Parameters<T>` and `ReturnType<T>` utility types to extract the parameters and return type of each function. Then, we just need to reconstruct the function, with a `Promise<T>` around the return type. To do this on one function, it might look like this:
 
 ```ts
-type ToAsync<Fn extends (...args: any[]) => any> =
-  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+type ToAsync<Fn extends (...args: any[]) => any> = (
+  ...args: Parameters<Fn>
+) => Promise<ReturnType<Fn>>;
 
-type Result = ToAsync<(arg: string) => string>
+type Result = ToAsync<(arg: string) => string>;
 //   ^ type Result = (arg: string) => Promise<string>
 ```
 
@@ -161,51 +162,50 @@ Okay, now let’s apply `ToAsync` in a mapped type.
 
 ```ts
 type MyFuncs = {
-  a: (arg: string) => number
-  b: (arg: Box<string>) => Box<number>
-}
+  a: (arg: string) => number;
+  b: (arg: Box<string>) => Box<number>;
+};
 
-type ToAsync<Fn extends (...args: any[]) => any> =
-  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+type ToAsync<Fn extends (...args: any[]) => any> = (
+  ...args: Parameters<Fn>
+) => Promise<ReturnType<Fn>>;
 
 type MyFuncsAsync = {
-  [K in keyof MyFuncs]: ToAsync<MyFuncs[K]>
-}
+  [K in keyof MyFuncs]: ToAsync<MyFuncs[K]>;
+};
 // ^ type MyFuncsAsync = {
 //       a: ToAsync<(arg: string) => number>;
 //       b: ToAsync<(arg: Box<string>) => Box<number>>;
 //   }
-
 ```
 
 The statement `[K in keyof MyFuncs]` gives us a new type `K` that we can use to map into `MyFuncs`. The statement lets us use each field in `MyFuncs` as though it were a new generic argument, and TypeScript will take those results and reconstruct a new mapped type. Here’s the above, resulting in `MyFuncsAsync` again, but this time using a generic utility type:
 
 ```ts
-type ToAsync<Fn extends (...args: any[]) => any> =
-  (...args: Parameters<Fn>) => Promise<ReturnType<Fn>>
+type ToAsync<Fn extends (...args: any[]) => any> = (
+  ...args: Parameters<Fn>
+) => Promise<ReturnType<Fn>>;
 
 type MappedToAsync<T extends FuncArgs> = {
-  [K in keyof T]: ToAsync<T[K]>
-}
+  [K in keyof T]: ToAsync<T[K]>;
+};
 
-type MyFuncsAsync = MappedToAsync<MyFuncs>
+type MyFuncsAsync = MappedToAsync<MyFuncs>;
 ```
 
 With this new utility type, we can finish out the signature of the `makeArgsAsync` function:
 
 ```ts
-function makeArgsAsync<T extends FuncArgs>(
-  args: T
-): MappedToAsync<T> {
+function makeArgsAsync<T extends FuncArgs>(args: T): MappedToAsync<T> {
   // todo
 }
 
 const asyncArgs = makeArgsAsync({
   a: (arg: string) => arg,
   b: (arg: Box<string>) => arg.clone(),
-})
+});
 
-const result = asyncArgs.a("test")
+const result = asyncArgs.a("test");
 //    ^ Promise<string>
 ```
 
@@ -216,31 +216,24 @@ Success! We’ve now created a mapped type that maps an object of synchronous fu
 The part that many resources leave out is actually implementing the runtime code while maintaining type-safety. To mentally maintain focus when working with complex types, I recommend splitting each bit of functionality that deals with a different part of the type into separate functions. Putting all the implementation inside of a for loop or mapping inside the main function can result in a confusing type hierarchy. Here’s an implementation of just making one function asynchronous:
 
 ```ts
-function makeArgAsync<Fn extends (...args: any[]) => any>(
-  fn: Fn
-): ToAsync<Fn> {
+function makeArgAsync<Fn extends (...args: any[]) => any>(fn: Fn): ToAsync<Fn> {
   return async (...args) => {
     return new Promise<ReturnType<Fn>>((resolve) => {
       setTimeout(() => {
-        resolve(fn(...args))
-      }, 1000)
-    })
-  }
+        resolve(fn(...args));
+      }, 1000);
+    });
+  };
 }
 ```
 
 Now, let’s use it.
 
 ```ts
-function makeArgsAsync<T extends FuncArgs>(
-  args: T
-): MappedToAsync<T> {
+function makeArgsAsync<T extends FuncArgs>(args: T): MappedToAsync<T> {
   return Object.fromEntries(
-    Object.keys(args).map((key) => [
-      key,
-      makeArgAsync(args[key])
-    ]),
-  ) as MappedToAsync<T>
+    Object.keys(args).map((key) => [key, makeArgAsync(args[key])]),
+  ) as MappedToAsync<T>;
 }
 ```
 
@@ -249,8 +242,8 @@ The `as` keyword is casting in TypeScript. We’ve had to cast to `MappedToAsync
 Additionally, `Object.keys` does not return the type `(keyof T)[]`. Instead, it returns `string[]`. This is because the keys may differ from the structural type that the runtime object satisfies. For example:
 
 ```ts
-type ObjType = { a: number }
-const obj: ObjType = { a: number, b: number }
+type ObjType = { a: number };
+const obj: ObjType = { a: number, b: number };
 ```
 
 `obj` satisfies the structural type of `ObjType`, but the key `b` will show up during runtime, hence the difference in type for `Object.keys`.
