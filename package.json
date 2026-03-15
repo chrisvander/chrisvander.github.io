@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "gen": "bunx -p @atproto/lex lex build",
+    "gen": "lex build",
     "generate-types": "wrangler types",
     "postinstall": "rm -rf src/lexicons && bun run gen && bun run generate-types"
   },
