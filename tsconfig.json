@@ -3,11 +3,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "baseUrl": ".",
+    "exactOptionalPropertyTypes": false,
     "paths": {
-      "@images/*": ["public/images/*"]
-    }
+      "@images/*": ["./public/images/*"],
+    },
   },
   "include": [".astro/types.d.ts", "**/*", "./worker-configuration.d.ts"],
-  "exclude": ["dist", "src/lexicons"]
+  "exclude": ["dist"],
 }

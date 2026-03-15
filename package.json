@@ -20,6 +20,7 @@
     "@atproto/lex": "^0.0.20",
     "astro": "^6.0.3",
     "astro-icon": "^1.1.5",
+    "at-astro-loader": "^1.0.1",
     "dayjs": "^1.11.19",
     "markdown-it": "^14.1.1",
     "sanitize-html": "^2.17.1",
@@ -27,6 +28,8 @@
     "wrangler": "^4.72.0"
   },
   "devDependencies": {
+    "@atproto/lex-client": "^0.0.15",
+    "@atproto/lex-schema": "^0.0.14",
     "@iconify-json/akar-icons": "^1.2.7",
     "@iconify-json/bi": "^1.2.7",
     "@tailwindcss/typography": "^0.5.19",

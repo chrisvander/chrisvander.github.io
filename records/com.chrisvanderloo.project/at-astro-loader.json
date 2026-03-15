@@ -1,0 +1,7 @@
+{
+  "$type": "com.chrisvanderloo.project",
+  "title": "at-astro-loader",
+  "description": "An Astro loader for ATProto data.",
+  "repo": "https://github.com/chrisvander/at-astro-loader",
+  "language": "TypeScript"
+}
