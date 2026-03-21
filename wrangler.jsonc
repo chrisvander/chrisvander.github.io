@@ -3,6 +3,12 @@
   "compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
   "name": "chrisvanderloo",
   "main": "@astrojs/cloudflare/entrypoints/server",
+  "routes": [
+    {
+      "pattern": "chrisvanderloo.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
