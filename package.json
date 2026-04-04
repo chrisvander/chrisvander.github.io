@@ -20,7 +20,7 @@
     "@atproto/lex": "^0.0.20",
     "astro": "^6.0.3",
     "astro-icon": "^1.1.5",
-    "at-astro-loader": "^1.0.1",
+    "at-astro-loader": "^1.1.0",
     "dayjs": "^1.11.19",
     "markdown-it": "^14.1.1",
     "sanitize-html": "^2.17.1",

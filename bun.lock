@@ -11,7 +11,7 @@
         "@atproto/lex": "^0.0.20",
         "astro": "^6.0.3",
         "astro-icon": "^1.1.5",
-        "at-astro-loader": "^1.0.1",
+        "at-astro-loader": "^1.1.0",
         "dayjs": "^1.11.19",
         "markdown-it": "^14.1.1",
         "sanitize-html": "^2.17.1",
@@ -428,7 +428,7 @@
 
     "astro-icon": ["astro-icon@1.1.5", "", { "dependencies": { "@iconify/tools": "^4.0.5", "@iconify/types": "^2.0.0", "@iconify/utils": "^2.1.30" } }, "sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw=="],
 
-    "at-astro-loader": ["at-astro-loader@1.0.1", "", { "dependencies": { "@atproto/lex": "^0.0.20", "@atproto/lex-client": "^0.0.15", "zod": "^4.3.6" }, "peerDependencies": { "astro": "^5 || ^6" } }, "sha512-zze/+IHSXCa1aW0QJE/G5/qSuJCaxKtP5kpJG/SRi0n2AXbtf9wOp4jhJGND6lQn76Nd6kN3xetZ8cRatrmAFw=="],
+    "at-astro-loader": ["at-astro-loader@1.1.0", "", { "dependencies": { "@atproto/lex": "^0.0.20", "@atproto/lex-client": "^0.0.15", "zod": "^4.3.6" }, "peerDependencies": { "astro": "^5 || ^6" } }, "sha512-gIg+u5wRpXKU5NZKb48hR7NHJ9xc6UTRnVewwqxwgyHVqfVVIYKoj60hmGmMSTdMJQBbZOhqanOAdB6MtW62AA=="],
 
     "atomic-sleep": ["atomic-sleep@1.0.0", "", {}, "sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ=="],
 
