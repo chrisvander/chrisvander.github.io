@@ -1,6 +1,15 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import * as com from "./lexicons/com";
+import { atLoader } from "at-astro-loader";
+
+const projects = defineCollection({
+  loader: atLoader(com.chrisvanderloo.project, {
+    endpoint: "https://bsky.chrisvanderloo.com",
+    repo: "chrisvanderloo.com",
+  }),
+});
 
 const blogCollection = defineCollection({
   loader: glob({
@@ -19,4 +28,5 @@ const blogCollection = defineCollection({
 
 export const collections = {
   blog: blogCollection,
+  projects
 };

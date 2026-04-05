@@ -1,7 +1,5 @@
 ---
-export const prerender = false;
-
-import { getCollection, getLiveCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 import dayjs from "dayjs";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -13,7 +11,7 @@ const postsSorted = posts
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
 
-const { entries: projects = [] } = await getLiveCollection("projects");
+const projects = await getCollection("projects");
 ---
 
 <BaseLayout>
