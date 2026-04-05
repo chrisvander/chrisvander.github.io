@@ -23,3 +23,5 @@ pnpm-debug.log*
 
 src/lexicons
 worker-configuration.d.ts
+
+*.local

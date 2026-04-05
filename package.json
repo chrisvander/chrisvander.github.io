@@ -11,6 +11,7 @@
     "astro": "astro",
     "gen": "lex build",
     "generate-types": "wrangler types",
+    "redeploy": "bun run deploy.ts",
     "postinstall": "rm -rf src/lexicons && bun run gen && bun run generate-types"
   },
   "dependencies": {
