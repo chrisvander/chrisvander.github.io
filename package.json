@@ -9,10 +9,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "gen": "lex build",
+    "gen": "lex build --clear",
     "generate-types": "wrangler types",
     "redeploy": "bun run deploy.ts",
-    "postinstall": "rm -rf src/lexicons && bun run gen && bun run generate-types"
+    "postinstall": "bun run gen && bun run generate-types"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.10",
