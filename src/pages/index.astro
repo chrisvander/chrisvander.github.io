@@ -5,11 +5,20 @@ import dayjs from "dayjs";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = await getCollection("blog");
-const postsSorted = posts
+const atprotoPosts = await getCollection("atprotoBlog");
+const postsSorted = [
+  ...posts,
+  ...atprotoPosts.map((p) => ({
+    ...p,
+    id: p.data.path.slice(1),
+    data: { ...p.data, date: p.data.publishedAt },
+  })),
+]
   .filter((post) => !post.data.draft)
   .sort((a, b) => {
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-  });
+  })
+  .slice(0, 5);
 
 const projects = await getCollection("projects");
 ---
@@ -32,7 +41,9 @@ const projects = await getCollection("projects");
       <>
         <div class="flex w-full justify-between items-center">
           <h2>Posts</h2>
-          <a class="inline-block pb-4" href="/blog">View All</a>
+          <a class="inline-block pb-4" href="/blog">
+            View All
+          </a>
         </div>
         <hr class="border-zinc-300 dark:border-zinc-500" />
         <div class="py-4 pb-8 text-base">
