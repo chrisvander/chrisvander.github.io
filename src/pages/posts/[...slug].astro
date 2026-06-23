@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import dayjs from "dayjs";
+import { formatDate } from "../../lib/formatDate";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -15,9 +15,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { title, description, banner } = post.data;
 const { Content } = await render(post);
-const dateFmt = dayjs(post.data.publishedAt ?? post.data.date).format(
-  "DD MMM YYYY",
-);
+const dateFmt = formatDate(post.data.publishedAt ?? post.data.date);
 ---
 
 <BaseLayout pageSubtitle={title} description={description}>

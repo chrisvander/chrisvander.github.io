@@ -1,8 +1,6 @@
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
-import MarkdownIt from "markdown-it";
-import sanitizeHtml from "sanitize-html";
-const parser = new MarkdownIt();
+import { marked } from "marked";
 
 export async function GET(context: { site: string }) {
   const blog = await getCollection("blog");
@@ -14,9 +12,7 @@ export async function GET(context: { site: string }) {
       .filter((post) => post.data.draft !== true)
       .map((post) => ({
         link: `/posts/${post.id}`,
-        content: sanitizeHtml(parser.render(post.body ?? ""), {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-        }),
+        content: marked.parse(post.body ?? ""),
         ...post.data,
       })),
   });

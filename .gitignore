@@ -1,5 +1,6 @@
 # astro
 .astro/
+.wrangler
 
 # build output
 dist/
